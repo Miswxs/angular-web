@@ -1,0 +1,1353 @@
+{
+  "userList": [
+    {
+      "userId": 1,
+      "orgId": "2054",
+      "userName": "小王",
+      "userAccount": "skkfjdsal",
+      "userPass": "Ofkjsadfk",
+      "userPosition": "职务",
+      "userEmail": "hello@163.com",
+      "userDescribe": "you are beautiful!",
+      "userPhone": "13566589457",
+      "userStatus": "开通",
+      "userType": "员工",
+      "userDepart": "c1|c1t1|c1t1d1|c1t1d11",
+      "myRole": [
+        {
+          "id": "001",
+          "isMine": false,"orgName":"组织名称",
+          "name": "角色一"
+        },
+        {
+          "id": "002",
+          "isMine": false,"orgName":"组织名称",
+          "name": "角色在"
+        },
+        {
+          "id": "003",
+          "isMine": false,"orgName":"组织名称",
+          "name": "角色有"
+        }
+      ],
+      "userZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "一",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+      "dataZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "一",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+      "TotalPages": 20,
+      "TotalRows": 89,
+      "PageSize": 0
+    },
+    {
+      "userId": 2,
+      "orgId": "2055",
+      "userName": "你奶奶",
+      "userAccount": "jindij",
+      "userPass": "Ofkjsadfk",
+      "userPosition": "职务",
+      "userEmail": "hello@163.com",
+      "userDescribe": "you are beautiful!",
+      "userPhone": "13566589457",
+      "userStatus": "开通",
+      "userType": "员工",
+      "userDepart": "c1|c1t1|c1t1d1|c1t1d11",
+      "myRole": [],
+         "myGroup":[],
+      "userZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "二",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+        "dataZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "一",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+      "TotalPages": 20,
+      "TotalRows": 89,
+      "PageSize": 0
+    },
+    {
+      "userId": 3,
+      "orgId": "2054",
+      "userName": "你大爷",
+      "userAccount": "ueiwyrewui",
+      "userPass": "Ofkjsadfk",
+      "userPosition": "职务",
+      "userEmail": "hello@163.com",
+      "userDescribe": "you are beautiful!",
+      "userPhone": "",
+      "userStatus": "开通",
+      "userType": "员工",
+      "userDepart": "c1|c1t1|c1t1d1|c1t1d11",
+      "myRole": [],
+      "userZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "三",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+        "dataZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "一",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+      "TotalPages": 20,
+      "TotalRows": 89,
+      "PageSize": 0
+    },
+    {
+      "userId": 2,
+      "orgId": "2055",
+      "userName": "你奶奶",
+      "userAccount": "jindij",
+      "userPass": "Ofkjsadfk",
+      "userPosition": "职务",
+      "userEmail": "hello@163.com",
+      "userDescribe": "you are beautiful!",
+      "userPhone": "13566589457",
+      "userStatus": "开通",
+      "userType": "员工",
+      "userDepart": "c1|c1t1|c1t1d1|c1t1d11",
+      "myRole": [],
+         "myGroup":[],
+      "userZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "二",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+        "dataZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "一",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+      "TotalPages": 20,
+      "TotalRows": 89,
+      "PageSize": 0
+    },
+    {
+      "userId": 3,
+      "orgId": "2054",
+      "userName": "你大爷",
+      "userAccount": "ueiwyrewui",
+      "userPass": "Ofkjsadfk",
+      "userPosition": "职务",
+      "userEmail": "hello@163.com",
+      "userDescribe": "you are beautiful!",
+      "userPhone": "",
+      "userStatus": "开通",
+      "userType": "员工",
+      "userDepart": "c1|c1t1|c1t1d1|c1t1d11",
+      "myRole": [],
+      "userZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "三",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+        "dataZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "一",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+      "TotalPages": 20,
+      "TotalRows": 89,
+      "PageSize": 0
+    },
+    {
+      "userId": 4,
+      "orgId": "2055",
+      "userName": "丽丽",
+      "userAccount": "iourewioruew",
+      "userPass": "Ofkjsadfk",
+      "userPosition": "职务",
+      "userEmail": "hello@163.com",
+      "userDescribe": "you are beautiful!",
+      "userPhone": "13566589457",
+      "userStatus": "开通",
+      "userType": "员工",
+      "userDepart": "c1|c1t1|c1t1d1|c1t1d11",
+      "myRole": [],
+      "userZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "四",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+        "dataZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "一",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+      "TotalPages": 20,
+      "TotalRows": 89,
+      "PageSize": 0
+    },
+    {
+      "userId": 5,
+      "orgId": "2055",
+      "userName": "小花",
+      "userAccount": "oieuwoe",
+      "userPass": "Ofkjsadfk",
+      "userPosition": "职务",
+      "userEmail": "hello@163.com",
+      "userDescribe": "you are beautiful!",
+      "userPhone": "",
+      "userStatus": "开通",
+      "userType": "员工",
+      "userDepart": "c1|c1t1|c1t1d1|c1t1d11",
+      "myRole": [],
+      "userZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "五",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+        "dataZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "一",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+      "TotalPages": 20,
+      "TotalRows": 89,
+      "PageSize": 0
+    },
+    {
+      "userId": 6,
+      "orgId": "2054",
+      "userName": "小明",
+      "userAccount": "rewoiuqiorqpew",
+      "userPass": "Ofkjsadfk",
+      "userPosition": "职务",
+      "userEmail": "hello@163.com",
+      "userDescribe": "you are beautiful!",
+      "userPhone": "13566589457",
+      "userStatus": "开通",
+      "userType": "员工",
+      "userDepart": "c1|c1t1|c1t1d1|c1t1d11",
+      "myRole": [],
+      "userZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "六",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+        "dataZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "一",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+      "TotalPages": 20,
+      "TotalRows": 89,
+      "PageSize": 0
+    }
+  ],
+  "TotalPages": 20,
+  "TotalRows": 89,
+  "PageSize": 0
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "pId": -1,
+      "groupId":1,
+    "name": "通用(3)",
+    "isParent": false,
+    "childOuter": false,
+    "dropInner": false,
+    "open": true
+  },
+  {
+    "id": 2,
+    "pId": 0,
+       "groupId":2,
+    "name": "地产(3)",
+    "isParent": false,
+    "childOuter": false,
+    "dropInner": false,
+    "open": true
+  },
+  {
+    "id": 3,
+    "pId": 0,
+       "groupId":3,
+    "name": "物业(6)",
+    "isParent": false,
+    "childOuter": false,
+    "dropInner": false,
+    "open": true
+  },
+  {
+    "id": 4,
+    "pId": 0,
+       "groupId":4,
+    "name": "客服(2)",
+    "isParent": false,
+    "childOuter": false,
+    "dropInner": false,
+    "open": true
+  },
+  {
+    "id": 5,
+    "pId": 0,
+       "groupId":5,
+    "name": "商业(0)",
+    "isParent": false,
+    "childOuter": false,
+    "dropInner": false,
+    "open": true
+  },
+  {
+    "id": 6,
+    "pId": 0,
+       "groupId":6,
+    "name": "会员(5)",
+    "isParent": false,
+    "childOuter": false,
+    "dropInner": false,
+    "open": true
+  },
+    {
+    "id": 7,
+    "pId": 0,
+       "groupId":7,
+    "name": "其他(0)",
+    "isParent": false,
+    "childOuter": false,
+    "dropInner": false,
+    "open": true
+  }
+]

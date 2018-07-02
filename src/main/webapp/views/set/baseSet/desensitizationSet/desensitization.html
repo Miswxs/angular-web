@@ -1,0 +1,96 @@
+<div ng-controller="desensitizationController" ng-init="initializeController()">
+	<div class="title-position box-shadow-1 clearfix">
+		<h2>系统管理 > 基础设置  > <span class="color-black">脱敏设置</span></h2>
+	</div>
+
+	<div class="content">
+		<div class="content-main">
+			<div class="client-search-header box-shadow-1 bg-white ">
+            	<ul class="clearfix">
+                    <li class="group">
+						<div class="client-search-header-btn rights-management">
+                        	<a ng-click="search(keyword)" href="javascript:;" class="btn btn-black fontWeight"><i class="glyphicon glyphicon-search"></i>查询</a>
+                        	<a ng-click="save()" href="javascript:;" class="btn btn-success"><i class="glyphicon glyphicon-floppy-save"></i>保存</a>
+                        </div>
+						<div class="client-search-header-keyword rights-management"><input type="text" class="form-control long-input" placeholder="输入字段字或字段中文字" ng-model="keyword"></div>	
+					</li>
+                </ul>
+                <div class="table-responsive organization-table">
+                	<table class="table table-bordered  table-striped">
+                    	<tbody>
+                        	<tr>
+                            	<th>序号</th>
+                                <th>字段中文名</th>
+								<th>字段说明</th>
+                                <th>脱敏规则</th>
+                                <th>是否敏感保护</th>
+                                
+                            </tr>
+                            <tr ng-repeat="l in list">
+                            	<td>{{$index+1}}</td>
+                                <td>{{l.fieldname}}</td>
+                                <td>{{l.fielddesc}}</td>
+                                <td>{{l.rule}}</td>
+                                <td><label class="td-radio">
+                                    <input type="radio" ng-model="l.state" class="marginRight" ng-click="choosePrimary(1,l)" value="1">是</label>
+                                    <label class="td-radio">
+                                    <input type="radio" ng-model="l.state" class="marginRight" ng-click="choosePrimary(2,l)" value="2">否</label></td>
+                                
+                            </tr>
+                            <tr ng-show="TotalRows == 0"><td colspan="5">暂时没有数据</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="project-page clearfix ">
+                    <pagination max-size="5" rotate="false" boundary-links="true" total-items="TotalRows" items-per-page="PageSize"
+                        ng-change="pageChanged()" ng-model="currentPage" class="pagination-default"
+                        previous-text="上一页" next-text="下一页" first-text="首页" last-text="末页" style="margin: 0; display: block;">
+                    </pagination>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/ng-template" id="modifyOrganization.html" ng-controller="desensitizationController">
+<div class="add-items">
+	<form class="form-horizontal" role="form" name="myForm" novalidate>
+		<div class="modal-header">
+			<h3 class="modal-title">修改</h3>
+		</div>
+		<div class="modal-body">
+			<table class="table  table-bordered ">
+				<tr>
+					<td width="22%">表名:</td>
+					<td width="78%"><span ng-bind="des.tableName"></span></td>
+				</tr>
+				<tr>
+					<td>字段名:</td>
+					<td><span ng-bind="des.fieldName"></span></td>
+				</tr>
+				<tr>
+					<td>字段中文名:</td>
+					<td><span ng-bind="des.fieldNameCn"></span></td>
+				</tr>
+                <tr>
+					<td>脱敏规则:</td>
+					<td><span ng-bind="des.desens"></span></td>
+				</tr>
+				<tr>
+					<td>是否脱敏:</td>
+					<td>
+                        <input type="radio" class=" no-margin marginRight" value="是" ng-model="des.isDesens" name="isDesens" />是
+						<input type="radio" class=" no-margin marginRight" value="否" ng-model="des.isDesens" name="isDesens" />否
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-submit" ng-disabled="myForm.$invalid" ng-click="modifySave(des)">提交</button>
+			<button class="btn btn-cancle" ng-click="cancel()">取消</button>
+		</div>
+		
+	</form>
+</div>
+</script>

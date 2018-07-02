@@ -1,0 +1,60 @@
+<div class="container-fluid-xx container-main-header">
+  <div class="navbar-header" >
+    <a class="navbar-brand" href="javascript:;"><img src="images/logo.png" alt="" /></a>
+  </div>
+
+  <div class="collapse navbar-collapse nav-header" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+
+      <li ng-repeat="module in allModules.children" ng-click="isPortrait(module.name)" ng-mouseenter="module.dropdown = true;" ng-mouseleave="module.dropdown = false;"   ng-class="{active: $state.includes(module.name) || module.dropdown || isPortrait(module.name)}">
+          <a ng-click="clickModule(module)" ng-if="(module.value.modKind == 1 || module.value.modKind == 2)&& module.value.modType == 1"><span class=" header-icon" ng-class="module.value.modCss" ></span>{{module.text}} </a>
+          {{$state.includes(module.name + '.personPortrait')}}
+          <a ng-click="clickModule(module)" ng-if="(module.value.modKind==1 || module.value.modKind == 2)&& module.value.modType == 2"><span class="header-icon" ng-class="module.value.modCss" ></span>{{module.text}}{{menu.modGuid}}</a>
+          <a target="_blank" ng-click="clickModule(module)" ng-if="(module.value.modKind==1 || module.value.modKind == 2)&& module.value.modType == 3"><span class="header-icon" ng-class="module.value.modCss" ></span>{{module.text}}</a>
+          <div ng-show="module.dropdown" class="out-dropdown" >
+           <!-- <ul>-->
+                <div ng-repeat="smodule in module.children" ng-mouseleave="smodule.dropdown = false;" ng-mouseenter="menter(smodule, subModules);" class="inner-li" ng-class="{active:smodule.dropdown}">
+                    <a ng-if="smodule.value.modKind==1 || smodule.value.modKind==2" ng-click="clickModule(smodule)" class="inner-a">
+                        <span class="aicon"></span>
+                        <span class="atext" ng-bind="smodule.text"></span>
+                        <span ng-if="subModules.length != 0" class="inner-a-icon"></span>
+                        <!--<span ng-if="smodule.subMenus.length == 0" class="inner-a-noicon"></span>-->
+                    </a>
+                    <div ng-show="smodule.dropdown"  class="inner-dropdown">
+                        <!--<ul>-->
+                            <div ng-repeat="cmodule in smodule.children" class="inner-dropdown-li">
+                               <a ng-if="cmodule.value.modKind==1 || cmodule.value.modKind==2" ng-click="clickModule(cmodule)" class="inner-dropdown-a">
+                                   <span class="aicon-3"></span>
+                                   <span class="atext" ng-bind="cmodule.text"></span><span></span>
+                                </a>
+                            </div>
+                       <!-- </ul>-->
+                    </div>
+                </div>
+            <!--</ul>-->
+          </div>
+      </li>
+     
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown no-padding">
+        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> {{userName}} <span class="caret"></span></a>
+        <ul class="dropdown-menu animated fadeInRight nav-dropdown">
+            <li><a href="javascript:;" ui-sref="app.system.modify">修改密码</a></li>
+          <li><a href="javascript:;" ng-click="exitSign()">退出登录</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!--<div class="nav-pop bg-dark" id="nav-pop">
+  <a ui-sref="{{(menu.href!=''?menu.href:'app.client.search')}}" class="{{popMenuBg[$index]}}" ng-repeat="menu in menuItems" ng-click="setMenu(menu)">
+    <i class="icon glyphicon {{menu.className}} text-2x"></i>
+    <span>{{menu.menuName}}</span>
+  </a>
+  
+</div>-->
+
+<!--<div class="nav-pop-mask" id="nav-pop-mask"></div>-->

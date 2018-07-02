@@ -1,0 +1,375 @@
+<div ng-controller="personPortraitController" ng-init="initializeController()">
+    <div class="title-position  box-shadow-1 clearfix">
+        <span ng-show="isShow != 'search'" class="title-client-p client-back" ng-click="backHis()"></span>
+        <h2>客户画像 > <span class="color-black">个人客户画像</span></h2>
+    </div>
+    <div class="content">
+        <div class="content-main " >
+            <div>
+            <!--个人客户画像-->
+            <div class="client-protrait-left">
+                    <div class="client-top-left box-shadow-1 border-e3 bg-white">
+                        <div class="client-top-zone top-zone">
+                            <h2>
+                <img src="images/header-{{baseInfo.gender=='男'?'male':(baseInfo.gender=='女'?'female':'unknow')}}.jpg" alt="">
+                </h2>
+                            <div class="client-zone-right">
+                                <div class="zone-right-name">
+                                    <h4 ng-bind="baseInfo.cstName"></h4></div>
+                                <div class="zone-right-ctype"><span ng-bind="baseInfo.cstIdentity"></span></div>
+                                <div class="zone-right-phone">
+                                    <span>手机号码</span>
+                                    <div class="no-padding p-relative" dropdown keyboard-nav>
+                                        <span ng-class="{'toggle-link': tels.length > 1}" dropdown-toggle ng-hide="tels.length == 0">{{tels[0]}}
+                                		<i class="arrow" ng-hide="tels.length == 1"></i>
+                                    </span>
+                                        <ul class="dropdown-menu client-dropdown-menu" role="menu" aria-labelledby="simple-btn-keyboard-nav" ng-if="tels.length>1">
+                                            <li role="menuitem" ng-repeat-start="tel in tels">{{tel}}</li>
+                                            <li ng-repeat-end class="divider" ng-hide="$last == true"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="client-middle-yetai">							
+							<span ng-repeat="ye in baseInfo.sourceName"><b ng-bind="ye"></b></span>
+							<!--
+							<span><b>{{baseInfo.sourceName}}</b></span> -->                       
+						</div>
+                        <div class="client-bottom-label">
+                        	<span ng-if="cstLabelList.length==0">该客户目前还没有所属标签</span>
+                            <span ng-repeat="la in cstLabelList" ng-bind="la.labelname" popover={{la.labInfo}} popover-trigger="mouseenter" popover-placement="bottom"/>
+                        </div>
+                    </div>
+                    <div class="client-under-left client-track box-shadow-1 border-e3">
+                        <div class="client-base-title">
+                            <label>客户轨迹</label>
+                            <select class="fr client-title-select" ng-options="item.name for item in sourceBizList" ng-model="sourceBiz" ng-change="changeFormat(sourceBiz)">
+                            </select>
+                        </div>
+                        <div class="track-list-container box-shadow-1">
+                            <div class="track-search-box">
+                                <a ng-click="search()" href="javascript:;" class="btn btn-search">搜索</a>
+                                <input type="text" class="form-control" placeholder="输入关键字" ng-model="keyword">
+                            </div>
+                            <div class="client-track-list">
+                                <ul>
+                                    <li ng-show="keyWordslist.length==0">暂时没有客户轨迹</li>
+                                    <li ng-show="keyWordslist.length>0 && noSearchResult" class="no-border">暂时没有符合条件的客户轨迹</li>
+                                    <li ng-repeat="l in searchList" ng-show="l.selected">
+                                        <div class="trail-icon">
+                                            <p class="icon{{l.sourceName=='地产'?'1':(l.sourceName=='物业'?'2':(l.sourceName=='会员'?'3':'4'))}}" ng-bind-html="l.sourceName | important:keywordSearch"></p>
+                                        </div>
+                                        <div class="trail-item">
+                                            <p class="data" ng-bind-html="l.beginDate | important:keywordSearch"></p>
+                                            <p>
+	                                            <span class="type" ng-bind-html="l.followName | important:keywordSearch"/>
+	                                            <span class="data" ng-bind-html="l.closeReason |important:keywordSearch"/>
+                                            </p>
+                                            <p ng-if="l.sourceName!='会员'"><span ng-bind-html="l.projectName | important:keywordSearch"></span></p>
+                                            <!-- 地产 -->
+                                            <p ng-if="l.sourceName=='地产'&&(l.followName=='来电'||l.followName=='到访')">意向等级：<span ng-bind-html="l.intendLevel | important:keywordSearch"/></p>
+                                            <p ng-if="l.sourceName=='地产'&&(l.followName=='认购'||l.followName=='认筹'||l.followName=='签约')">金额：<span ng-bind-html="l.tradeAmt|number | important:keywordSearch"></span></p>
+                                            <p ng-if="l.sourceName=='地产'">置业顾问：<span ng-bind-html="l.operName | important:keywordSearch"></span></p>
+                                            <!-- 物业 -->
+                                            <p ng-if="l.sourceName=='物业'&&(l.followName=='入伙'||l.followName=='迁入'||l.followName=='迁出'||l.followName=='过户')">房产类型：<span ng-bind-html="l.assetType | important:keywordSearch"></span></p>
+                                            <p ng-if="l.sourceName=='物业'&&(l.followName=='入伙'||l.followName=='迁入'||l.followName=='迁出'||l.followName=='过户')">房产名称：<span ng-bind-html="l.assetName | important:keywordSearch"></span></p>
+                                            
+                                            <p ng-if="l.followName=='报修'">报修对象：<span ng-bind-html="l.eventObject | important:keywordSearch"></span></p>
+                                            <p ng-if="l.followName=='投诉'">投诉类型：<span ng-bind-html="l.eventType | important:keywordSearch"></span></p>
+                                            <p ng-if="l.followName=='投诉'">投诉对象：<span ng-bind-html="l.eventObject | important:keywordSearch"></span></p>
+                                            <p ng-if="(l.followName=='投诉'||l.followName=='报修')">受理人：<span ng-bind-html="l.operName | important:keywordSearch"></span></p>
+                                            <p ng-if="(l.followName=='投诉'||l.followName=='报修')">受理人电话：<span ng-bind-html="l.operTel | important:keywordSearch"></span></p>
+                                            <!-- 会员 -->
+                                            <p ng-if="l.sourceName=='会员'">商场名称：<span ng-bind-html="l.projectName | important:keywordSearch"></span></p>
+                                            <p ng-if="l.sourceName=='会员'&&(l.followName=='消费'||l.followName=='退货')">消费业态：<span ng-bind-html="l.consumeName | important:keywordSearch"></span></p>
+                                            <p ng-if="l.sourceName=='会员'&&(l.followName=='消费'||l.followName=='退货')">消费子业态：<span ng-bind-html="l.consumeSubName | important:keywordSearch"></span></p>
+                                            <p ng-if="l.sourceName=='会员'&&(l.followName=='消费'||l.followName=='退货')">品牌：<span ng-bind-html="l.brandName | important:keywordSearch"></span></p>
+                                            <p ng-if="l.sourceName=='会员'&&(l.followName=='消费'||l.followName=='退货')">客单价：<span ng-bind-html="l.tradeAmt|number | important:keywordSearch"></span></p>
+                                            <p ng-if="l.sourceName=='会员'&&(l.followName=='消费'||l.followName=='退货'||l.followName=='线上积分')">积分值：<span ng-bind-html="l.point | important:keywordSearch"></span></p>
+                                            <!-- 商业 -->
+                                            <p ng-if="l.sourceName=='商业'">资产类型：<span ng-bind-html="l.assetType | important:keywordSearch"></span></p>
+                                            <p ng-if="l.sourceName=='商业'">资产名称：<span ng-bind-html="l.assetName | important:keywordSearch"></span></p>
+                                            <p ng-if="l.sourceName=='商业'">租赁面积：<span ng-bind-html="l.rentArea | important:keywordSearch"></span></p>
+                                            <p ng-if="l.sourceName=='商业'">租赁周期：<span ng-bind-html="l.rentCycle | important:keywordSearch"></span></p>
+                                            <p ng-if="l.sourceName=='商业'">租赁单价：<span ng-bind-html="l.rentPrice | important:keywordSearch"></span></p>
+                                            <p ng-if="l.sourceName=='商业'">经办人姓名：<span ng-bind-html="l.operName | important:keywordSearch"></span></p>
+                                            <p ng-if="l.sourceName=='商业'">经办人电话：<span ng-bind-html="l.operTel | important:keywordSearch"></span></p>
+                                            
+                                            <!-- 发生时间、项目、轨迹类型、房产类型、房产名称 -->
+                                            <p ng-if="l.sourceName=='客服'">请求来源：<span ng-bind-html="l.eventSource | important:keywordSearch"></span></p>
+                                            <p ng-if="l.sourceName=='客服'">投诉对象：<span ng-bind-html="l.eventObject | important:keywordSearch"></span></p>
+                                            
+                                            <!-- 发生时间、商场名称、轨迹类型 -->
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="client-protrait-right ">
+                    <div class="client-top-right  box-shadow-1 border-e3">
+                        <div class="client-base-title">
+                            <label>客户特征描摹</label>
+                        </div>
+                        <div class="client-base-info">
+                            <div class="client-base-intitle"><span class="title-color">基础信息</span></div>
+                            <div class=" client-base-row clearfix">
+                                <span>性&nbsp;&nbsp;别：<b  ng-bind="baseInfo.gender"></b></span>
+                                <span>生&nbsp;&nbsp;日：<b ng-hide="baseInfo.birthdate=='0000-00-00'">{{baseInfo.birthdate}}</b></span>
+                                <span class="span-last">年&nbsp;&nbsp;龄：<b ng-bind="baseInfo.age"></b></span>
+                            </div>
+                            <div class=" client-base-row clearfix">
+                                <span>证件类型：<b  ng-bind="baseInfo.cardType"></b></span>
+                                <span>证件号码：<b ng-bind="baseInfo.cardId"></b></span>
+                                <span class="span-last" >兴趣爱好：<b ng-bind="baseInfo.hobbies"></b></span>
+                            </div>
+                            <div class=" client-base-row clearfix">
+                                <span>个人月收入：<b  ng-bind="baseInfo.personalIncome"></b></span>
+                                <!-- <span>置业次数：<b ng-bind="baseInfo.buyNum"></b></span> -->
+                                <span>交通工具：<b ng-bind="baseInfo.vehicle"></b></span>
+                            </div>
+                            <div class=" client-base-row clearfix">                                
+                                <span>微信号：<b ng-bind="baseInfo.weixin"></b></span>
+                                <span class="email-length" ng-mouseenter="showEmail = true;" ng-mouseleave="showEmail = false;">
+                                	邮箱：<b ng-bind="baseInfo.email"></b>
+                                	<b class="base-row-last" ng-show="showEmail" ng-bind="baseInfo.email"></b>
+                                </span>
+                                <span class="span-last">QQ：<b ng-bind="baseInfo.qq"></b></span>
+                            </div>
+                        </div>
+                        <div class="client-home-info">
+                            <div class="client-base-intitle"><span class="title-color">家庭特征</span></div>
+                            <div class=" client-base-row clearfix">
+                                <span>婚姻状况：<b  ng-bind="baseInfo.marriage"></b></span>
+                                <span>家庭结构：<b ng-bind="baseInfo.familyStructure"></b></span>
+                                <span class="span-last">家庭月收入：<b ng-bind="baseInfo.familyIncome"></b></span>
+                            </div>
+                            <div class=" client-base-row clearfix">
+                                <span>有无子女：<b  ng-bind="baseInfo.haveChild"></b></span>
+                                <span>子女个数：<b ng-bind="baseInfo.childNum"></b></span>
+                            </div>
+                        </div>
+                        <div class="client-home-info">
+                            <div class="client-base-intitle"><span class="title-color" >区域特征</span></div>
+                            <div class=" client-base-row clearfix">
+                                <span>居住区域：<b>{{liveTotalName}}</b></span>
+                                <span>工作区域：<b>{{workTotalName}}</b></span>
+                                <span class="span-last">户籍：<b>{{nativeTotalName}}</b></span>
+                            </div>
+                            <div class=" client-base-row clearfix">
+                                <span>籍贯：<b>{{regiTotalName}}</b></span>
+                            </div>
+                        </div>
+                        <div class="client-social-info">
+                            <div class="client-base-intitle"><span class="title-color">社会特征</span></div>
+                            <div class=" client-base-row clearfix">
+                                <span>文化程度：<b  ng-bind="baseInfo.education"></b></span>
+                                <span>从事行业：<b ng-bind="baseInfo.engageIndustry"></b></span>
+                                <span class="span-last">工作职位：<b ng-bind="baseInfo.occupation"></b></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="client-center-right box-shadow-1 bg-white bg-white pd-20 border-e3">
+                        <tabset>
+                            <tab heading="购房特征">
+                                <div class="client-house-zone clearfix">
+                                    <div class="house-zone-left">
+                                        <div class="house-zone-intitle"><span class="title-color">意向购房特征</span></div>
+                                        <div class="house-zone-content clearfix">
+                                            <div class="house-zone-top">
+                                                <span class="ztitle">意向项目</span>
+                                                <select class="form-control zselect" ng-model="intentionSelected" ng-options="item.title for item in intentions" ng-change="getIntention_proj(intentionSelected)"></select>
+                                                <span class="zsum">意向等级：<b ng-bind="intentionProjs.intendLevel"></b></span>
+                                            </div>
+                                            <div class="house-zone-row clearfix">
+                                                <span>购房用途：<b ng-bind="intentionProjs.purpose"></b></span>
+                                                <span>置业次数：<b ng-bind="baseInfo.buyNum"></b></span>                                                
+                                            </div>
+                                            <div class="house-zone-row clearfix">
+                                            	<span>房产类型：<b ng-bind="intentionProjs.roomType"></b></span>
+                                                <span>需求套数：<b ng-bind="intentionProjs.roomNum"></b></span>                                                
+                                            </div>
+                                            <div class="house-zone-row clearfix">
+                                            	<span>房产面积：<b ng-bind="intentionProjs.roomAreaName"></b></span>
+                                                <span>房产户型：<b ng-bind="intentionProjs.roomLayout"></b></span>                                                
+                                            </div>
+                                            <div class="house-zone-row clearfix">
+                                            	<span>购房预算：<b ng-bind="intentionProjs.budget"></b></span>
+                                                <span>承受单价：<b ng-bind="intentionProjs.price"></b></span>                                                
+                                            </div>
+                                            <div class="house-zone-row clearfix">
+                                            	<span>认购前跟进次数：<b ng-bind="intentionProjs.followNum"></b></span>
+                                                <span>到访次数：<b ng-bind="intentionProjs.visitNum"></b></span>                                                
+                                            </div>
+                                            <div class="house-zone-row clearfix">
+                                            	<span>媒体渠道大类：<b ng-bind="intentionProjs.mediaName"></b></span>
+                                            	<span>媒体渠道小类：<b ng-bind="intentionProjs.mediaSubName"></b></span>
+                                            </div>
+                                           <div class="house-zone-row clearfix" style="margin-bottom: 20px;">
+                                                <span>对本项目满意因素：<b ng-bind="intentionProjs.satisfyReason"></b></span>
+                                                <span>对本项目不满意因素：<b ng-bind="intentionProjs.unsatisfyReason"></b></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="house-zone-right pull-right">
+                                        <div class="house-zone-intitle width100"><span class="title-color">已购房特征</span></div>
+                                        <div class="house-zone-content">
+                                            <div class="house-zone-top">
+                                                <span class="ztitle">已购房产</span>
+                                                <select class="form-control aselect" ng-model="houseSelected" ng-options="item.title for item in houses" ng-change="getIntention_bld(houseSelected)"></select>
+                                            </div>
+                                            <div class="house-zone-row">
+                                                <span>购房用途：<b ng-bind="intentionBlds.purpose"></b></span>
+                                                <span>购入时间：<b ng-bind="intentionBlds.buyDate"></b></span>
+                                            </div>
+                                            <div class="house-zone-row">
+                                                <span>房产类型：<b ng-bind="intentionBlds.roomType"></b></span>
+                                                <span>房产价格：<b ng-bind="intentionBlds.tradeAmt"></b></span>
+                                            </div>
+                                            <div class="house-zone-row">
+                                                <span>房产面积：<b ng-bind="intentionBlds.roomArea"></b></span>
+                                                <span>房产户型：<b ng-bind="intentionBlds.roomLayout"></b></span>
+                                            </div>
+                                            <div class="house-zone-row">
+                                                <span>付款方式：<b ng-bind="intentionBlds.loanName"></b></span>
+                                            </div>
+                                            <div class="house-zone-row">
+                                                <span>媒体渠道大类：<b ng-bind="intentionBlds.mediaName"></b></span>
+                                                <span>媒体渠道小类：<b ng-bind="intentionBlds.mediaSubName"></b></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tab>
+                            <tab heading="会员消费特征">
+                                <div class="client-feature-intitle"><span>消费特征</span></div>
+                                <div class="client-feature-row">
+                                    <span>总消费金额：<b ng-bind="memberCustom.showConsumeAmt"></b></span>
+                                    <span>总消费次数：<b ng-bind="memberCustom.consumNum"></b></span>
+                                    <span>最高客单价：<b ng-bind="memberCustom.showPriceMax"></b></span>
+                                </div>
+                                <div class="client-feature-row">
+                                    <span>平均客单价（月）：<b  ng-bind="memberCustom.showPriceM"></b></span>
+                                    <span class="width-60">平均客单价（年）：<b ng-bind="memberCustom.showPriceY"></b></span>
+                                </div>
+                                <div class="client-feature-row">
+                                    <span>近半年消费金额：<b  ng-bind="memberCustom.showConsumeAmt_half"></b></span>
+                                    <span class="width-60">近半年消费次数：<b ng-bind="memberCustom.consumeNum_half"></b></span>
+                                </div>
+                                <div class="client-feature-row">
+                                    <span>消费业态偏好：<b  ng-bind="memberCustom.consumeName"></b></span>
+                                    <span class="width-60">消费子业态偏好：<b ng-bind="memberCustom.consumeSubName"></b></span>
+                                </div>
+                            </tab>
+                        </tabset>
+                    </div>
+
+                    <div class="client-under-right box-shadow-1  bg-white pd-20 border-e3  mb-20">
+                        <tabset>
+                            <tab heading="交易关系">
+                                <div class="client-table-zone">
+                                    <table class="table client-table">
+                                        <thead>
+                                            <tr>
+                                                <th>项目名称</th>
+                                                <th>房产/单元</th>
+                                                <th>交易类型</th>
+                                                <th>发生时间</th>
+                                                <th>交易金额</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="ba in tradeInfo">
+                                                <td ng-bind="ba.projName"></td>
+                                                <td >{{ba.bldName}} {{ba.unitName}} {{ba.roomName}}</td>
+                                                <td ng-bind="ba.dealType"></td>
+                                                <td ng-bind="ba.buyDate"></td>
+                                                <td ng-bind="ba.tradeAmt"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </tab>
+                            <tab heading="家庭成员">
+                                <div class="client-table-zone">
+                                    <table class="table client-table text-center">
+                                        <thead>
+                                            <tr>
+                                                <th>成员关系</th>
+                                                <th>姓名</th>
+                                                <th>年龄</th>
+                                                <th>兴趣爱好</th>
+                                                <th>联系电话</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="hm in homeMember">
+                                                <td ng-bind="hm.relation_type"></td>
+                                                <td><a ui-sref="app.client.portrait.personPortrait({'cstGUID':hm.contactCstGUID})" ng-bind="hm.relation_name"></a></td>
+                                                <td ng-bind="hm.relation_age"></td>
+                                                <td ng-bind="hm.relation_hobby"></td>
+                                                <td ng-bind="hm.relation_mobile"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </tab>
+                            <tab heading="会员信息">
+                                <div class="client-table-zone">
+                                    <table class="table client-table  text-center">
+                                        <thead>
+                                            <tr>
+                                                <th>会员类型</th>
+                                                <th>入会渠道</th>
+                                                <th>会员卡号</th>
+                                                <th>入会时间</th>
+                                                <th>会员等级</th>
+                                                <th>会员积分</th>
+                                                <th>会员状态</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="vi in vip">
+                                                <td ng-bind="vi.vip_type"></td>
+                                                <td ng-bind="vi.vip_source"></td>
+                                                <td ng-bind="vi.vip_card"></td>
+                                                <td ng-bind="vi.vip_begindate"></td>
+                                                <td ng-bind="vi.vip_level"></td>
+                                                <td ng-bind="vi.vip_points"></td>
+                                                <td ng-bind="vi.vip_status"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </tab>
+                            <tab heading="资产信息">
+                                <div class="client-table-zone">
+                                    <table class="table client-table  text-center">
+                                        <thead>
+                                            <tr>
+                                                <th>资产类别</th>
+                                                <th>资产名称</th>
+                                                <th>品牌</th>
+                                                <th>资产类型</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="a in assets">
+                                                <td ng-bind="a.asset_category"></td>
+                                                <td ng-bind="a.asset_name"></td>
+                                                <td ng-bind="a.brandName"></td>
+                                                <td ng-bind="a.brandLevel"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </tab>
+                        </tabset>
+                    </div>
+                </div>
+        </div>
+        </div>
+    </div>
+</div>

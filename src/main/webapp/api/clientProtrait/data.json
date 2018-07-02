@@ -1,0 +1,297 @@
+{
+    "baseInfo":{
+        "name":"刘明",
+        "customerType":"业主&租户&会员",
+        "phone":["13625458575","13845712585","13745204589"],
+        "yetai":["商业","物业","售楼"],
+        "label":["意向等级A++","新客户","吃货","包包控","时尚达人","品质追求型"],
+        "sex":"女",
+        "birthday":"1986-01-05",
+        "age":"30",
+        "idType":"身份证",
+        "id":"362565199504120387",
+        "hobby":"电影图书/运动健身",
+        "salary":"5000-10000元",
+        "yeTime":"2次",
+        "transport":"自驾",
+        "qq":"12852843",
+        "wechart":"未知",
+        "email":"liushi@sxit.com.cn",
+        "marriage":"已婚",
+        "home":"三代同堂",
+        "homein":"20000-40000元",
+        "hasBaby":"有",
+        "babys":"1个",
+        "add":"广东省深圳市宝安区",
+        "nearadd":"广东省深圳南山区",
+        "household":"广东省深圳市",
+        "household2":"湖北省武汉市",
+        "degree":"本科",
+        "industry":"未知",
+        "work":"未知"
+    },
+    "keyWordslist":[
+			{
+				"state": "售楼",
+				"date": "2016-02-06",
+				"type": "到访",
+				"project": "金地湖城大境-一期",
+				"buildroom":"26栋 502",
+				"person": "经办人：李响 18602068988",
+				"subs": [
+					{
+						"state": "售楼",
+						"date": "2014-02-01",
+						"type": "签约",
+						"project": "武汉金地京汉金地京汉1903-一期住宅",
+						"buildroom":"B区车位 008",
+						"person": "经办人：李响 18602068988"
+					},
+					{
+						"state": "售楼",
+						"date": "2014-02-01",
+						"type": "活动",
+						"project": "武汉金地京汉金地京汉1903-一期住宅",
+						"buildroom":"B区车位 008",
+						"person": "经办人：张三 18602068980"
+					}
+				]
+			},
+			{
+				"state": "会员",
+				"date": "2016-02-02",
+				"type": "到访",
+				"project": "武汉金地京汉金地京汉1903-一期住宅",
+				"buildroom":"B区车位 008",
+				"person": "经办人：李响 18602068988"
+			},
+			{
+				"state": "物业",
+				"date": "2016-02-03",
+				"type": "签约",
+				"project": "武汉金地京汉金地京汉1903-一期住宅",
+				"buildroom":"B区车位 008",
+				"person": "经办人：李响 18602068988"
+			},
+			{
+				"state": "售楼",
+				"date": "2015-02-01",
+				"type": "到访",
+				"project": "武汉金地京汉金地京汉1903-一期住宅",
+				"buildroom":"B区车位 008",
+				"person": "经办人：李响 18602068988",
+				"subs": [
+					{
+						"state": "售楼",
+						"date": "2014-02-01",
+						"type": "签约",
+						"project": "海滨假日",
+						"buildroom":"B区车位 008",
+						"person": "经办人：李响 18602068988"
+					},
+					{
+						"state": "售楼",
+						"date": "2014-02-01",
+						"type": "活动",
+						"project": "海滨假日",
+						"buildroom":"B区车位 008",
+						"person": "经办人：张三 18602068980"
+					}
+				]
+			},
+			{
+				"state": "售楼",
+				"date": "2016-02-02",
+				"type": "到访",
+				"project": "春天海",
+				"buildroom":"B区车位 008",
+				"person": "经办人：李响 18602068988"
+			},
+			{
+				"state": "售楼",
+				"date": "2016-02-03",
+				"type": "签约",
+				"project": "碧海蓝天",
+				"buildroom":"B区车位 008",
+				"person": "经办人：李响 18602068988"
+			}
+		],
+    "memberFeature":{
+        "buyHouse":{
+            "intention":[
+                {
+                    "id":"1",
+                    "name":"蔚蓝山",
+                    "level":"高",
+                    "use":"投资",
+                    "num":"未知",
+                    "huType":"2室",
+                    "canPrice":"未知",
+                    "comeTimes":"3-5次",
+                    "mediaWayS":"老带新",
+                    "feelGood":"未知",
+                    "houseType":"别墅",
+                    "area":"90以下",
+                    "hasMoney":"301万-500万",
+                    "follow":"2",
+                    "mediaWayB":"老带新",
+                    "feelBad":"未知"
+                },
+                {
+                    "id":"2",
+                    "name":"蔚蓝山2",
+                    "level":"中",
+                    "use":"居住",
+                    "num":"未知",
+                    "huType":"3室",
+                    "canPrice":"未知",
+                    "comeTimes":"3-5次",
+                    "mediaWayS":"老带新",
+                    "feelGood":"未知",
+                    "houseType":"别墅",
+                    "area":"90以下",
+                    "hasMoney":"401万-500万",
+                    "follow":"3",
+                    "mediaWayB":"老带新",
+                    "feelBad":"未知" 
+                }
+            ],
+            "already":[
+                {
+                    "id":"1",
+                    "name":"蔚蓝海岸 3橦1单元A2208",
+                    "use":"改善",
+                    "houseType":"平层",
+                    "area":"100以下",
+                    "payWay":"组合贷款",
+                    "mediaWayB":"转介",
+                    "buyTime":"2016-03-07",
+                    "buyPrice":"250万",
+                    "huType":"2室",
+                    "mediaWayS":"转介"
+                },
+                {
+                   "id":"2",
+                    "name":"锦绣江南 B1503",
+                    "use":"改善",
+                    "houseType":"平层",
+                    "area":"90以下",
+                    "payWay":"组合贷款",
+                    "mediaWayB":"转介",
+                    "buyTime":"2016-04-07",
+                    "buyPrice":"250万",
+                    "huType":"2室",
+                    "mediaWayS":"转介" 
+                },
+                {
+                    "id":"3",
+                    "name":"锦绣江南 B1208",
+                    "use":"改善",
+                    "houseType":"平层",
+                    "area":"120以下",
+                    "payWay":"组合贷款",
+                    "mediaWayB":"转介",
+                    "buyTime":"2016-06-07",
+                    "buyPrice":"250万",
+                    "huType":"2室",
+                    "mediaWayS":"转介"
+                }
+            ]
+        },
+        "memberCustom":{
+            "sum":"14000元",
+            "averagem":"1000元",
+            "averagey":"1000元",
+            "halfSum":"1400元",
+            "halfTimes":"6次",
+            "pref":"餐饮",
+            "prefSon":"湖南菜",
+            "highest":"1800元",
+            "times":"12次"
+        }
+    },
+    "tableInfo":{
+        "bargin":[
+            {
+                "id":"1",
+                "name":"蔚蓝海岸",
+                "unit":"3幢1单元A2208",
+                "type":"房产销售",
+                "date":"2013-07-15",
+                "sum":"330万元"
+            },
+            {
+                "id":"2",
+                "name":"浅水湾",
+                "unit":"3幢1单元A2208",
+                "type":"房产销售",
+                "date":"2013-07-15",
+                "sum":"450万元"
+            },
+            {
+                "id":"3",
+                "name":"INTOWN",
+                "unit":"L02016",
+                "type":"资产租赁",
+                "date":"2013-07-15",
+                "sum":"--"
+            }
+        ],
+        "homeMember":[
+            {
+                "id":"1",
+                "relation":"夫妻",
+                "name":"陈小丽",
+                "age":"30",
+                "hobby":"未知",
+                "phone":"13785486975"
+            },
+            {
+                "id":"2",
+                "relation":"儿女",
+                "name":"陈思玲",
+                "age":"50",
+                "hobby":"未知",
+                "phone":"13785486975"
+            },
+            {
+                "id":"3",
+                "relation":"父母",
+                "name":"二哈",
+                "age":"10",
+                "hobby":"未知",
+                "phone":"13785486975"
+            }
+        ],
+        "vip":[
+           {
+                "id":"1",
+                "type":"商业",
+                "way":"车友会",
+                "number":"123456",
+                "date":"2016-06-05",
+                "level":"普卡",
+                "score":"1222",
+                "state":"激活"
+            },
+            {
+                "id":"2",
+                "type":"商业",
+                "way":"游艇会",
+                "number":"852456",
+                "date":"2016-06-05",
+                "level":"金卡",
+                "score":"1222",
+                "state":"未激活"
+            }
+        ],
+        "assets":[
+            {
+                "type":"车辆",
+                "name":"粤B88888",
+                "product":"宝马",
+                "kind":""
+            }
+        ]
+    }
+}

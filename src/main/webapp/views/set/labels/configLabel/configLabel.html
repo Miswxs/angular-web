@@ -1,0 +1,154 @@
+<div ng-controller="configLabelController" ng-init="initializeController()">
+    <div class="go-top-btn"></div>
+    <div class="content ">
+        <div class="title-position box-shadow-1 clearfix">
+            <h1>基础标签配置</h1>
+            <h2>
+                <a class="glyphicon glyphicon-home" ui-sref="app.dashboard"><i>首页</i></a>
+                > 管理 > 基础设置 > 基础标签配置
+            </h2>
+        </div>
+        <div class="org_content_left label_org_tree">
+            <div class="sideBar-content left">
+                <div class="label_content_title"><span class="left_icon"></span><span class="left_title">特征项</span></div>
+                <div class="label_tree_zone">
+                    <ul id="commonTree" z-yree setting="mySetting" znodes="myZnodes" currentselect="currentSelect" class="ztree diy_ztree org_diy_ztree sdiy_ztree"></ul>
+                    <div id="rMenu">
+                        <ul ng-show="isP">
+                            <!-- <li class="rm-li" ng-click="modifyTreeNode();">修改分组</li> -->
+                            <li class="rm-li" ng-click="addGroupTreeNode();">增加特征项</li>
+                            <li class="rm-li" ng-click="addCFLabel();">增加特征值</li>
+                            <li class="rm-li" ng-show="curFeature.isleaf==0" ng-click="handleLabel();">特征项<span ng-bind="isOnline"></span></li>
+                            <li class="rm-li" ng-show="curFeature.isleaf==0" ng-click="removeTreeNode();">删除特征项</li>
+                        </ul>
+                        <ul ng-hide="isP">
+                            <!-- <li class="rm-li" ng-click="modifyTreeNode();">修改标签</li> -->
+                            <li class="rm-li" ng-click="addCFLabel();">增加特征值</li>
+                            <li class="rm-li" ng-click="handleLabel();">特征值<span ng-bind="isOnline"></span></li>
+                            <li class="rm-li" ng-click="removeTreeNode();">删除特征值</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="org_content_right  box-shadow-1  set-height" ng-show="isSql">
+            <div class="org_content_title">
+                
+                <ul class="clearfix">
+                	<li>
+						<div class="client-search-header-title"><h3>特征项配置</h3></div>
+					</li>
+					<li>
+                    	<div class="client-search-header-title label-config-btn pull-right">
+                            <button class="btn btn-primary" ng-show="isBtn=='modify' && curFeature.isleaf!=null" ng-click="isBtn='save';">修改</button>
+                            <button class="btn btn-success" ng-show="isBtn=='save'" ng-disabled="myForm.$invalid" ng-click="saveModify(curFeature)">保存</button>
+                            <button class="btn btn-success" ng-show="isBtn=='add'" ng-disabled="myForm.$invalid" ng-click="saveModify(curFeature)">添加</button>
+                             <button class="btn btn-default" ng-show="isBtn=='save'||isBtn=='add'" ng-click="isBtn='modify';">取消</button>
+                        </div>
+					</li>
+				</ul>
+            </div>
+            <div class="org_content_form">
+                <a href="javascript:;" class="org-check-a" ng-show="isBtn=='modify'">
+                    <span></span>
+                </a>
+                <form class="form-horizontal" role="form" name="myForm" novalidate>
+                    <table class="table table-striped table-bordered edit-table ">
+                        <tr>
+                            <td width="15%" class="text-right t_title">特征类别：</td>
+                            <td width="35%">
+                                <!-- <input type="text" ng-model="featureTypeName" name="featureType" class="form-control" placeholder="请输入..." required/> -->
+                                {{featureTypeName}}
+                            </td>
+                            <td width="15%" class="text-right t_title">特征类别值：</td>
+                            <td width="35%">
+                                <!-- <input type="text" ng-model="curFeature.feaTemDir" name="feaTemDir" class="form-control" placeholder="请输入..." required/> -->
+                                {{curFeature.feaTemDir}}
+                            </td>
+                        </tr>
+                        <tr ng-show="curFeature.isleaf!=null">
+                            <td width="15%" class="text-right t_title">特征名称：</td>
+                            <td width="35%">
+                                <input type="text" ng-model="curFeature.feaTemTitle" name="labelSonName" class="form-control" placeholder="请输入..." />
+                            </td>
+
+                            <td width="15%" class="text-right t_title">特征编码：</td>
+                            <td width="35%">
+                                <input type="text" ng-model="curFeature.feaTemCode" name="labelName" class="form-control" placeholder="请输入..." />
+                            </td>
+                        </tr>
+                        <tr ng-show="curFeature.isleaf==1">
+                            <td width="15%" class="text-right t_title">特征值名称：</td>
+                            <td width="35%">
+                                <input type="text" ng-model="curFeature.feaTemName" name="labelSonName" class="form-control" placeholder="请输入..." />
+                            </td>
+
+                            <td width="15%" class="text-right t_title">特征值编码：</td>
+                            <td width="35%">
+                                <input type="text" ng-model="curFeature.feaTemValue" name="labelName" class="form-control" placeholder="请输入..." />
+                            </td>
+                        </tr>
+                        <tr ng-show="curFeature.isleaf!=null">
+                            <td width="15%" class="text-right t_title">数据来源表名：</td>
+                            <td width="35%">
+                                <input type="text" ng-model="curFeature.ttabName" name="tTabName" class="form-control" placeholder="请输入..." />
+                            </td>
+                            <td width="15%" class="text-right t_title">表类型：</td>
+                            <td width="35%"  class="label-config-middle">
+                                 <div class="col-md-4"><input type="radio" class="label-config-mrig no-margin ng-pristine ng-valid" value="1" ng-model="curFeature.tabletype" name="tableType"><span>行表</span></div>
+                                <div class="col-md-4"><input type="radio" class="label-config-mrig no-margin ng-pristine ng-valid" value="2" ng-model="curFeature.tabletype" name="tableType"><span>竖表</span></div>
+                            </td>
+                        </tr>
+                        <tr ng-show="curFeature.isleaf!=null">
+                            <td width="15%" class="text-right t_title">表字段名：</td>
+                            <td width="35%">
+                                <input type="text" ng-model="curFeature.tTabField" name="tTabField" class="form-control" placeholder="请输入..." />
+                            </td>
+                            <td width="15%" class="text-right t_title">字段类型：</td>
+                            <td width="35%"  class="label-config-middle">
+                                 <div class="col-md-4"><input type="radio" class="label-config-mrig no-margin ng-pristine ng-valid" value="1" ng-model="curFeature.tFieldType" name="tFieldType"><span>数字</span></div>
+                                 <div class="col-md-4"><input type="radio" class="label-config-mrig no-margin ng-pristine ng-valid" value="2" ng-model="curFeature.tFieldType" name="tFieldType"><span>字符串</span></div>
+                            </td>
+                        </tr>
+                        <tr ng-show="curFeature.isleaf!=null">
+                            <td width="15%" class="text-right t_title">特征值配置方式：</td>
+                            <td width="50%" colspan="2">
+                                 <div class="col-md-4"><input type="radio" class="label-config-mrig no-margin ng-pristine ng-valid" value="1" ng-model="curFeature.isoption" name="isoption"><span>下拉选项</span></div>
+                                 <div class="col-md-4"><input type="radio" class="label-config-mrig no-margin ng-pristine ng-valid" value="2" ng-model="curFeature.isoption" name="isoption"><span>文本输入</span></div>
+                                 <div class="col-md-4"><input type="radio" class="label-config-mrig no-margin ng-pristine ng-valid" value="3" ng-model="curFeature.isoption" name="isoption"><span>时间选择</span></div>
+                            </td>
+                            <td></td>
+                            
+                        </tr>
+                        <tr ng-show="curFeature.tabletype==2">
+                            <td width="15%" class="text-right t_title">标识字段名：</td>
+                            <td width="35%">
+                                <input type="text" ng-model="curFeature.tMarkField" name="tMarkField" class="form-control" placeholder="请输入..." />
+                            </td>
+                            <td width="15%" class="text-right t_title">标识字段值：</td>
+                            <td width="35%"  class="label-config-middle">
+                            	<input type="text" ng-model="curFeature.tMarkFieldValue" name="tMarkFieldValue" class="form-control" placeholder="请输入..." />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="15%" class="text-right t_title">是否来源码表：</td>
+                            <td width="35%" class="label-config-middle">
+                                <div class="col-md-4"><input type="radio" class="label-config-mrig no-margin ng-pristine ng-valid" value="1" ng-model="curFeature.isfromCode" name="isfromCode"><span>是</span></div>
+                                <div class="col-md-4"><input type="radio" class="label-config-mrig no-margin ng-pristine ng-valid" value="0" ng-model="curFeature.isfromCode" name="isfromCode"><span>否</span></div>
+                            </td>
+                            <td width="15%" class="text-right t_title">来源编码：</td>
+                            <td width="35%">
+                                <input type="text" ng-disabled="curFeature.isfromCode==0" ng-model="curFeature.tsourcechannel" name="theWay" class="form-control" placeholder="请输入..." />
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            
+        </div>
+        <div class="org_content_right  box-shadow-1  set-height" ng-hide="isSql">
+            <div  class=" sql-content"><h3>完整Sql</h3> <span class="btn btn-default" ng-click="isSql = true">返回</span></div>
+            <textarea class="form-control" ng-model="sql" name="sql" rows="300" placeholder="组织简介" required></textarea>
+        </div>
+    </div>
+</div>

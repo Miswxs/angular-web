@@ -1,0 +1,29 @@
+{
+    "list": [
+        {
+        	"id": "1000",
+        	"fieldNameCn": "姓名",
+            "fieldDescirbe": "这是字段的说明",
+        	"fieldRule": "第2位用*替换",
+        	"isDesens": "是"
+        },
+		{
+        	"id": "1001",
+        	"fieldNameCn": "手机号",
+            "fieldDescirbe": "这是字段的说明",
+        	"fieldRule": "第2位用*替换",
+        	"isDesens": "否"
+        },
+        {
+        	"id": "1002",
+        	"fieldNameCn": "邮箱",
+            "fieldDescirbe": "这是字段的说明",
+        	"fieldRule": "第2位用*替换",
+        	"isDesens": "是"
+        }
+    ],
+	
+    "TotalPages": 20,
+    "TotalRows": 89,
+    "PageSize": 0
+}

@@ -1,0 +1,127 @@
+<div ng-controller="ClientShowController" ng-init="initializeController()">
+	<div class="title-position box-shadow-1 clearfix">
+		<h2>客户概览</h2>
+	</div>
+	<div class="content">
+		<div class="content-main" ng-if="loaded">
+			
+			<div class="client-show-header clearfix">
+				<div class="client-show-header-l">
+					<div class="customer-header-item-outer">
+						<div class="customer-header-item customer-header-item1 box-shadow-1 bg-white border-1px ">
+                        	<p class="in-total">共有<span>{{allCustomer.BASIS101 | number}}</span>位客户</p>
+							<dl class="new-add clearfix">
+                            	<dd class="clearfix">
+									<div class="customer-header-key">本月新增</div>
+									<div class="customer-header-value"><b>{{allCustomer.A102.value | number}}</b></div>
+								</dd>
+								<dd class="clearfix">
+									<div class="customer-header-key">昨日新增</div>
+									<div class="customer-header-value"><b>{{allCustomer.A103.value | number}}</b></div>
+								</dd>
+							</dl>
+                            <dl class="formal-potential clearfix">
+                            	<dd ng-mouseenter="tips2 = true;" ng-mouseleave="tips2 = false;"  class="clearfix">
+									<div class="customer-header-key">潜在客户</div>
+									<div class="customer-header-value">
+                                    	<b>{{allCustomer.A104.value | number}}</b>
+                                        <span>{{allCustomer.A104.extra1}}%</span>
+                                    </div>
+                                    <div ng-show="tips2" class="dropdown-tips">
+                                        <p>未发展为正式客户，但在业务系统中有登记客户信息的客户</p>
+                                    </div>
+								</dd>
+                                
+								<dd  ng-mouseenter="tips3 = true;" ng-mouseleave="tips3 = false;"  class="clearfix">
+									<div class="customer-header-key">正式客户</div>
+									<div class="customer-header-value">
+                                    	<b>{{allCustomer.A105.value | number}}</b>
+                                        <span>{{allCustomer.A105.extra1}}%</span>
+                                    </div>
+                                    <div ng-show="tips3" class="dropdown-tips">
+                                       <p>• 明源售楼系统/NC系统：状态为已认购/已签约，并且认购单/签约合同状态不是“失效”状态的客户（如果某个客户有多个签约/认购单，则只要其中之一的状况是非失效即认为该客户为正式客户）。</p>
+                                        <p>• 在讯商业会员系统中的所有会员；</p>
+                                        <p>• 极致物业系统中的所有租户和业主；</p>
+                                        <p>• JDE系统（含商业与写字楼）：有签订租赁合同的所有租客，含历史租赁与正在租赁的客户。</p>
+                                    </div>
+								</dd>
+                            </dl>
+                            <div class="past-decade">
+                            	<h3>近五年的新增客户情况</h3>
+                                <div class="added-customers-chart" is-echarts option="addedCustomersChart"></div>
+                                
+                            </div>
+						</div>
+					</div>
+
+				</div>
+				<div class="client-show-header-r more-charts list-slide box-shadow-1 bg-white border-1px " onepage="5" customer-sorts="customerSorts">
+					<a href="javascript:;" class="arrow-prev has-no"></a>
+					<div class="customer-header-item-outer client-show-header-r-main w100">
+                        <div class="client-show-header-r-outer page-container">
+                            <div class="proportion-item" ng-repeat="chart in customerTypeProportion" ng-model="chartsType" ng-click="chartsType($index)">
+                            	<div class="arrow-box" ng-show="pageIndex == $index"></div>
+                                <div class="proportion-main">
+                                    <div class="proportion-table">
+                                        <div is-echarts option="chart.option" class="client-ctp-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					<a href="javascript:;" class="arrow-next"></a>
+                    
+                    <div class="drop-down-box bg-white border-top-dark border-1px" ng-repeat="contents in customerFormat" ng-show="currentIndex == $index">
+                        <a href="javascript:;" class="arrow-prev has-no"></a>
+                        <div class="drop-down-main">
+                            <dl class="clearfix">
+                                <dd class="clearfix" ng-repeat="c in contents.format">
+                                    <div class="drop-down-top clearfix">
+                                        <i class="drop-down-icon{{$index}}"></i>
+                                        <div class="drop-down-right">
+                                            <p class="customer-header-num">{{c.finished | number}}</p>
+                                            <p class="customer-header-value">{{c.noFinished}}%</p>
+                                        </div>
+                                    </div>
+                                    <div class="customer-header-key">{{c.title}}</div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <a href="javascript:;" class="arrow-next has-no"></a>
+                    </div>
+
+				</div>
+            <div class="client-show-header-r box-shadow-1 bg-white client-bar" >
+                <div class="client-bar-select">
+                    <h3>近一年每月新增客户</h3>
+                    <select ng-model="selectCurrent" ng-change="selectChange(selectCurrent)" ng-options="item.selectName for item in selectBar" class="form-control">
+                    </select>
+                </div>
+               <div is-echarts option="customerRegister" class="client-bar-content" ></div>
+                
+			</div>
+		</div>
+            <div class="client-footer-line client-show-header clearfix">
+                <div class="client-line border-1px client-line-left" >
+                    <div class="client-line-title" >
+                        <h3 ng-mouseenter="tips1 = true;" ng-mouseleave="tips1 = false;">近半年营销活跃客户</h3>
+                    </div>
+                    <div ng-show="tips1" class="client-line-tips">
+                        <p>• 同一项目，比较当前统计时间（如，1月1号），近30天内来访超过一次的来访客户；</p>
+                        <p>• 同一项目，比较当前统计时间（如，1月1号），近90天内成交1套房产以上的成交客户（签约客户）；</p>
+                    </div>
+                    <div is-echarts option="activeCustomer" class="client-line-content box-shadow-1 bg-white  "></div>
+                </div>
+                <div class="client-line border-1px">
+                    <div class="client-line-title" >
+                        <h3 ng-mouseenter="tips = true;" ng-mouseleave="tips = false;">近半年活跃会员（商业）</h3>
+                    </div>
+                    <div ng-show="tips" class="client-line-tips">
+                        <p>商业会员的最近一笔消费记录比较当前统计时间（如，1月1号），间隔不超过30天的客户，平均月消费次数三次以上的会员；</p>
+                    </div>
+                    <div is-echarts option="activeMember" class="client-line-content box-shadow-1 bg-white  "></div>
+                </div>
+            </div>
+	</div>
+</div>
+

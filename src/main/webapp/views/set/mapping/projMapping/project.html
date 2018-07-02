@@ -1,0 +1,334 @@
+<div ng-controller="ProjectCtrlController" ng-init="initializeController()">
+	<div class="title-position box-shadow-1 clearfix">
+        <h2>系统管理  > 映射管理  >  <span class="color-black">项目映射</span></h2>
+    </div>
+
+	<div class="content">
+		<div class="content-main">
+			<div class="client-search-header box-shadow-1">
+            	<ul class="clearfix">
+            		<li>
+						<div class="client-search-header-title">业态</div>
+						<div class="client-search-header-input">
+							<select name="belongsFormat" id="belongsFormat" class="form-control no-margin" ng-model="belongsFormat" ng-options="f.name for f in belongsFormats" ng-change="changeYeTai()">
+			                       <option value="">请选择</option>
+			                </select>
+						</div>
+					</li>
+                	<li>
+						<div class="client-search-header-title">接入系统</div>
+						<div class="client-search-header-input">
+							<select name="accessSystem" id="accessSystem" class="form-control no-margin" ng-model="accessSystem" ng-options="f.name for f in accessSystems">
+								<option value="">全部</option>
+							</select>
+						</div>
+					</li>
+                    <li>
+						<div class="client-search-header-title">本地组织</div>
+						<div class="client-search-header-input">
+                        	<select name="company" id="company" class="form-control" ng-model="company" ng-options="company.name for company in companys" ng-change="changeCompany()">
+								<option value="">请选择</option>
+							</select>
+							<select name="area" id="area" class="form-control" ng-model="area" ng-options="area.name for area in company.children" ng-change="changeArea()">
+								<option value="">请选择</option>
+							</select>
+							<select name="city" id="city" class="form-control" ng-model="city" ng-options="city.name for city in area.children">
+								<option value="">请选择</option>
+							</select>
+						</div>
+					</li>
+                    <li>
+                    	<div class="client-search-header-title">项目</div>
+                    	<div class="client-search-header-input">
+                    		<input type="text" class="form-control" placeholder="输入项目名称" ng-model="keyword">
+                    		<a ng-click="search('search')" href="javascript:;" class="btn btn-success1"><i class="glyphicon glyphicon-search"></i>查询</a>
+                    	</div>
+					</li>
+					<!-- <li class="">
+						<a href="javascript:;" class="btn btn-import" ng-click="importIn();"><i class="glyphicon glyphicon-download"></i>导入</a>
+                    </li> -->
+                </ul>
+                <div class="table-responsive organization-table">
+                	<table id="tab" class="table table-bordered">
+                    	<tbody>
+                        	<tr>
+                            	<th colspan="6">接入系统</th>
+                                <th colspan="5">客户数据管理平台(本地)</th>
+                                <th rowspan="2">最近修改人</th>
+                                <th rowspan="2">最近修改时间</th>
+                                <th rowspan="2">操作</th>
+                            </tr>
+                            <tr>
+                                <th>序号</th>
+                                <th>系统名称</th>
+                                <th>组织</th>
+                                <th>项目名称</th>
+                                <th>项目编号</th>
+                                <th>父级项目</th>
+                                <th>业态</th>
+                                <th>所属组织</th>
+                                <th>项目名称</th>
+                                <th>项目编号</th>
+                                <th>父级项目</th>
+                            </tr>
+                            <tr ng-repeat="l in formatList">
+                            	<td>{{(currentPage-1)*PageSize+$index+1}}</td>
+                                <td>{{l.appName}}</td>
+                                <td class="tfl">{{l.beorgName}}</td>
+                                <td>{{l.beprojName}}</td>
+                                <td>{{l.beprojCode}}</td>
+                                <!--  <td>[<font color="red">{{l.projName.substring(l.projName.indexOf('-'),l.projName.length)}}</font>]</td> -->
+                                <td class="tfl">{{l.beparentProjName}}</td>
+                                <td>{{l.mappingGUID != null && l.mappingGUID != ''?belongsFormat.name:''}}</td>
+                                <td>{{l.orgName}}</td>
+                                <td>{{l.projName}}</td>
+                                <!-- <td>[{{l.projName.substring(l.projName.indexOf('-'),l.projName.length)}}]</td> -->
+                                <td class="tfl">{{l.projCode}}</td>
+                                <td class="tfl">{{l.parentProjName}}</td>
+                                <td><font color="red">{{l.modifyUserName}}</font></td>
+                                <td>{{l.modifyTime != null && l.modifyTime != ''?l.modifyTime:l.createTime}}</td>
+                                <td width="11%">
+                                	<button class="btn btn-modify btn-xs" type="button" ng-click="modifyMapping(l, belongsFormat.name);">修改 </button>
+                                    <!-- <button class="btn btn-mapping btn-xs" type="button" ng-click="mappingBan(l);">楼栋映射 </button> -->
+                                </td>
+                            </tr>
+                            <tr ng-show="TotalRows == 0"><td colspan="16">暂时没有数据</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="project-page clearfix">
+                    <pagination max-size="20" rotate="false" boundary-links="true" total-items="TotalRows" items-per-page="PageSize"
+                        ng-change="pageChanged()" ng-model="currentPage" class="pagination-default"
+                        previous-text="上一页" next-text="下一页" first-text="首页" last-text="末页" style="margin: 0; display: block;">
+                    </pagination>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/ng-template" id="modifyMapping.html" ng-controller="ProjectCtrlController">
+<div class="add-items" ng-init="initializeForEditController()">
+	<form class="form-horizontal" role="form" name="myForm" novalidate> 
+		<div class="modal-header">
+			<h3 class="modal-title">修改项目映射关系</h3>
+		</div>
+		<div class="modal-body">
+			<table class="table table-striped table-bordered edit-table ">
+				<tr>
+					<td width="22%">接入系统:</td>
+					<td width="78%">
+						<div class="fl">{{app_name}}</div><div class="fr">组织:{{groupOrgName}}</div>
+					</td>
+				</tr>
+				<tr>
+					<td>接入系统项目名称:</td>
+					<td>
+						<div class="fl">{{xprojName}}</div><div class="fr">项目编号:{{xprojCode}}</div>
+					</td>
+				</tr>
+				<tr>
+					<td>父级项目名称:</td>
+					<td>
+						<div class="fl">{{xrootprojName}}</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="tfl">映射本地项目信息</td>
+				</tr>
+
+				<tr>
+					<td>所属业态:</td>
+					<td class="property-list">
+						<select name="industryName" id="industryName" class="form-control" ng-model="industryName"  ng-change = "selectIndustryName(industryName)">
+								
+								<option ng-repeat="p in industryNames" value="{{p.name}}">{{p.name}}</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>所属组织:</td>
+					<td>
+					   <div class="custom-select drop-down" dropdown>
+							<div class="input-group fl">
+								<input class="form-control " type="text" name="name" ng-model="orgname" value="" id="citySel" placeholder="请选择项目组织" readOnly="readOnly">
+								<span class="input-group-addon" dropdown-toggle><i class="glyphicon glyphicon-chevron-down"></i></span>
+							</div>
+							<div class="dropdown-menu collapse citySel" is-stop-propagation ng-class="{in: vm.dropdownProject}" ng-blur="vm.dropdownProject = false">
+								<ul id="selectMenu" z-tree setting="mySettingMenu" znodes="myZnodes" class="ztree modal_ztree"></ul>
+									
+							</div>
+						</div>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>项目名称:</td>
+					<td>
+						<div class="dropdown custom-select clearfix">
+							<div class="input-group fl">
+								<input class="form-control " type="text" name="projName" id="projName" ng-model="row.projName" value="" readOnly="readOnly">
+								<span class="input-group-addon dropdown-toggle"><i class="glyphicon glyphicon-chevron-down"></i></span>
+							</div>
+							<div class="fr">项目编号：{{row.projCode}}</div>
+							<div class="dropdown-menu collapse" is-stop-propagation style="width: 600px;">
+								<div class="search-btn">
+									<input class="form-control fl" type="text" name="name" placeholder="请输入项目名称" ng-model="searchTxt">
+									<a ng-click="searchUniProj(searchTxt)" href="javascript:;" class="btn btn-success1"><i class="glyphicon glyphicon-search"></i>查询</a>
+								</div>
+								<div class="table-list" style="overflow-y:auto;max-height:360px;">
+									<table class="table table-hover" >
+										<thead>
+											<tr>
+												<th width="10%">序号</th>
+												<th width="15%" style="text-align:left;">项目编号</th>
+												<th width="20%" style="text-align:left;">项目名称</th>
+												<th width="20%" style="text-align:left;">父级项目</th>												
+											</tr>
+										</thead>
+										<tbody>
+											<tr ng-repeat="city in projects" ng-click="selection(city)" ng-mode="selection">
+												<td style="text-align:center;">{{$index+1}}</td>
+												<td>{{city.projCode}}</td>
+												<td>{{city.projName}}</td>
+												<td>{{city.parentProjName}}</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>父级项目名称:</td>
+					<td>
+						<div class="fl">{{row.rootprojName}}</div><div class="fr">父级项目编号：{{row.parentProjCode}}</div>
+					</td>
+				</tr>
+				<tr>
+					<td>最近修改人:</td>
+					<td>
+						<div class="fl" id="lastuser">{{row.lastModifyUser}}</div><div class="fr" id="lasttime">最近修改时间:{{row.lastModifyTime}}</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-submit" ng-disabled="myForm.$invalid" ng-click="ok()">提交</button>
+			<button class="btn btn-cancle" ng-click="cancel()">取消</button>
+		</div>
+		
+	</form>
+</div>
+</script>
+
+<script type="text/ng-template" id="mappingBan.html" ng-controller="ProjectCtrlController">
+<div class="add-items">
+	<form class="form-horizontal" role="form" name="myForm" novalidate>
+		<div class="modal-header">
+			<h3 class="modalititle">修改楼栋映射关系</h3>
+		</div>
+		<div class="modal-body">
+			<table id="tabs" class="table table-bordered mapping-ban-table">
+				<tr class="first">
+					<td width="50%">接入系统名称</td>
+					<td width="50%">客户数据管理平台(本地)</td>
+				</tr>
+				<tr class="second">
+					<td>{{xprojName}}</td>
+					<td>{{gprojName}}</td>
+				</tr>
+				<tr ng-repeat="l in formatList">
+					<td>{{l.gbldName}}</td>
+					<td>
+						<select name="bldName" id="bldName{{$index+1}}" class="ban-form-control" ng-model="l.uniguid" ng-change="assignBuild(l)" ng-options="n.codevalue as n.codename for n in choosebuilds">
+							<option value="">请选择</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-submit" ng-disabled="myForm.$invalid" ng-click="ok()">提交</button>
+			<button class="btn btn-cancle" ng-click="cancel()">取消</button>
+		</div>
+		
+	</form>
+</div>
+</script>
+
+<script type="text/ng-template" id="importTemplate.html" ng-controller="ProjectCtrlController">
+<div class="add-items">
+	<form class="form-horizontal" role="form" name="myForm" novalidate>
+		<div class="modal-header">
+			<h3 class="modal-title">导出为模板</h3>
+		</div>
+		<div class="modal-body">
+			<ul class="import-template">
+				<li>提示：仅能导不存在映射关系的项目，若要修改映射关系请通过页面的[修改]按钮操作。</li>
+				<li>导出</li>
+                <li class="clearfix">
+                    <p class="client-search-header-title">业态</p>
+                    <select name="exbelongsFormat" id="exbelongsFormat" class="form-control no-margin" ng-model="selected.exbelongsFormat" ng-options="a.name for a in selected.exbelongsFormats" ng-change="changeExYeTai(selected.exbelongsFormat)">
+						<option value="">请选择</option>
+					</select>
+                </li>
+                <li class="clearfix"><hr></li>
+				<li class="clearfix">
+                    <p class="client-search-header-title">接入系统  </p>
+                    <select name="exaccessSystem" id="exaccessSystem" class="form-control no-margin" ng-model="selected.exaccessSystem" ng-options="a.name for a in selected.exaccessSystems" >
+						<option value="">全部</option>
+					</select>
+					<p class="client-search-header-title">组织 </p>
+					<select name="excompany" id="excompany" class="form-control" ng-model="selected.excompany" ng-options="a.name for a in selected.excompanys" ng-change="changeExCompany(selected.excompany)">
+								<option value="">请选择</option>
+					</select>
+					<select name="exarea" id="exarea" class="form-control" ng-model="area" ng-options="b.name for b in selected.excompany.children" ng-change="changeExArea(selected.exarea)">
+								<option value="">请选择</option>
+					</select>
+					<select name="excity" id=excity" class="form-control" ng-model="selected.excity" ng-options="c.name for c in area.children">
+								<option value="">请选择</option>
+					</select>
+					<p class="fl">的全部项目作为参考</p>
+				</li>
+			</ul>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-submit" ng-disabled="myForm.$invalid" ng-click="exportBuildMappingTemp()">确认导出</button>
+			<button class="btn btn-cancle" ng-click="cancel()">取消</button>
+		</div>
+		
+	</form>
+</div>
+</script>
+
+<script type="text/ng-template" id="importIn.html" ng-app="app" ng-controller="ProjectCtrlController" >
+<div class="add-items project-add-items">
+	<form class="form-horizontal" name="myForm">
+		<div class="modal-header">
+			<h3 class="modal-title">导入</h3>
+		</div>
+		<div class="modal-body">
+			<ul class="import-template import-in">
+				<li>请选择文件后缀为.xls或.xlsx的文件。<a ng-click="importTemplate()">下载模板</a></li>
+				<li class="clearfix">
+					<p class="fl">导入文件: </p>
+					<div class="search-file-path fl" style="width:65%;position:relative;"  ngf-select ngf-change="fileChange($files)">
+						<input type="text" ng-model="fileInfo.name" class="form-control" placeholder="请选择文件后缀为.xls或.xlsx的文件" style="width:80%;">
+						<a href="javascript:;" class="btn btn-import">选择</a>
+					</div>
+					<div class="search-file-btn">
+						<a href="javascript:;" class="btn btn-submit" ng-click="doImport()" ng-show="!imported">导入</a>
+						<button class="btn btn-cancle" ng-click="cancel()">取消</button>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="modal-footer">
+		</div>
+	</form>
+</div>
+</script>

@@ -1,0 +1,54 @@
+[
+  {
+    "id": "001",
+    "isSelected": false,
+    "orgName": "组织名称",
+    "name": "用户组一"
+  },
+  {
+    "id": "002",
+    "isSelected": false,
+    "orgName": "组织名称",
+    "name": "用户组在"
+  },
+  {
+    "id": "003",
+    "isSelected": false,
+    "orgName": "组织名称",
+    "name": "用户组有"
+  },
+  {
+    "id": "004",
+    "isSelected": false,
+    "orgName": "组织名称",
+    "name": "用户组的"
+  },
+  {
+    "id": "005",
+    "isSelected": false,
+    "orgName": "组织名称",
+    "name": "用户组和"
+  },
+  {
+    "id": "006",
+    "isSelected": false,
+    "orgName": "组织名称",
+    "name": "用户组工"
+  },
+  {
+    "id": "007",
+    "isSelected": false,
+    "orgName": "组织名称",
+    "name": "用户组人"
+  },
+  {
+    "id": "008",
+    "name": "用户组我"
+  },
+  {
+    "id": "009",
+    "isSelected": false,
+    "orgName": "组织名称",
+    "name": "用户组二"
+  }
+]

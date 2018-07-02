@@ -1,0 +1,68 @@
+<div ng-controller="ClientPortraitController" ng-init="initializeController()">
+    <div class="title-position  box-shadow-1 clearfix">
+        <h2 >客户画像</h2>
+    </div>
+    <div class="content">
+        <div class="content-main paddingBottom0">
+            <!--查询界面-->
+            <div  class="client-show-header client-protrait box-shadow-1  bg-white  position-relative">
+                 <form>
+                    <div class="client-protrait-formrow">
+                        <div class="client-protrait-radio" ng-click="selectRadio(1)">
+                            <input type="radio" value="1" ng-model="clientType" />
+                            <span class="text-title">个人客户</span>
+                        </div>
+                        <div class="client-protrait-radio" ng-click="selectRadio(2)">
+                            <input type="radio" value="2" ng-model="clientType" />
+                            <span class="text-title">企业客户</span>
+                            <!-- 企业客户搜索列表展示 -->
+                        </div>
+                    </div>
+                    <div class="client-protrait-formrow2 p-relative">
+                        
+                        <div p-holder inputid="ad01" lefts="20" content="{{clientPlace}}"></div>
+                        <input id="ad01" type="text" ng-model="keyword" class="form-control client-protrait-input"/>
+                        <a ng-click="searchDetail(keyword)" moduleCode="app.client.portrait.clientPortrait.search" modText="查询" assign-a-button class="btn btn-search btn-padding" ng-model="listShow">查询</a>
+                    </div>
+                    <div ng-show="listShow" id="clientList" class="border-1px">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>公司名称</th>
+                                    <th>公司性质</th>
+                                    <th>组织机构代码</th>
+                                    <th>营业执照号码</th>
+                                    <th>通讯地址</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-if="ListData != null && ListData.length > 0" ng-repeat=" iteam in ListData">
+                                    <td>{{$index+1}}</td>
+                                    <td><a ng-click="listDetail(iteam.cstGUID)">{{iteam.cstName}}</a></td>
+                                    <td>{{iteam.companyType}}</td>
+                                    <td>{{iteam.organizationNo}}</td>
+                                    <td>{{iteam.businessLicense}}</td>
+                                    <td>{{iteam.companyAddress}}</td>
+                                </tr>
+                                <tr ng-if="ListData == null || ListData.length == 0">
+               						<td colspan="6" class="text-center">暂无记录</td>
+               					</tr>
+               					<tr ng-if="ListData == null || ListData.length == 0">
+               						<td></td>
+               						<td></td>
+               						<td></td>
+               						<td></td>
+               						<td></td>
+               						<td></td>
+               					</tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+                <div class="search-bg" ng-hide="listShow"><img src="images/search-bg.jpg"></div>
+            </div>
+            
+        </div>
+    </div>
+</div>

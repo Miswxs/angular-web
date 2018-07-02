@@ -1,0 +1,240 @@
+<div ng-controller="usersController" ng-init="initializeController()">
+    <div class="go-top-btn"></div>
+    <div class="content ">
+        <div class="title-position box-shadow-1 clearfix">
+            <h2>系统管理  > 基础设置  >  <span class="color-black">用户</span></h2>
+        </div>
+        <div class="org_content_left label_org_tree">
+            <div class="sideBar-content left">
+                <div class="label_content_title zy_title"><span class=""></span><span class="left_title">组织架构</span></div>
+                <div class="label_content_tree">
+                    <ul id="commonTree" z-yree setting="mySetting" znodes="myZnodes" currentselect="currentSelect" class="ztree diy_ztree diy_red_ztree diy_red_ztree_user"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="org_content_right  box-shadow-1 ">
+            <div class="client-search-header role_content_right">
+            	<ul class="clearfix">
+                    <li class="group">
+						<div class="client-search-header-btn rights-management">
+                        	<a ng-click="search(keyword)" href="javascript:;" class="btn btn-black" moduleCode="app.system.baseSet.sysUser.search" modText="查询" assign-span-button><i class="glyphicon glyphicon-search"></i>查询</a>
+                            <!-- <a ng-click="roleAM(null);" href="javascript:;" class="btn btn-red"><i class="glyphicon glyphicon-plus"></i>添加</a> -->
+                        </div>
+						<div class="client-search-header-keyword rights-management role_user_searchinput"><input type="text" class="form-control"  placeholder="请输入检索关键字：系统用户名称" ng-model="keyword"></div>	
+					</li>
+                    <li class="rights-management-li">
+                    	<a href="javascript:;" ng-click="exportFile()" class="btn btn-black" moduleCode="app.system.baseSet.sysUser.export" modText="导出" assign-span-button><i class="glyphicon glyphicon-share-alt"></i>导出</a>
+                    </li>
+                </ul>
+                <div class="table-responsive organization-table">
+                	<table class="table table-bordered  table-striped">
+                    	<tbody>
+                        	<tr>
+                            	<th>ID</th>
+                                <th width="150">登录账号</th>
+                                <th width="150">姓名</th>
+                                <th width="150">联系电话</th>
+                                <th width="70">状态</th>
+                               <!--  <th width="70">类别</th> -->
+                                <th>操作</th>
+                            </tr>
+                            <tr ng-repeat="l in list">
+                            	<td ng-bind="l.userId"></td>
+                                <td ng-bind="l.userName"></td>
+                                <td ng-bind="l.name"></td>
+                                <td ng-bind="l.mobile"></td>
+                                <td ng-bind="l.state==1?'正常':'冻结'"></td>
+                                <!-- <td ng-bind="l.userType"></td> -->
+                                <td>
+                                    <button class="btn btn-cofe btn-xs" type="button" ng-click="setRowRole(l);" moduleCode="app.system.baseSet.sysUser.right" modText="权限" assign-span-button>权限</button>
+                                    <!-- <button class="btn btn-black btn-xs" type="button" ng-click="roleAM(l);">修改</button> -->
+                                    <button class="btn btn-red btn-xs" type="button" ng-show="l.state==1" ng-click="updateUserState(2,l);" moduleCode="app.system.baseSet.sysUser.changeState" modText="冻结" assign-span-button>冻结</button>
+                                    <button class="btn btn-cofe btn-xs" type="button" ng-hide="l.state==1" ng-click="updateUserState(1,l);" moduleCode="app.system.baseSet.sysUser.changeState" modText="启用" assign-span-button>启用</button>
+                                </td>
+                            </tr>
+                            <tr ng-show="TotalRows == 0"><td colspan="7">暂时没有数据</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="project-page clearfix">
+                    <pagination max-size="5" rotate="false" boundary-links="true" total-items="TotalRows" items-per-page="PageSize"
+                        ng-change="pageChanged()" ng-model="currentPage" class="pagination-default"
+                        previous-text="上一页" next-text="下一页" first-text="首页" last-text="末页" style="margin: 0; display: block;">
+                    </pagination>
+                </div>
+			</div>
+        </div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="export.html" ng-controller="usersController">
+<div class="add-items">
+	<form class="form-horizontal" role="form" name="myForm" novalidate>
+		<div class="modal-header">
+			<h3 class="modal-title">用户基本资料</h3>
+		</div>
+		<div class="modal-body">
+			<input type="file" class="form-control long-input"/>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-red" ng-disabled="myForm.$invalid" ng-click="doExport()">导出</button>
+			<button class="btn btn-cancle fontWeight" ng-click="cancel()">取消</button>
+		</div>
+		
+	</form>
+</div>
+</script>
+
+<script type="text/ng-template" id="rowRole.html" ng-controller="usersController">
+<div class="add-items">
+	<form class="form-horizontal" role="form" name="myForm" novalidate>
+		<div class="modal-header">
+			<h3 class="modal-title">功能权限</h3>
+		</div>
+		<div class="modal-body">
+			<table class="table  table-bordered ">
+				<tr>
+					<td width="20%" class="text-right t_title fontWeight">用户:</td>
+					<td class="textAlgin-left" width="80%"><span ng-bind="mrole.userName"></span></td>
+				</tr>
+				<!-- <td class="text-right t_title notify-font-weight"><font color="red">*&nbsp;&nbsp;</font>脱敏权限:</td>
+					<td class="textAlgin-left" colspan="3">
+                        <input type="radio" class=" no-margin " value="2" ng-model="mrole.delicateState" name="userStatus" required/>开通
+                        &nbsp&nbsp&nbsp&nbsp
+						<input type="radio" class=" no-margin " value="1" ng-model="mrole.delicateState" name="userStatus" required/>关闭
+				</td> -->
+				<tr>
+                    <td width="20%" class="text-right t_title fontWeight">功能权限:</td>
+					<td colspan="2">
+                        <div class="model_tree_div">
+                            <ul id="checkTree" check-tree setting="myRoleSetting" znodes="myRoleFunctions" class="ztree yid_ztree"></ul>
+                        </div>
+                    </td>
+				</tr>
+                <tr>
+                    <td width="20%" class="text-right t_title fontWeight">数据权限:</td>
+					<td colspan="2">
+                        <div class="model_tree_div">
+                            <ul id="checkTree2" check-tree setting="myRoleSetting" znodes="myRoleDataPowers" class="ztree yid_ztree"></ul>
+                        </div>
+                    </td>
+				</tr>
+			</table>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-red" ng-disabled="myForm.$invalid" ng-click="modifySave(mrole)">提交</button>
+			<button class="btn btn-cancle fontWeight" ng-click="cancel()">取消</button>
+		</div>
+		
+	</form>
+</div>
+</script>
+
+<script type="text/ng-template" id="modifyAndSaveRole.html" ng-controller="usersController">
+<div class="add-items">
+	<form class="form-horizontal" role="form" name="myForm" novalidate>
+		<div class="modal-header">
+			<h3 class="modal-title">用户基本资料</h3>
+		</div>
+		<div class="modal-body set-user-padding">
+            <div class="table-form">
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td class="textAlgin-right" width="150">部  门:</td>
+                                <td class="textAlgin-left" colspan="3">
+                                    <!-- <div multi-select collects="useList" skey="myArr"></div> -->
+									{{curOrg.namepath}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="textAlgin-right" width="150"><font color="red">*&nbsp;&nbsp;</font>登录账号:</td>
+                                <td class="textAlgin-left">
+                                    <input class="form-control auto-width" maxlength="10" ng-model="user.userName" required/>
+                                </td>
+                                <td class="textAlgin-right"><font color="red">*&nbsp;&nbsp;</font>登录密码:</td>
+                                <td class="textAlgin-left">
+                                    <input type="password" class="form-control auto-width" maxlength="20" ng-disabled="type=='modify'" ng-model="user.password" required/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="textAlgin-right" width="150"><font color="red">*&nbsp;&nbsp;</font>姓  名:</td>
+                                <td class="textAlgin-left">
+                                    <input class="form-control auto-width" maxlength="10" ng-model="user.name" required/>
+                                </td>
+                                <td class="textAlgin-right">联系电话:</td>
+                                <td class="textAlgin-left"><input class="form-control auto-width" maxlength="11" ng-model="user.mobile"/></td>
+                            </tr>
+                            <tr>
+                                <td class="textAlgin-right" width="150">职  务:</td>
+                                <td class="textAlgin-left">
+                                    <input class="form-control auto-width" maxlength="32" ng-model="user.post"/>
+                                </td>
+                                <td class="textAlgin-right">邮  箱:</td>
+                                <td class="textAlgin-left"><input class="form-control auto-width" maxlength="50" ng-model="user.mail"/></td>
+                            </tr>
+                            
+                            <tr>
+					<!-- <td class="text-right t_title notify-font-weight"><font color="red">*&nbsp;&nbsp;</font>脱敏权限:</td>
+					<td class="textAlgin-left" colspan="3">
+                        <input type="radio" class=" no-margin " value="2" ng-model="user.delicateState" name="userStatus" required/>开通
+                        &nbsp&nbsp&nbsp&nbsp
+						<input type="radio" class=" no-margin " value="1" ng-model="user.delicateState" name="userStatus" required/>关闭
+					</td> -->
+				</tr>
+                        </tbody>
+                    </table>
+                </div>
+            
+		</div>
+        <div class="set-user-padding border-bottom">
+			<h3 class="modal-title ">分配角色</h3>
+		</div>
+		<div class="modal-body set-user-padding">
+            <ul class="user-search-left clearfix">
+                    <li class="group">
+						<div class="client-search-header-btn rights-management">
+                        	<a ng-click="roleSearch(keyword)" href="javascript:;" class="btn btn-red"><i class="glyphicon glyphicon-search"></i>查询</a>
+                            <!-- <a  href="#/app/set/basisSetting/myRole"  ng-click="cancel()" class="btn btn-black"><i class="glyphicon glyphicon-plus"></i>添加</a> -->
+                        </div>
+						<div class="client-search-header-keyword rights-management role_user_searchinput"><input type="text" class="full-width form-control" placeholder="请输入" ng-model="keyword"></div>	
+					</li>
+                </ul>
+            <div class="user-sdiv">
+                <div class="user-left">
+                    <div class="user-title">待选角色</div>
+                    <ul class="user-ul">
+                        <li class="choice-item-li-group ng-scope" ng-repeat="lg in roleData" ng-click="toSelect(lg);">
+                            <span class="glyphicon glyphicon-ok choice-item-select" ng-show="lg.isSelected"></span>
+                            <span ng-bind="lg.name" class="ng-binding user-choice-center"></span>
+                             <span ng-bind="lg.orgName" class="ng-binding"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="user-center">
+                    <ul class="center-ul">
+                        <li class="center-li center-top" ><span ng-click="addToRight('myRole')" class="btn btn-default glyphicon glyphicon-menu-right"></span></li>
+                        <li class="center-li" ><span ng-click="deleteToLeft('myRole')" class="btn btn-default glyphicon glyphicon-menu-left"></span></li>
+                    </ul>
+                </div>
+                <div class="user-right">
+                    <div class="user-title">已选角色</div>
+                     <ul class="user-ul">
+                        <li class="choice-item-li-group ng-scope" ng-repeat="role in user.myRole" ng-click="toMelect(role);">
+                            <span class="glyphicon glyphicon-ok choice-item-select" ng-show="role.isMine"></span>
+                            <span ng-bind="role.name" class="ng-binding user-choice-center"></span>
+                            <span ng-bind="role.orgName" class="ng-binding"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<div class="modal-footer">
+			<button class="btn btn-red" ng-disabled="myForm.$invalid" ng-click="saveMA(user)">提交</button>
+			<button class="btn btn-cancle fontWeight" ng-click="cancel()">取消</button>
+		</div>
+		
+	</form>
+</div>
+</script>

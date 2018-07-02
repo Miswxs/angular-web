@@ -1,0 +1,6 @@
+.client-ctp-chart div,.client-bar-content div,.client-line-content div{position: absolute !important;}
+.main-header{z-index: 9000;}
+.client-line-tips,.customer-header-item .formal-potential .dropdown-tips{background: #999;opacity: 0.2;}
+.proportion-item{width: 20% !important;}
+.page-container{padding: 0 5% !important;}
+.proportion-item .arrow-box {left: 31.5% !important;top: 165px !important;}

@@ -1,0 +1,188 @@
+{
+  "extractLabels": [
+    {
+      "groupKey": "c1",
+      "name": "项目营销",
+      "selectHide": false,
+      "son": [
+        {
+          "groupKey": "c1t1",
+          "name": "项目一",
+          "selectHide": false,
+          "son": [
+            {
+              "groupKey": "c1t1d1",
+              "name": "项目一1",
+              "selectHide": false,
+              "son": [
+                {
+                  "groupKey": "c1t1d11",
+                  "name": "项目一11",
+                  "selectHide": false,
+                  "son": []
+                },
+                {
+                  "groupKey": "c1t1d12",
+                  "name": "项目一12",
+                  "selectHide": false,
+                  "son": []
+                }
+              ]
+            },
+            {
+              "groupKey": "c1t1d2",
+              "name": "项目一2",
+              "selectHide": false,
+              "son": []
+            },
+            {
+              "groupKey": "c1t1d3",
+              "name": "项目一3",
+              "selectHide": false,
+              "son": []
+            }
+          ]
+        },
+        {
+          "groupKey": "c1t2",
+          "name": "项目二",
+          "selectHide": false,
+          "son": []
+        },
+        {
+          "groupKey": "c1t3",
+          "name": "项目三",
+          "selectHide": false,
+          "son": []
+        }
+      ]
+    },
+    {
+      "groupKey": "c2",
+      "name": "客群分析",
+      "selectHide": false,
+      "son": []
+    },
+    {
+      "groupKey": "c3",
+      "name": "产品定位",
+      "selectHide": false,
+      "son": []
+    },
+    {
+      "groupKey": "c4",
+      "name": "客户回访",
+      "selectHide": false,
+      "son": []
+    },
+    {
+      "groupKey": "c5",
+      "name": "其他",
+      "selectHide": false,
+      "son": []
+    }
+  ],
+  "useType": [
+    {
+      "id": "1",
+      "name": "全部",
+      "value": "1"
+    },
+    {
+      "id": "2",
+      "name": "营销活动",
+      "value": "2"
+    },
+    {
+      "id": "3",
+      "name": "商业活动",
+      "value": "3"
+    },
+    {
+      "id": "4",
+      "name": "客群分析",
+      "value": "4"
+    },
+    {
+      "id": "5",
+      "name": "产品定位",
+      "value": "5"
+    },
+    {
+      "id": "6",
+      "name": "客户回访",
+      "value": "6"
+    },
+    {
+      "id": "7",
+      "name": "其他",
+      "value": "7"
+    }
+  ],
+  "lotus": [
+    {
+      "id": "1",
+      "name": "全部",
+      "value": "1"
+    },
+    {
+      "id": "2",
+      "name": "已审批",
+      "value": "2"
+    },
+    {
+      "id": "3",
+      "name": "审批中",
+      "value": "3"
+    },
+    {
+      "id": "4",
+      "name": "未提交",
+      "value": "4"
+    },
+    {
+      "id": "5",
+      "name": "已驳回",
+      "value": "5"
+    },
+    {
+      "id": "6",
+      "name": "已撤回",
+      "value": "6"
+    }
+  ],
+  "followType": [
+    {
+      "id": "1",
+      "name": "全部",
+      "value": "1"
+    },
+    {
+      "id": "2",
+      "name": "地产营销",
+      "value": "2"
+    },
+    {
+      "id": "3",
+      "name": "商业推广",
+      "value": "3"
+    }
+  ],
+  "followState": [
+    {
+      "id": "1",
+      "name": "全部",
+      "value": "1"
+    },
+    {
+      "id": "2",
+      "name": "需跟踪",
+      "value": "2"
+    },
+    {
+      "id": "3",
+      "name": "不跟踪",
+      "value": "3"
+    }
+  ]
+}

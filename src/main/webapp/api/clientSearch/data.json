@@ -1,0 +1,523 @@
+{
+  "customType": [
+    {
+      "type": "person",
+      "name": "个人客户"
+    },
+    {
+      "type": "company",
+      "name": "企业客户"
+    }
+  ],
+  "standard": {
+    "isMore": false,
+    "data": [
+      {
+        "id": "1",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个,家庭结构”等于子女同住OR“子女个数”不等于0个家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "2",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "3",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "4",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "5",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "6",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "7",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "8",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "9",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "10",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "11",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "12",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "13",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "14",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "15",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "16",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "17",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "18",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "19",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "20",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "21",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "22",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      }
+    ]
+  },
+  "business": {
+    "isMore": false,
+    "data": [
+      {
+        "id": "23",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "24",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "25",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "26",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "27",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "28",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "29",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "30",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "31",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      },
+      {
+        "id": "32",
+        "name": "家有儿女",
+        "type": "个人",
+        "doSelect": false,
+        "dropdown": false,
+        "setTime": "",
+        "cover": "13,254",
+        "roles": "“家庭结构”等于子女同住OR“子女个数”不等于0个"
+      }
+    ]
+  },
+  "personInfo": {
+    "base": [
+      {
+        "id": "1",
+        "name": "姓名",
+        "current": true
+      },
+      {
+        "id": "2",
+        "name": "手机号码",
+        "current": false
+      },
+      {
+        "id": "3",
+        "name": "证件类型&证件号码",
+        "current": false
+      },
+      {
+        "id": "4",
+        "name": "性别",
+        "current": false
+      },
+      {
+        "id": "5",
+        "name": "生日",
+        "current": false
+      },
+      {
+        "id": "6",
+        "name": "年龄",
+        "current": false
+      },
+      {
+        "id": "7",
+        "name": "兴趣爱好",
+        "current": false
+      },
+      {
+        "id": "8",
+        "name": "个人月收入",
+        "current": false
+      },
+      {
+        "id": "9",
+        "name": "交通工具",
+        "current": false
+      },
+      {
+        "id": "10",
+        "name": "邮箱地址",
+        "current": false
+      }
+    ],
+    "home": [
+      {
+        "id": "11",
+        "name": "婚姻状况",
+        "current": false
+      },
+      {
+        "id": "12",
+        "name": "家庭结构",
+        "current": false
+      },
+      {
+        "id": "13",
+        "name": "家庭月收入",
+        "current": false
+      },
+      {
+        "id": "14",
+        "name": "子女个数",
+        "current": false
+      }
+    ],
+    "locate": [
+      {
+        "id": "15",
+        "name": "居住区域",
+        "current": false
+      },
+      {
+        "id": "16",
+        "name": "工作区域",
+        "current": false
+      },
+      {
+        "id": "17",
+        "name": "籍贯",
+        "current": false
+      },
+      {
+        "id": "18",
+        "name": "户籍",
+        "current": false
+      }
+    ],
+    "society": [
+      {
+        "id": "19",
+        "name": "文化程度",
+        "current": false
+      },
+      {
+        "id": "20",
+        "name": "人事行业",
+        "current": false
+      },
+      {
+        "id": "21",
+        "name": "工作职位",
+        "current": false
+      }
+    ]
+  },
+  "companyInfo": {
+    "base": [
+      {
+        "id": "22",
+        "name": "公司名称",
+        "current": false
+      },
+      {
+        "id": "23",
+        "name": "公司电话",
+        "current": false
+      },
+      {
+        "id": "24",
+        "name": "公司性质",
+        "current": false
+      },
+      {
+        "id": "25",
+        "name": "组织机构代码",
+        "current": false
+      },
+      {
+        "id": "26",
+        "name": "营业执照号码",
+        "current": false
+      },
+      {
+        "id": "27",
+        "name": "经营大类",
+        "current": true
+      },
+      {
+        "id": "28",
+        "name": "公司人数",
+        "current": false
+      },
+      {
+        "id": "29",
+        "name": "注册资金",
+        "current": false
+      }
+    ],
+    "communicate": [
+      {
+        "id": "30",
+        "name": "联系人姓名",
+        "current": true
+      },
+      {
+        "id": "31",
+        "name": "联系人电话",
+        "current": true
+      },
+      {
+        "id": "32",
+        "name": "注册人数",
+        "current": false
+      },
+      {
+        "id": "33",
+        "name": "通讯地址",
+        "current": false
+      }
+    ]
+  }
+}

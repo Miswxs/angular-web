@@ -1,0 +1,376 @@
+<div ng-controller="labelBusinessController" ng-init="initializeController()">
+    <div class="go-top-btn"></div>
+    <div class="content ">
+
+        <div class="title-position box-shadow-1 clearfix">
+            <h2>系统管理  >  标签  >  <span class="color-black">业务标签</span></h2>
+        </div>
+
+        <div class="label_content_main">
+            <div class=" label-busi-header  box-shadow-1 border-radius-3 clearfix">
+                <h4 class="modal-title common-add-title" ng-show="deleteMask">删除标签</h4>
+                <h4 class="modal-title common-add-title" ng-show="ismainwindow =='add'">添加标签</h4>
+                <h4 class="modal-title common-add-title" ng-show="ismainwindow =='extract'">提取客户信息</h4>
+
+
+                <div class="label-busi-btn " ng-show="hasLabel">
+                    <div assign-span-button  modText="删除" moduleCode="app.system.label.business.delete" class="btn btn-red" ng-hide="deleteMask" ng-show="ismainwindow == 'showlabel'" ng-click="showDeleteMask()">
+                        <span class=" glyphicon glyphicon-minus"></span> <span>删除</span>
+                    </div>
+                    <div class="btn btn-red" ng-show="deleteMask" ng-click="deleteLabel();">
+                        <span class="">确认删除</span>
+                    </div>
+                    <div class="btn btn-default fontWeight" ng-show="deleteMask" ng-click="showDeleteMask();">
+                        <span class="">返回</span>
+                    </div>
+                </div>
+                <div class="label-busi-btn ">
+                     <div assign-span-button  modText="添加" moduleCode="app.system.label.business.add" class="btn btn-black" ng-click="addLabel();" ng-hide="deleteMask" ng-show="ismainwindow == 'showlabel'">
+                        <span class="glyphicon glyphicon-plus"></span> <span>添加</span>
+                    </div>
+
+                    <div class="btn btn-success fontWeight" ng-show="ismainwindow == 'add'" ng-click="submitRoles()">
+                        <span>提交</span>
+                    </div>
+                    <div class="btn btn-default fontWeight" ng-show="ismainwindow == 'add'" ng-click="resetRoles()">
+                        <span>重置</span>
+                    </div>
+                    <div class="btn btn-default fontWeight" ng-show="ismainwindow == 'add'" ng-click="changeMainWindow()">
+                        <span>返回</span>
+                    </div>
+                </div>
+
+                <div class="label-busi-btn ">                   
+                    <div class="btn btn-success fontWeight" ng-show="ismainwindow == 'extract'" ng-click="saveModalExtract(extract)">
+                    <span moduleCode="app.label.labelStandard.export" modText="提交" assign-span-button ng-click="saveModalExtract(extract)">提交</span>                       
+                    </div>
+                    <div class="btn btn-default fontWeight" ng-show="ismainwindow == 'extract'" ng-click="cancel()">
+                        <span class="">返回</span>
+                    </div>
+                </div>
+
+
+                <div class="pull-left label-margin" ng-hide="deleteMask" ng-show="ismainwindow == 'showlabel'">
+                    <a assign-span-button  modText="查询" moduleCode="app.system.label.business.search"  role="button" ng-click="searchLabel(keyword);" class="btn btn-black label-busi-search"><i class="glyphicon glyphicon-search"></i> 查询</a>
+                    <div class="common-extract-rightbtn">
+                        <input type="text" name="title" placeholder="请输入标签名称" ng-model="keyword" maxlength="100" class="input-xlarge form-control ng-isolate-scope ng-pristine ng-valid">
+                    </div>
+                </div>
+
+            </div>
+            <div class="label_content_left">
+                <div class="label_content_title"><span class="left_icon"></span><span class="left_title">业务标签</span></div>
+                <div class="label_content_tree left">
+                    <div class="label_tree_zone">
+                        <ul id="commonTree" z-yree setting="mySetting" znodes="labGroups" currentselect="currentSelect" class="ztree diy_ztree sdiy_ztree diy_red_ztree"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="label_content_right">
+            
+                <div class="label_right_content">
+                    <div class="label-main-item-common" ng-show="ismainwindow == 'showlabel'" ng-repeat="comm in myInitLabel">
+                        <a href="javascript:;" ng-class="{'label-common-adddelete': comm.showdelete}" class="label-common-delete" ng-show="deleteMask" ng-click="addLabelDelete(comm)">
+                            <i></i>
+                            <span></span>
+                        </a>
+                        <div class="label-common-header">
+                            <div class="common-header-left" ng-bind="comm.labName"></div>
+                            <div class="common-header-right">
+                                <!--<a href="javascript:;" class="header-right-b" ng-click="extractLabel(comm)"></a>-->
+                                <div class="header-right-a  label-red label-font-weight">
+                                    <span ng-bind="comm.labCstCount==null?0:comm.labCstCount"></span>
+                                    <span class="label-black">人</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="label-common-content" ng-bind="comm.labInfo"></div>
+                        <div class="label-common-footer">
+                            <div class="common-footer-left">
+                                <div class="footer-left-a">
+                                    <span>提取次数：</span>
+                                    <span class="label-font-weight label-black" ng-bind="comm.labExpCount==null?0:comm.labExpCount"></span>
+                                    <span class="label-font-weight label-black">次</span>
+                                </div>
+                                <div class="footer-left-b">
+                                    <span>最新数据时间：</span><span ng-bind="comm.exectime"></span>
+                                </div>
+                            </div>
+                            <div class="common-footer-right">
+                                <a href="javascript:;" ng-click="seeLabelModalOpen(comm)">查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--添加标签-->
+<script type="text/ng-template" id="addlabel.html" ng-controller="labelBusinessController">
+    <div id="detailscope">
+        <div class="modal-header create-label-header common-extract-header">
+            <h3 class="modal-title common-extract-title" >添加标签</h3>
+            <div class="common-extract-rightbtn">
+                <span class="btn btn-red" ng-click="submitRoles()" >提交</span>
+                <span class="btn btn-default fontWeight" ng-click="resetRoles()" >重置</span>
+                <span class="btn btn-default fontWeight" ng-click="cancel()">返回</span>
+            </div>
+        </div>
+        <div class="modal-body label-show-list">
+           <!-- <a href="javascript:;" class="org-check-a" ng-show="ischeck">
+                <span></span>
+            </a>-->
+            <form class="form-horizontal clearfix" role="form">
+                <div class="table-form">
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td class="textAlgin-right" width="150">标签名称:</td>
+                                <td class="textAlgin-left">
+                                    <input class="form-control auto-width" ng-model="cLabel.name" />
+                                </td>
+                                <td class="textAlgin-right">标签编号:</td>
+                                <td class="textAlgin-left"><span ng-bind="cLabel.order"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="textAlgin-right" width="150">标签描述:</td>
+                                <td class="textAlgin-left" colspan="3">
+                                    <textarea rows="3" class="form-control"  ng-model="cLabel.describe"></textarea>
+                                </td>
+                            </tr>
+                           <!-- <tr>
+                                <td class="textAlgin-right" width="150">创建人:</td>
+                                <td class="textAlgin-left" colspan="3"><span ng-bind="cLabel.createdBy"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="textAlgin-right" width="150">创建时间:</td>
+                                <td class="textAlgin-left" colspan="3"><span ng-bind="cLabel.createdTime"></span></td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="label-custom-type">
+                    <table class="table "><tbody>
+                        <tr>
+                        <td class="textAlgin-right no-top-border" width="150">客户类型:</td>
+                        <td class="textAlgin-left no-top-border" colspan="3">
+                            <select class="form-control auto-width custype" ng-change="changeCstType(cLabel.customerType)" ng-model="cLabel.customerType" ng-options="item.value as item.name for item in customTypes"></select>
+                        </td>
+                        </tr>
+                    </tbody></table>
+                </div>
+                <div>
+                    <label class="">满足以下任一规则</label>
+                    <div class="role-content clearfix">
+                        <div class="role-content clearfix" ng-repeat="item in cLabel.roles">
+                            <label class="role-label">规则<span ng-bind="$index+1"></span></label>
+                            <a href="javascript:;" ng-hide="ischeck" ng-click="removeRoles(item.id)" class="role-a">删除规则</a>
+                            <div class="role-div">
+                                <div class=" role-div-cdi clearfix" ng-repeat="otherRole in item.condiction">
+                                    <div class="col-sm-2" ng-repeat="ruleOpt in otherRole.operObj">
+                                        <select class="form-control" ng-model="ruleOpt.feature" ng-change="changeSelect(otherRole.id,item.id,ruleOpt.feature,$index)" ng-options="group.name for group in ruleOpt.options">
+                                            <option value="">请选择</option>
+                                        </select>
+                                    </div>
+
+									<div class="col-sm-2">
+                                    	<select class="form-control" ng-model="otherRole.feaRuleSymbol" ng-hide="otherRole.curSelect.object.isoption!=1">
+                                        	<option value="等于">等于</option>
+                                            <option value="不等于">不等于</option>
+                                        </select>
+										<select class="form-control" ng-model="otherRole.feaRuleSymbol" ng-show="otherRole.curSelect.object.isoption!=1">
+                                            <option value="大于">大于</option>                                        	
+                                            <option value="等于">等于</option>
+                                            <option value="小于">小于</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-sm-3">
+										<input type="text" class="form-control" ng-model="otherRole.value" class="form-control" placeholder="请输入" ng-show="otherRole.curSelect.object.isoption==2"/>
+                                        <div  zone-click skey="otherRole.isdropdown" sid="otherRole.id" class="role-mulselect-dropdown" ng-hide="otherRole.curSelect.object.isoption==2">
+                                            <input to-locate tid="{{otherRole.id+'ctree'}}" ng-click="clickDropdown(otherRole)" ng-model="otherRole.rightName" ng-value="otherRole.rightName" class="form-control" placeholder="点击选择" readonly/>
+                                            <div class="role-dropdown-choice " ng-show="otherRole.isdropdown">
+                                                <div ng-hide="otherRole.isTree">
+                                                     <ul class="role-dropdown-ul">
+                                                          <li class="choice-item-li" ng-repeat="drop in otherRole.feaObj">
+                                                               <div class="checkbox role-dropdown-checkbox">
+                                                                    <label class="role-dropdown-checkbox-label">
+                                                                         <input type="checkbox" name="drop.name" ng-model="drop.checked"/>
+                                                                         <span ng-bind="drop.name"></span></label>
+                                                               </div>
+                                                          </li>
+                                                     </ul>
+                                                </div>
+                                                                
+                                                <div  ng-show="otherRole.isTree">
+                                                     <div id="treeSelect" class="role-dropdown-ul">
+                                                         <ul super-check-tree zid="otherRole.id+'tr'" setting="myRoleSetting" znodes="otherRole.feaObj" class="ztree yid_ztree"></ul>
+                                                     </div>
+                                                </div>
+                                                                
+                                                <div class="role-dropdown-div">
+                                                    <div class="checkbox role-dropdown-submit">
+                                                         <input id="{{otherRole.id+'ctree'}}" type="button" class="form-control btn btn-success" value="确定" ng-click="submitSelect(otherRole)" />
+                                                    </div>
+                                                </div>
+                                             </div>
+                                        </div>
+                                    </div>
+                                    <div ng-hide="ischeck" class="role-row-a">
+                                        <a href="javascript:;" ng-click="removeRowRoles(otherRole)" class="role-a">删除行</a>
+                                    </div>
+                                </div>
+                                <div class="role-add-a">
+                                    <a href="javascript:;" class="" ng-click="addRowRoles(item.condiction)"><span class="role-add-btnword">+ 添加条件</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div to-locate tid="addbtn" pscope="app-modal-window" class="btn btn-default role-bth-default" ng-click="addRoles()"><span class="role-add-btn glyphicon glyphicon-plus-sign"></span><span id="addbtn" class="role-add-btnword">添加规则{{roleToken+1}}</span></div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</script>
+
+<!--查看详情-->
+<script type="text/ng-template" id="seeLabelDetail.html" ng-controller="labelBusinessController">
+    <div id="detailscope">
+        <div class="modal-header create-label-header common-extract-header">
+            <h3 class="modal-title common-extract-title" ng-show="ischeck">查看标签</h3>
+            <h3 class="modal-title common-extract-title" ng-hide="ischeck">修改标签</h3>
+            <div class="common-extract-rightbtn">
+                <span assign-span-button  modText="修改" moduleCode="app.system.label.business.update" class="btn btn-red" ng-click="modifyCLabel()" ng-show="ischeck">修改</span>
+                <span class="btn btn-success fontWeight" ng-click="saveModifyLabel(CLDetail)" ng-hide="ischeck">保存</span>
+                <span class="btn btn-default fontWeight" ng-click="cancel()">关闭</span>
+            </div>
+        </div>
+        <div class="modal-body label-show-list">
+            <a href="javascript:;" class="org-check-a" ng-show="ischeck">
+                <span></span>
+            </a>
+            <form class="form-horizontal clearfix" role="form">
+                <div class="table-form">
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td class="textAlgin-right" width="150">标签名称:</td>
+                                <td class="textAlgin-left"><input class="form-control auto-width" ng-model="CLDetail.label.labName" /></td>
+                                <td class="textAlgin-right">标签编号:</td>
+                                <td class="textAlgin-left"><span ng-bind="CLDetail.label.labCode"></span></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="textAlgin-right" width="150">覆盖客户数:</td>
+                                <td class="textAlgin-left color-red"><span ng-bind="CLDetail.label.labCstCount"></span><span>人</span></td>
+                                <td class="textAlgin-right">最近数据时间:</td>
+                                <td class="textAlgin-left"><span ng-bind="CLDetail.label.exectime"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="textAlgin-right" width="150">提取次数:</td>
+                                <td class="textAlgin-left color-red"><span ng-bind="CLDetail.label.labExpCount"></span><span>次</span></td>
+                                <td class="textAlgin-right">上次提取时间:</td>
+                                <td class="textAlgin-left"><span ng-bind="CLDetail.label.lastexptime"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="textAlgin-right" width="150">标签描述:</td>
+                                <td class="textAlgin-left" colspan="3">
+                                    <textarea rows="3" class="form-control"  ng-model="CLDetail.label.labInfo"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="textAlgin-right" width="150">创建人:</td>
+                                <td class="textAlgin-left" colspan="3"><span ng-bind="CLDetail.label.creator"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="textAlgin-right" width="150">创建时间:</td>
+                                <td class="textAlgin-left"><span ng-bind="CLDetail.label.createtime"></span></td>
+                                <td class="textAlgin-right">最近修改时间:</td>
+                                <td class="textAlgin-left"><span ng-bind="CLDetail.label.modifytime"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="label-custom-type">
+                    <table class="table "><tbody>
+                        <tr>
+                        <td class="textAlgin-right no-top-border" width="150">客户类型:</td>
+                        <td class="textAlgin-left no-top-border" colspan="3">
+                            <select class="form-control auto-width custype" ng-disabled="true" ng-model="CLDetail.label.customerType" ng-options="item.value as item.name for item in customTypes"></select>
+                        </td>
+                        </tr>
+                    </tbody></table>
+                </div>
+                <div>
+                    <label class="">满足以下任一规则</label>
+                    <div class="role-content clearfix">
+                        <div class="role-content clearfix" ng-repeat="item in CLDetail.rules">
+                            <label class="role-label">规则<span ng-bind="$index+1"></span></label>
+                            <a href="javascript:;" ng-hide="ischeck" ng-click="removeRoles(item.id)" class="role-a">删除规则</a>
+                            <div class="role-div">
+                                <div class=" role-div-cdi clearfix" ng-repeat="otherRole in item.condiction">
+                                    <div class="col-sm-2" ng-repeat="ruleOpt in otherRole.operObj">
+                                         <select class="form-control" ng-model="ruleOpt.feature" ng-change="changeSelect(otherRole.id,item.id,ruleOpt.feature,$index)" ng-options="group.name for group in ruleOpt.options">
+                                             <option value="">请选择</option>
+                                         </select>
+                                    </div>              
+                                    <div class="col-sm-2">
+                                    	<select class="form-control" ng-model="otherRole.feaRuleSymbol" ng-hide="otherRole.curSelect.object.isoption!=1">
+                                        	<option value="等于">等于</option>
+                                            <option value="不等于">不等于</option>
+                                        </select>
+										<select class="form-control" ng-model="otherRole.feaRuleSymbol" ng-show="otherRole.curSelect.object.isoption!=1">
+                                            <option value="大于">大于</option>                                        	
+                                            <option value="等于">等于</option>
+                                            <option value="小于">小于</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-3">
+										<input type="text" class="form-control" ng-model="otherRole.value" class="form-control" placeholder="请输入" ng-show="otherRole.curSelect.object.isoption==2"/>
+                                        <div zone-click skey="otherRole.isdropdown" sid="otherRole.id" class="role-mulselect-dropdown" ng-hide="otherRole.curSelect.object.isoption!=1">
+                                                            <input to-locate tid="{{otherRole.id+'minput'}}" pscope="app-modal-window" ng-click="clickDropdown(otherRole)" ng-model="otherRole.rightName" ng-value="otherRole.rightName" class="form-control" placeholder="点击选择" readonly/>
+                                                            <div class="role-dropdown-choice " ng-show="otherRole.isdropdown">
+                                                                <div  ng-hide="otherRole.isTree">
+                                                                    <ul class="role-dropdown-ul">
+                                                                        <li class="choice-item-li" ng-repeat="drop in otherRole.feaObj">
+                                                                            <div class="checkbox role-dropdown-checkbox">
+                                                                                <label class="role-dropdown-checkbox-label">
+                                                                                    <input type="checkbox" name="drop.name" ng-model="drop.checked"/>
+                                                                                    <span ng-bind="drop.name"></span></label>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+																<div  ng-show="otherRole.isTree">
+                                                                    <div id="treeSelect" class="role-dropdown-ul">
+                                                                        <ul super-check-tree zid="otherRole.id+'tr'" setting="myRoleSetting" znodes="otherRole.feaObj" class="ztree yid_ztree"></ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="role-dropdown-div">
+                                                                    <div class="checkbox role-dropdown-submit">
+                                                                        <input id="{{otherRole.id+'minput'}}" type="button" class="form-control btn btn-success" value="确定" ng-click="submitSelect(otherRole)" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                    </div>
+                                    <div ng-hide="ischeck" class="role-row-a">
+                                        <a href="javascript:;" ng-click="removeRowRoles(otherRole)" class="role-a">删除行</a>
+                                    </div>
+                                </div>
+                                <div class="role-add-a">
+                                    <a href="javascript:;" class="" ng-click="addRowRoles(item.condiction)"><span class="role-add-btnword">+ 添加条件</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div to-locate tid="addbtn" pscope="app-modal-window" class="btn btn-default role-bth-default" ng-click="addRoles()"><span class="role-add-btn glyphicon glyphicon-plus-sign"></span><span id="addbtn" class="role-add-btnword">添加规则{{roleToken+1}}</span></div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</script>

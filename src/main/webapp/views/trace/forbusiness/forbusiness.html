@@ -1,0 +1,225 @@
+<div ng-controller="forbusinessController" ng-init="initializeController()">
+    <div class="title-position box-shadow-1 clearfix">
+            <span class="title-client-p client-back" ng-click="backHis()"></span>
+            <h2>跟踪分析  > <span class="color-black">营销活动分析</span></h2>
+        </div>
+    <div class="client-search-zone">
+        <div id="forbusiness" class=" color-666 mb-20 mt-20">
+                <div class="main overView mb-20">
+                    <ul>
+                        <li >
+                            <div class="forsale-top ">
+                                <dl>
+                                    <p class="clearfix">
+                                        <dt class="dt-fl">活动名称：</dt>
+                                        <dd class="text-left black">{{expJob.jobName}}</dd>
+                                    </p>
+                                    <p>
+                                        <dt class="dt-fl">营销项目：</dt>
+                                       	<dd class="text-left black">{{expJob.jobProjname}}</dd>
+                                    </p>
+                                    <!-- <div>
+                                        <dt class="dt-fl">营销区域：</dt>
+                                        <dd class="text-right black">深圳市</dd>
+                                    </div> -->
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="text-center">
+                            <div class="forsale-top" >
+                                <dl>
+                                    <dt>活动预算</dt>
+                                    <dd><b class="black">{{expJob.jobBudget}}</b>万元</dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="text-center ">
+                            <div class="forsale-top" >
+                                <dl>
+                                    <dt>客消费金额</dt>
+                                    <dd><b class="black">{{followJob.consumeAmt}}</b>万元</dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="text-center " style="height: 102px;padding-right:0px;">
+                            <div class="forsale-top" >
+                                <dl>
+                                    <dt>投入产出比(ROI)</dt>
+                                    <dd><b style="color:#bd1022;">{{percent}}</b></dd>
+                                </dl>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="main  mb-20 border-1px box-shadow-1">
+                    <div class="main-title bg-white">
+                        跟踪单据详情
+                    </div>
+                    <div class="pd70">
+                        <div class="clearfix mt-20 mb-20">
+                            <dl id="billDetails">
+                                <dd class="left-dd">
+                                    <div class="customer-header-key">提取单号：</div>
+                                    <div class="black">{{expJob.jobOddNumber}}</div>
+                                </dd>
+                                <dd class="left-dd">
+                                    <div class="customer-header-key">申请时间：</div>
+                                    <div class="black">{{expJob.jobCreatetime}}</div>
+                                </dd>
+                                <dd class="left-dd">
+                                    <div class="customer-header-key">提取标签：</div>
+                                    <div class="black">{{expJob.jobLabName}}</div>
+                                </dd>
+                               <!--  <dd class="left-dd">
+                                    <div class="customer-header-key">营销地区：</div>
+                                    <div class="black">深圳市罗湖区</div>
+                                </dd> -->
+                                <dd class="clearfix">
+                                    <div class="customer-header-key">附加条件：</div>
+                                    <div class="black">{{expJob.jobExtratemplate}}</div>
+                                </dd>
+                                <dd>
+                                    <div class="customer-header-key title-top">用途说明：</div>
+                                    <div class="customer-input">
+                                        	{{expJob.jobDescribe}}
+                                    </div>
+                                </dd>
+                                <dd>
+                                    <div class="customer-header-key">跟踪周期：</div>
+                                    <div class="black">{{expJob.jobTrackStarttime}}～{{expJob.jobTrackEndtime}}</div>
+                                </dd>
+                                <dd class="clearfix">
+                                    <div class="customer-header-key">关键数据：</div>
+                                    <div class="Key-data">
+                                        <ul class="clearfix text-center">
+                                            <li class="dt-fl">
+                                                <dl>
+                                                    <dd>提取客户数</dd>
+                                                    <dd  class="blue-color">
+                                                        <stong class="blue-color">{{followJob.folCstcount}}</stong>个</dd>
+                                                </dl>
+                                            </li>
+                                            <li class="dt-fl">
+                                                <dl>
+                                                    <dd>总消费金额</dd>
+                                                    <dd  class="blue-color">
+                                                        <stong class="blue-color">{{followJob.consumeAmt}}</stong>万元</dd>
+                                                </dl>
+                                            </li>
+                                            <li class="dt-fl">
+                                                <dl>
+                                                    <dd>总消费次数</dd>
+                                                    <dd  class="blue-color">
+                                                        <stong class="blue-color">{{followJob.consumeCnt}}</stong>次</dd>
+                                                </dl>
+                                            </li>
+                                            <li class="dt-fl">
+                                                <dl>
+                                                    <dd>最高客单价</dd>
+                                                    <dd class="blue-color">
+                                                        <stong class="blue-color">{{followJob.maxPrice}}</stong>元</dd>
+                                                </dl>
+                                            </li>
+                                            <li class="dt-fl">
+                                                <dl>
+                                                    <dd>平均客单价</dd>
+                                                    <dd class="blue-color">
+                                                        <stong class="blue-color">{{followJob.avgPrice}}</stong>元</dd>
+                                                </dl>
+                                            </li>
+                                            <li class="dt-fl">
+                                                <dl>
+                                                    <dd>消费最多的子业态</dd>
+                                                    <dd class="blue-color">
+                                                        <stong class="blue-color">{{maxType}}</stong></dd>
+                                                </dl>
+                                            </li>
+                                            <li class="dt-fl">
+                                                <dl>
+                                                    <dd>消费最多的子品牌</dd>
+                                                    <dd class="blue-color">
+                                                        <stong class="blue-color">{{maxBrand}}</stong></dd>
+                                                </dl>
+                                            </li>
+                                          
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="main  mb-20 border-1px box-shadow-1">
+                    <div class="main-title bg-white">
+                        跟踪效果分析
+                    </div>
+                    <div class="mt-20 pd66 mb-20 ">
+                        <div id="visitTrend">
+                            <p ng-mouseenter="tips1 = true;" ng-mouseleave="tips1 = false;" class="chart-title">消费客户日流量</p>
+                            <div ng-show="tips1" class="chart-title-tips">
+                                <p>所跟踪客户每天到商场消费的客户量</p>
+                            </div>
+                            <div is-echarts option="visitTrend" class="visitTrend-content"></div>
+                        </div>
+                       <div id="dayConsumer">
+                            <p class="chart-title">日消费额与平均客单价</p>
+                            <div is-echarts option="dayConsumer" class="dayConsumer-content"></div>
+                        </div>
+                        <div class="clearfix mt-20">
+                            <div class=" fl margin-right">
+                                <p class="chart-title">消费子业态（TOP5）</p>
+                                <div is-echarts option="childFormatData" class="dealSum-content"></div>
+                            </div>
+                            <div class="fl">
+                                <p class="chart-title">消费品牌（TOP5）</p>
+                                <div is-echarts option="consumerBrand" class="dealSum-content"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div id="zfields" class="search-zone-fields boder-e3 mb-20 box-shadow-1 bg-f5">
+            <div class="list-title bg-white">跟踪客户列表
+                <span class="client-search-table-others fr">
+                    <a href="javascript:;" ng-click="doExport()" class="btn btn-black trace-btn-margin btn-padding">导出</a>
+                </span>
+            </div>
+            <div class="forsale-content forbusiness-content">
+                <div class="main boder-e3 table-responsive">
+                    <table class="table table-striped boder-1px">
+                        <thead>
+                            <tr class="bg-white">
+                                <th>序号</th>
+                                <th>姓名</th>
+                                <th>联系电话</th>
+                                <th>总消费金额</th>
+                                <th>总消费次数</th>
+                                <th>最高客单价</th>
+                                <th>平均客单价</th>
+                                <th>消费最多的子业态</th>
+                                <th>消费最多的品牌</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="cst in cstList">
+                                <td>{{(currentPage-1)*pageSize+$index+1}}</td>
+                                <td><a class="ng-binding" href="javascript:;">{{cst.cstname}}</a></td>
+                                <td>{{cst.mobileNoList}}</td>
+                                <td>{{cst.consumeAmt}}</td>
+                                <td>{{cst.consumeCnt}}</td>
+                                <td>{{cst.maxPrice}}</td>
+                                <td>{{cst.avgPrice}}</td>
+                                <td>{{cst.consFormatNames}}</td>
+                                <td>{{cst.brandsName}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-pagniation">
+                    <pagination max-size="5" rotate="false" boundary-links="true" total-items="TotalRows" items-per-page="pageSize" ng-change="pageChanged()" ng-model="currentPage" class="pagination-default" previous-text="上一页" next-text="下一页" first-text="首页" last-text="末页" style="margin: 0; display: block;">
+                    </pagination>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

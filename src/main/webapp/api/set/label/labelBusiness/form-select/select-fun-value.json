@@ -1,0 +1,129 @@
+[
+  {
+    "selectCode": "sin-01",
+    "selectList": [
+      {
+        "code": "s1",
+        "name": "小花"
+      },
+      {
+        "code": "s2",
+        "name": "小明"
+      },
+      {
+        "code": "s3",
+        "name": "小丽"
+      },
+      {
+        "code": "s4",
+        "name": "小和"
+      }
+    ]
+  },
+  {
+    "selectCode": "mul-01",
+    "selectList": [
+      {
+        "name": "dk",
+        "title": "大熊"
+      },
+      {
+        "name": "dk",
+        "title": "小丽"
+      },
+      {
+        "name": "dk",
+        "title": "李雷"
+      },
+      {
+        "name": "dk",
+        "title": "张伟"
+      },
+      {
+        "name": "dk",
+        "title": "小猫"
+      },
+      {
+        "name": "dk",
+        "title": "名人"
+      }
+    ]
+  },
+    {
+    "selectCode": "tree-01",
+    "selectList": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "年龄",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "30岁",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "40岁"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "50岁"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "20岁",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "60岁"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "70岁"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "80岁",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "90岁"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "10岁",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "11岁",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "12岁"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "13岁"
+        }
+      ]
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "field": "cometimes",
+    "describe": "到访次数"
+  },
+  {
+    "field": "money",
+    "describe": "认筹金额"
+  },
+  {
+    "field": "buysum",
+    "describe": "认购套数"
+  },
+  {
+    "field": "dealsum",
+    "describe": "签约套数"
+  },
+  {
+    "field": "backmoney",
+    "describe": "回款金额"
+  }
+]

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		">
+
+	<!--hessian
+	 -->
+	<bean id="httpRequestHandlerAdapter" class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter" />
+	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
+		
+	
+	<bean id="labelfollowjobServiceH" class="com.sxit.mgt.label.serviceimpl.ZhuoyueLabelfollowjobServiceImpl" />
+	<bean name="/followjobService.g" class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<property name="service" ref="labelfollowjobServiceH" />
+		<property name="serviceInterface" value="com.sxit.mgt.zhuoyue.label.api.ZhuoyueLabelfollowjobServiceInterface" />
+	</bean>
+	
+	<bean id="labelexpjobServiceH" class="com.sxit.mgt.label.serviceimpl.ZhuoyueLabelexpjobServiceImpl" />
+	<bean name="/labelexpjobService.g" class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<property name="service" ref="labelexpjobServiceH"/>
+		<property name="serviceInterface" value="com.sxit.mgt.zhuoyue.label.api.ZhuoyueLabelexpjobServiceInterface"/>
+	</bean>
+	
+	<bean id="UUMSynchServiceH" class="com.sxit.mgt.system.serviceimpl.UUMSynchServiceImpl" />
+	<bean name="/UUMSynchService.g" class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<property name="service" ref="UUMSynchServiceH"/>
+		<property name="serviceInterface" value="com.sxit.mgt.zhuoyue.label.api.UUMSynchInterface"/>
+	</bean>
+	
+	<bean id="organizationalUnitServiceH" class="com.sxit.wsClient.interfaceImpl.OrganizationalUnitServiceImpl" />
+	<bean name="/organizationalUnitService.g" class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<property name="service" ref="organizationalUnitServiceH"/>
+		<property name="serviceInterface" value="com.sxit.mgt.zhuoyue.label.api.OrganizationalUnitServiceInterface"/>
+	</bean>
+</beans>

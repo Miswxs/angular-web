@@ -1,0 +1,123 @@
+[
+  {
+    "id": 1,
+    "pId": -1,
+    "name": "卓越子公司1",
+    "isParent": true,
+    "childOuter": false,
+    "dropInner": false,
+    "open": true,
+    "drag": false,
+    "fatherOrg": "广州公司",
+    "orgId": "2054",
+    "orgCode": "fafdb",
+    "orgTypes": "区域公司/事业部",
+    "orgSonType": "A",
+    "describe": "this organition describe"
+  },
+  {
+    "id": 12,
+    "pId": 1,
+    "name": "地产公司",
+    "isParent": true,
+    "childOuter": false,
+    "dropInner": false,
+    "open": true,
+    "drag": false,
+    "fatherOrg": "广州公司",
+    "orgId": "2055",
+    "orgCode": "fafda",
+    "orgTypes": "区域公司/事业部",
+    "orgSonType": "B",
+    "describe": "this organition describe  for guest"
+  },
+  {
+    "id": 121,
+    "pId": 12,
+    "dropInner": false,
+    "name": "固定资产"
+  },
+  {
+    "id": 122,
+    "pId": 12,
+    "drag": false,
+    "dropInner": false,
+    "name": "固定资产2"
+  },
+  {
+    "id": 123,
+    "pId": 12,
+    "drag": false,
+    "dropInner": false,
+    "name": "固定资产3"
+  },
+  {
+    "id": 124,
+    "pId": 12,
+    "isParent": true,
+    "drag": false,
+    "childOuter": false,
+    "dropInner": false,
+    "name": "固定资产4",
+    "open": true
+  },
+  {
+    "id": 1241,
+    "pId": 124,
+    "drag": false,
+    "dropInner": false,
+    "name": "固定资产31"
+  },
+  {
+    "id": 1242,
+    "pId": 124,
+    "drag": false,
+    "dropInner": false,
+    "name": "固定资产32"
+  },
+  {
+    "id": 1243,
+    "pId": 124,
+    "drag": false,
+    "dropInner": false,
+    "name": "固定资产33"
+  },
+  {
+    "id": 13,
+    "pId": 1,
+    "drag": false,
+    "dropInner": false,
+    "name": "华南区域"
+  },
+  {
+    "id": 14,
+    "pId": 1,
+    "drag": false,
+    "dropInner": false,
+    "name": "其他分组"
+  },
+  {
+    "id": 2,
+    "pId": 0,
+    "name": "卓越子公司2",
+    "isParent": true,
+    "drag": false,
+    "childOuter": false,
+    "dropInner": false,
+    "open": true
+  },
+  {
+    "id": 21,
+    "pId": 2,
+    "drag": false,
+    "dropInner": false,
+    "name": "分公司"
+  },
+  {
+    "id": 22,
+    "pId": 2,
+    "drag": false,
+    "dropInner": false,
+    "name": "分公司二"
+  }
+]

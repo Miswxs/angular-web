@@ -1,0 +1,130 @@
+[
+  {
+    "groupKey": "c1",
+    "name": "标识信息",
+    "LevelTwo": [
+      {
+        "leftKey": "c1t1",
+        "operType": "oper1",
+        "valueType": "sinSelectType",
+        "selectCode":"sin-01",
+        "name": "从事行业"
+      },
+      {
+        "leftKey": "c1t2",
+        "operType": "oper2",
+        "valueType": "treeSelectType",
+        "selectCode":"tree-01",
+        "name": "工作职位"
+      }
+    ]
+  },
+  {
+    "groupKey": "c2",
+    "name": "基础信息",
+    "LevelTwo": [
+      {
+        "leftKey": "c2t1",
+        "operType": "oper2",
+        "valueType": "mulSelectType",
+        "selectCode":"mul-01",
+        "name": "姓别"
+      },
+      {
+        "leftKey": "c2t2",
+        "operType": "oper2",
+        "valueType": "mulSelectType",
+        "selectCode":"mul-01",
+        "name": "年龄段"
+      },
+      {
+        "leftKey": "c2t3",
+        "operType": "oper2",
+        "valueType": "mulSelectType",
+        "selectCode":"mul-01",
+        "name": "婚姻状况"
+      }
+    ]
+  },
+  {
+    "groupKey": "c3",
+    "name": "意向信息",
+    "LevelTwo": [
+      {
+        "leftKey": "9901",
+        "operType": "oper1",
+        "valueType": "sinSelectType",
+        "selectCode":"sin-01",
+        "name": "个人月收入"
+      },
+      {
+        "leftKey": "9902",
+        "operType": "oper2",
+        "valueType": "mulSelectType",
+        "selectCode": "mul-01",
+        "name": "家庭年收入"
+      },
+      {
+        "leftKey": "9903",
+        "operType": "oper1",
+        "valueType": "sinSelectType",
+        "selectCode":"sin-01",
+        "name": "其他收入"
+      }
+    ]
+  },
+  {
+    "groupKey": "c4",
+    "name": "已购房信息",
+    "LevelTwo": [
+      {
+        "leftKey": "9901",
+        "operType": "oper1",
+        "valueType": "sinSelectType",
+        "selectCode":"sin-01",
+        "name": "二手房"
+      },
+      {
+        "leftKey": "9902",
+        "operType": "oper1",
+        "valueType": "sinSelectType",
+        "selectCode":"sin-01",
+        "name": "市区房"
+      },
+      {
+        "leftKey": "9903",
+        "operType": "oper1",
+        "valueType": "sinSelectType",
+        "selectCode":"sin-01",
+        "name": "惠东房"
+      }
+    ]
+  },
+  {
+    "groupKey": "c5",
+    "name": "行为轨迹信息",
+    "LevelTwo": [
+      {
+        "leftKey": "9901",
+        "operType": "oper1",
+        "valueType": "sinSelectType",
+        "selectCode":"sin-01",
+        "name": "去Ktv"
+      },
+      {
+        "leftKey": "9902",
+        "operType": "oper2",
+        "valueType": "mulSelectType",
+        "selectCode":"mul-01",
+        "name": "出国旅游"
+      },
+      {
+        "leftKey": "9903",
+        "operType": "oper1",
+        "valueType": "sinSelectType",
+        "selectCode":"sin-01",
+        "name": "啦啦啦"
+      }
+    ]
+  }
+]

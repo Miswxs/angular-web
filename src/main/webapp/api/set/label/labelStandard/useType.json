@@ -1,0 +1,36 @@
+[
+  {
+    "groupKey": "c1",
+    "name": "项目营销",
+    "LevelTwo": [
+      {
+        "groupKey": "c1t1",
+        "name": "项目一"
+      },
+      {
+        "groupKey": "c1t2",
+        "name": "项目二"
+      },
+        {
+        "groupKey": "c1t3",
+        "name": "项目三"
+      }
+    ]
+  },
+  {
+    "groupKey": "c2",
+    "name": "客群分析"
+  },
+    {
+    "groupKey": "c3",
+    "name": "产品定位"
+  },
+    {
+    "groupKey": "c4",
+    "name": "客户回访"
+  },
+    {
+    "groupKey": "c5",
+    "name": "其他"
+  }
+]

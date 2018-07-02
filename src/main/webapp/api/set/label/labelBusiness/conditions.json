@@ -1,0 +1,2178 @@
+{
+	"conditionCommon": {
+		"rootTitle": "通用特征",
+		"supTitle": "通用特征",
+		"showSupTitle": false,
+		"list": [
+			{
+				"model": "sex",
+				"title": "性别",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "男",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "女",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "未知",
+						"value": "3",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "marriage",
+				"title": "婚姻",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "已婚",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "未婚",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "未知",
+						"value": "3",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "monthIncome",
+				"title": "月收入",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "5K以下",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "5-8K ",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "8-15K",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "15-25K",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "25-30K",
+						"value": "5",
+						"checked": false
+					},
+					{
+						"name": "30K以上",
+						"value": "6",
+						"checked": false
+					},
+					{
+						"name": "未知",
+						"value": "7",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "age",
+				"title": "年龄",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "20岁及以下",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "21-34岁",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "35-44岁",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "45-54岁",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "55岁及以上",
+						"value": "5",
+						"checked": false
+					},
+					{
+						"name": "未知",
+						"value": "6",
+						"checked": false
+					}
+				]
+			}
+		]
+	},
+	"intentClient": {
+		"rootTitle": "客户特征",
+		"supTitle": "意向客户",
+		"showSupTitle": true,
+		"list":[
+			{
+
+				"model": "investClientRegion",
+				"title": "意向区域",
+				"hasSubs": true,
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "华东区域",
+						"value": "1",
+						"checked": false,
+						"subs": [
+							{
+								"name": "不限",
+								"value": "-1",
+								"checked": true
+							},
+							{
+								"name": "上海",
+								"value": "11",
+								"checked": false
+							},
+							{
+								"name": "江苏",
+								"value": "12",
+								"checked": false
+							},
+							{
+								"name": "浙江",
+								"value": "13",
+								"checked": false
+							},
+							{
+								"name": "安徽",
+								"value": "14",
+								"checked": false
+							}
+						]
+					},
+					{
+						"name": "华南区域",
+						"value": "2",
+						"checked": false,
+						"subs": [
+							{
+								"name": "不限",
+								"value": "-1",
+								"checked": true
+							},
+							{
+								"name": "广东",
+								"value": "21",
+								"checked": false
+							},
+							{
+								"name": "广西",
+								"value": "22",
+								"checked": false
+							},
+							{
+								"name": "海南",
+								"value": "23",
+								"checked": false
+							},
+							{
+								"name": "香港",
+								"value": "24",
+								"checked": false
+							},
+							{
+								"name": "澳门",
+								"value": "25",
+								"checked": false
+							}
+						]
+					},
+					{
+						"name": "华北区域",
+						"value": "3",
+						"checked": false,
+						"subs": [
+							{
+								"name": "不限",
+								"value": "-1",
+								"checked": true
+							},
+							{
+								"name": "北京",
+								"value": "31",
+								"checked": false
+							},
+							{
+								"name": "天津",
+								"value": "32",
+								"checked": false
+							},
+							{
+								"name": "河北",
+								"value": "33",
+								"checked": false
+							},
+							{
+								"name": "山西",
+								"value": "34",
+								"checked": false
+							},
+							{
+								"name": "内蒙古",
+								"value": "35",
+								"checked": false
+							}
+						]
+					},
+					{
+						"name": "华中区域",
+						"value": "4",
+						"checked": false,
+						"subs": [
+							{
+								"name": "不限",
+								"value": "-1",
+								"checked": true
+							},
+							{
+								"name": "河南",
+								"value": "41",
+								"checked": false
+							},
+							{
+								"name": "湖北",
+								"value": "42",
+								"checked": false
+							},
+							{
+								"name": "湖南",
+								"value": "43",
+								"checked": false
+							}
+						]
+					}
+				]
+
+			},
+			{
+				"model": "intentClientIntentGrade",
+				"title": "意向等级",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "A",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "B",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "C",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "D",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "E",
+						"value": "5",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "intentClientIntentLayout",
+				"title": "意向户型",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "一室",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "二室",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "三室",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "四室",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "五室",
+						"value": "5",
+						"checked": false
+					},
+					{
+						"name": "五室以上",
+						"value": "6",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "intentClientIntentArea",
+				"title": "意向面积",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "25㎡及以下",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "26-45㎡",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "46-90㎡",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "91-120㎡",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "121-140㎡",
+						"value": "5",
+						"checked": false
+					},
+					{
+						"name": "141㎡及以上",
+						"value": "6",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "intentClientIntentType",
+				"title": "意向类型",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "别墅",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "洋房",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "普通多层",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "小高层",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "高层",
+						"value": "5",
+						"checked": false
+					},
+					{
+						"name": "超高层",
+						"value": "6",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "intentClientIntentPrice",
+				"title": "意向价格",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "经济住宅",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "普通住宅",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "高级住宅",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "顶级住宅",
+						"value": "4",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "intentClientKeyAction",
+				"title": "关键动作",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "参观样板间",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "做置业预算",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "邀请亲友到访",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "推荐他人到访",
+						"value": "4",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "intentClientProductAttention",
+				"title": "产品关注",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "价格",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "地段",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "环境",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "品牌",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "园林",
+						"value": "5",
+						"checked": false
+					},
+					{
+						"name": "户型",
+						"value": "6",
+						"checked": false
+					},
+					{
+						"name": "朝向",
+						"value": "7",
+						"checked": false
+					},
+					{
+						"name": "配套",
+						"value": "8",
+						"checked": false
+					},
+					{
+						"name": "教育",
+						"value": "9",
+						"checked": false
+					}
+				]
+			}
+		]
+	},
+	"investClient": {
+		"rootTitle": "客户特征",
+		"supTitle": "投资客户",
+		"showSupTitle": true,
+		"list":[
+			{
+
+				"model": "investClientInvestArea",
+				"title": "投资区域",
+				"hasSubs": true,
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "华东区域",
+						"value": "1",
+						"subs": [
+							{
+								"name": "不限",
+								"value": "-1",
+								"checked": true
+							},
+							{
+								"name": "上海",
+								"value": "11",
+								"checked": false
+							},
+							{
+								"name": "江苏",
+								"value": "12",
+								"checked": false
+							},
+							{
+								"name": "浙江",
+								"value": "13",
+								"checked": false
+							},
+							{
+								"name": "安徽",
+								"value": "14",
+								"checked": false
+							}
+						]
+					},
+					{
+						"name": "华南区域",
+						"value": "2",
+						"checked": false,
+						"subs": [
+							{
+								"name": "不限",
+								"value": "-1",
+								"checked": true
+							},
+							{
+								"name": "广东",
+								"value": "21",
+								"checked": false
+							},
+							{
+								"name": "广西",
+								"value": "22",
+								"checked": false
+							},
+							{
+								"name": "海南",
+								"value": "23",
+								"checked": false
+							},
+							{
+								"name": "香港",
+								"value": "24",
+								"checked": false
+							},
+							{
+								"name": "澳门",
+								"value": "25",
+								"checked": false
+							}
+						]
+					},
+					{
+						"name": "华北区域",
+						"value": "3",
+						"checked": false,
+						"subs": [
+							{
+								"name": "不限",
+								"value": "-1",
+								"checked": true
+							},
+							{
+								"name": "北京",
+								"value": "31",
+								"checked": false
+							},
+							{
+								"name": "天津",
+								"value": "32",
+								"checked": false
+							},
+							{
+								"name": "河北",
+								"value": "33",
+								"checked": false
+							},
+							{
+								"name": "山西",
+								"value": "34",
+								"checked": false
+							},
+							{
+								"name": "内蒙古",
+								"value": "35",
+								"checked": false
+							}
+						]
+					},
+					{
+						"name": "华中区域",
+						"value": "4",
+						"checked": false,
+						"subs": [
+							{
+								"name": "不限",
+								"value": "-1",
+								"checked": true
+							},
+							{
+								"name": "河南",
+								"value": "41",
+								"checked": false
+							},
+							{
+								"name": "湖北",
+								"value": "42",
+								"checked": false
+							},
+							{
+								"name": "湖南",
+								"value": "43",
+								"checked": false
+							}
+						]
+					}
+				]
+
+			},
+			{
+				"model": "investClientProductLayout",
+				"title": "投资产品户型",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "一室",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "二室",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "三室",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "四室",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "五室",
+						"value": "5",
+						"checked": false
+					},
+					{
+						"name": "五室以上",
+						"value": "6",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "investClientArea",
+				"title": "投资产品面积",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "25㎡及以下",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "26-45㎡",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "46-90㎡",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "91-120㎡",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "121-140㎡",
+						"value": "5",
+						"checked": false
+					},
+					{
+						"name": "141㎡及以上",
+						"value": "6",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "investClientType",
+				"title": "投资产品类型",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "别墅",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "洋房",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "普通多层",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "小高层",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "高层",
+						"value": "5",
+						"checked": false
+					},
+					{
+						"name": "超高层",
+						"value": "6",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "investClientPrice",
+				"title": "投资产品总价",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "经济住宅",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "普通住宅",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "高级住宅",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "顶级住宅",
+						"value": "4",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "investClientInvestType",
+				"title": "投资类别",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "收租投资型",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "占有投资型",
+						"value": "2",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "investClientOriginArea",
+				"title": "籍贯区域",
+				"options": [
+				]
+			},
+			{
+				"model": "investClientWorkArea",
+				"title": "工作区域",
+				"options": [
+				]
+			},
+			{
+				"model": "investClientEducation",
+				"title": "文化程度",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "小学",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "初中",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "高中",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "大学专科",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "大学本科",
+						"value": "5",
+						"checked": false
+					},
+					{
+						"name": "硕士研究生",
+						"value": "6",
+						"checked": false
+					},
+					{
+						"name": "博士研究生",
+						"value": "7",
+						"checked": false
+					},
+					{
+						"name": "其他",
+						"value": "8",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "investClientWorkIndustry",
+				"title": "从事行业",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "计算机/互联网/通信/电子",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "会计/金融/银行/保险",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "贸易/消费/制造/营运",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "制药/医疗",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "广告/媒体",
+						"value": "5",
+						"checked": false
+					},
+					{
+						"name": "房地产/建筑",
+						"value": "6",
+						"checked": false
+					},
+					{
+						"name": "专业服务/教育/培训",
+						"value": "7",
+						"checked": false
+					},
+					{
+						"name": "服务业",
+						"value": "8",
+						"checked": false
+					},
+					{
+						"name": "物流/运输",
+						"value": "9",
+						"checked": false
+					},
+					{
+						"name": "能源/原材料",
+						"value": "10",
+						"checked": false
+					},
+					{
+						"name": "政府/非赢利机构/其他",
+						"value": "11",
+						"checked": false
+					},
+					{
+						"name": "其他",
+						"value": "12",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "investClientLoanMethod",
+				"title": "贷款方式",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "抵押贷款",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "信用贷款",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "担保贷款",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "贴现贷款",
+						"value": "4",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "investClientAmount",
+				"title": "交易金额",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "100万以上",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "100万-150万",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "150万-200万",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "200万-300万",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "300万以上",
+						"value": "5",
+						"checked": false
+					}
+				]
+			}
+		]
+	},
+	"selfLiveClient": {
+		"rootTitle": "客户特征",
+		"supTitle": "自住客户",
+		"showSupTitle": true,
+		"list":[
+			{
+				"model": "selfLiveOriginArea",
+				"title": "籍贯区域",
+				"options": [
+				]
+			},
+			{
+				"model": "selfLiveWorkArea",
+				"title": "工作区域",
+				"options": [
+				]
+			},
+			{
+				"model": "selfLiveEducation",
+				"title": "文化程度",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "小学",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "初中",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "高中",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "大学专科",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "大学本科",
+						"value": "5",
+						"checked": false
+					},
+					{
+						"name": "硕士研究生",
+						"value": "6",
+						"checked": false
+					},
+					{
+						"name": "博士研究生",
+						"value": "7",
+						"checked": false
+					},
+					{
+						"name": "其他",
+						"value": "8",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "selfLiveWorkIndustry",
+				"title": "从事行业",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "计算机/互联网/通信/电子",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "会计/金融/银行/保险",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "贸易/消费/制造/营运",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "制药/医疗",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "广告/媒体",
+						"value": "5",
+						"checked": false
+					},
+					{
+						"name": "房地产/建筑",
+						"value": "6",
+						"checked": false
+					},
+					{
+						"name": "专业服务/教育/培训",
+						"value": "7",
+						"checked": false
+					},
+					{
+						"name": "服务业",
+						"value": "8",
+						"checked": false
+					},
+					{
+						"name": "物流/运输",
+						"value": "9",
+						"checked": false
+					},
+					{
+						"name": "能源/原材料",
+						"value": "10",
+						"checked": false
+					},
+					{
+						"name": "政府/非赢利机构/其他",
+						"value": "11",
+						"checked": false
+					},
+					{
+						"name": "其他",
+						"value": "12",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "selfLiveHousePlace",
+				"title": "房产区域",
+				"options": [
+				]
+			},
+			{
+				"model": "selfLiveHouseProject",
+				"title": "房产归属项目",
+				"options": [
+				]
+			},
+			{
+				"model": "selfLiveHouseType",
+				"title": "房产类型",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "别墅",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "洋房",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "普通多层",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "小高层",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "高层",
+						"value": "5",
+						"checked": false
+					},
+					{
+						"name": "超高层",
+						"value": "6",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "selfLiveHouseArea",
+				"title": "房产面积",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "25㎡及以下",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "26-45㎡",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "46-90㎡",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "91-120㎡",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "121-140㎡",
+						"value": "5",
+						"checked": false
+					},
+					{
+						"name": "141㎡及以上",
+						"value": "6",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "selfLiveHousePurpse",
+				"title": "置业目的",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "首次",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "改善",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "空巢",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "投资",
+						"value": "4",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "selfLiveHouseTranseType",
+				"title": "置业房产交易类型",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "一手交易",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "二手交易",
+						"value": "2",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "selfLiveLoanMethod",
+				"title": "贷款方式",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "抵押贷款",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "信用贷款",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "担保贷款",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "贴现贷款",
+						"value": "4",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "selfLiveAmount",
+				"title": "交易金额",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "100万以上",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "100万-150万",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "150万-200万",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "200万-300万",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "300万以上",
+						"value": "5",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "selfLiveHousePrice",
+				"title": "房产购买价值",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "经济住宅",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "普通住宅",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "高级住宅",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "顶级住宅",
+						"value": "4",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "selfLiveHousePriceNow",
+				"title": "房产当前价值",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1"
+					},
+					{
+						"name": "经济住宅",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "普通住宅",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "高级住宅",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "顶级住宅",
+						"value": "4",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "selfLiveFamilyIncome",
+				"title": "家庭年收入",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "20万以下",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "20万-30万",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "30万-40万",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "40万-50万",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "50万-100万",
+						"value": "5",
+						"checked": false
+					},
+					{
+						"name": "100万以上",
+						"value": "6",
+						"checked": false
+					}
+				]
+			}
+		]
+	},
+	"toLiveClient": {
+		"rootTitle": "客户特征",
+		"supTitle": "期房客户",
+		"showSupTitle": true,
+		"list":[
+			{
+
+				"model": "toLiveClient1",
+				"title": "户籍区域",
+				"options": [
+				]
+			},
+			{
+
+				"model": "toLiveClient2",
+				"title": "工作区域",
+				"options": [
+				]
+			},
+			{
+
+				"model": "toLiveClient3",
+				"title": "文化程度",
+				"options": [
+				]
+			},
+			{
+
+				"model": "toLiveClient4",
+				"title": "从事行业",
+				"options": [
+				]
+			},
+			{
+
+				"model": "toLiveClient5",
+				"title": "房产区域",
+				"options": [
+				]
+			},
+			{
+
+				"model": "toLiveClient6",
+				"title": "房产归属项目",
+				"options": [
+				]
+			},
+			{
+
+				"model": "toLiveClient7",
+				"title": "房产类型",
+				"options": [
+				]
+			},
+			{
+
+				"model": "toLiveClient8",
+				"title": "房产面积",
+				"options": [
+				]
+			},
+			{
+
+				"model": "toLiveClient9",
+				"title": "置业目的",
+				"options": [
+				]
+			},
+			{
+
+				"model": "toLiveClient10",
+				"title": "置业房产交易类型",
+				"options": [
+				]
+			},
+			{
+
+				"model": "toLiveClient11",
+				"title": "贷款方式",
+				"options": [
+				]
+			},
+			{
+
+				"model": "toLiveClient12",
+				"title": "交易金额",
+				"options": [
+				]
+			},
+			{
+
+				"model": "toLiveClient13",
+				"title": "房产购买价值",
+				"options": [
+				]
+			},
+			{
+
+				"model": "toLiveClient14",
+				"title": "家庭年收入",
+				"options": [
+				]
+			},
+			{
+
+				"model": "toLiveClientRegion",
+				"title": "意向区域",
+				"hasSubs": true,
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "华东区域",
+						"value": "1",
+						"checked": false,
+						"subs": [
+							{
+								"name": "不限",
+								"value": "-1",
+								"checked": true
+							},
+							{
+								"name": "上海",
+								"value": "11",
+								"checked": false
+							},
+							{
+								"name": "江苏",
+								"value": "12",
+								"checked": false
+							},
+							{
+								"name": "浙江",
+								"value": "13",
+								"checked": false
+							},
+							{
+								"name": "安徽",
+								"value": "14",
+								"checked": false
+							}
+						]
+					},
+					{
+						"name": "华南区域",
+						"value": "2",
+						"checked": false,
+						"subs": [
+							{
+								"name": "不限",
+								"value": "-1",
+								"checked": true
+							},
+							{
+								"name": "广东",
+								"value": "21",
+								"checked": false
+							},
+							{
+								"name": "广西",
+								"value": "22",
+								"checked": false
+							},
+							{
+								"name": "海南",
+								"value": "23",
+								"checked": false
+							},
+							{
+								"name": "香港",
+								"value": "24",
+								"checked": false
+							},
+							{
+								"name": "澳门",
+								"value": "25",
+								"checked": false
+							}
+						]
+					},
+					{
+						"name": "华北区域",
+						"value": "3",
+						"checked": true,
+						"subs": [
+							{
+								"name": "不限",
+								"value": "-1",
+								"checked": true
+							},
+							{
+								"name": "北京",
+								"value": "31",
+								"checked": false
+							},
+							{
+								"name": "天津",
+								"value": "32",
+								"checked": false
+							},
+							{
+								"name": "河北",
+								"value": "33",
+								"checked": false
+							},
+							{
+								"name": "山西",
+								"value": "34",
+								"checked": false
+							},
+							{
+								"name": "内蒙古",
+								"value": "35",
+								"checked": false
+							}
+						]
+					},
+					{
+						"name": "华中区域",
+						"value": "4",
+						"checked": false,
+						"subs": [
+							{
+								"name": "不限",
+								"value": "-1",
+								"checked": true
+							},
+							{
+								"name": "河南",
+								"value": "41",
+								"checked": false
+							},
+							{
+								"name": "湖北",
+								"value": "42",
+								"checked": false
+							},
+							{
+								"name": "湖南",
+								"value": "43",
+								"checked": false
+							}
+						]
+					}
+				]
+
+			},
+			{
+				"model": "toLiveClientIntentGrade",
+				"title": "意向等级",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "A",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "B",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "C",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "D",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "E",
+						"value": "5",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "toLiveClientIntentLayout",
+				"title": "意向户型",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "一室",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "二室",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "三室",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "四室",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "五室",
+						"value": "5",
+						"checked": false
+					},
+					{
+						"name": "五室以上",
+						"value": "6",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "toLiveClientIntentArea",
+				"title": "意向面积",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "25㎡及以下",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "26-45㎡",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "46-90㎡",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "91-120㎡",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "121-140㎡",
+						"value": "5",
+						"checked": false
+					},
+					{
+						"name": "141㎡及以上",
+						"value": "6",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "toLiveClientIntentType",
+				"title": "意向类型",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "别墅",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "洋房",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "普通多层",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "小高层",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "高层",
+						"value": "5",
+						"checked": false
+					},
+					{
+						"name": "超高层",
+						"value": "6",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "toLiveClientIntentPrice",
+				"title": "意向价格",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "经济住宅",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "普通住宅",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "高级住宅",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "顶级住宅",
+						"value": "4",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "toLiveClientKeyAction",
+				"title": "关键动作",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "参观样板间",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "做置业预算",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "邀请亲友到访",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "推荐他人到访",
+						"value": "4",
+						"checked": false
+					}
+				]
+			},
+			{
+				"model": "toLiveClientProductAttention",
+				"title": "产品关注",
+				"options": [
+					{
+						"name": "不限",
+						"value": "-1",
+						"checked": true
+					},
+					{
+						"name": "价格",
+						"value": "1",
+						"checked": false
+					},
+					{
+						"name": "地段",
+						"value": "2",
+						"checked": false
+					},
+					{
+						"name": "环境",
+						"value": "3",
+						"checked": false
+					},
+					{
+						"name": "品牌",
+						"value": "4",
+						"checked": false
+					},
+					{
+						"name": "园林",
+						"value": "5",
+						"checked": false
+					},
+					{
+						"name": "户型",
+						"value": "6",
+						"checked": false
+					},
+					{
+						"name": "朝向",
+						"value": "7",
+						"checked": false
+					},
+					{
+						"name": "配套",
+						"value": "8",
+						"checked": false
+					},
+					{
+						"name": "教育",
+						"value": "9",
+						"checked": false
+					}
+				]
+			}
+		]
+	},
+	"loseClient": {
+		"rootTitle": "客户特征",
+		"supTitle": "流失客户",
+		"showSupTitle": true,
+		"list":[
+			{
+				"model": "loseClient1",
+				"title": "户籍区域",
+				"options": [
+				]
+			},
+			{
+				"model": "loseClient2",
+				"title": "工作区域",
+				"options": [
+				]
+			},
+			{
+				"model": "loseClient3",
+				"title": "文化程度",
+				"options": [
+				]
+			},
+			{
+				"model": "loseClient4",
+				"title": "从事行业",
+				"options": [
+				]
+			},
+			{
+				"model": "loseClient5",
+				"title": "房产区域",
+				"options": [
+				]
+			},
+			{
+				"model": "loseClient6",
+				"title": "房产归属项目",
+				"options": [
+				]
+			},
+			{
+				"model": "loseClient7",
+				"title": "房产类型",
+				"options": [
+				]
+			},
+			{
+				"model": "loseClient8",
+				"title": "房产面积",
+				"options": [
+				]
+			},
+			{
+				"model": "loseClient9",
+				"title": "置业目的",
+				"options": [
+				]
+			},
+			{
+				"model": "loseClient10",
+				"title": "贷款方式",
+				"options": [
+				]
+			},
+			{
+				"model": "loseClient11",
+				"title": "交易金额",
+				"options": [
+				]
+			},
+			{
+				"model": "loseClient11",
+				"title": "房产购买价值",
+				"options": [
+				]
+			},
+			{
+				"model": "loseClient11",
+				"title": "家庭年收入",
+				"options": [
+				]
+			}
+		]
+	}
+}

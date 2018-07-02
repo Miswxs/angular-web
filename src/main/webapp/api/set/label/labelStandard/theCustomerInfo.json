@@ -1,0 +1,30 @@
+[
+  {
+    "field": "name",
+    "describe": "姓名"
+  },
+  {
+    "field": "sex",
+    "describe": "性别"
+  },
+  {
+    "field": "age",
+    "describe": "年龄段"
+  },
+  {
+    "field": "firstNumber",
+    "describe": "首选联系电话"
+  },
+  {
+    "field": "secondNumber",
+    "describe": "备选联系电话"
+  },
+  {
+    "field": "email",
+    "describe": "邮箱地址"
+  },
+  {
+    "field": "address",
+    "describe": "通讯地址"
+  }
+]

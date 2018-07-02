@@ -1,0 +1,83 @@
+[
+  {
+    "groupKey": "c1",
+    "name": "项目营销",
+    "selectHide": false,
+    "son": [
+      {
+        "groupKey": "c1t1",
+        "name": "项目一",
+        "selectHide": false,
+        "son": [
+          {
+            "groupKey": "c1t1d1",
+            "name": "项目一1",
+            "selectHide": false,
+            "son": [
+              {
+                "groupKey": "c1t1d11",
+                "name": "项目一11",
+                "selectHide": false,
+                "son": []
+              },
+              {
+                "groupKey": "c1t1d12",
+                "name": "项目一12",
+                "selectHide": false,
+                "son": []
+              }
+            ]
+          },
+          {
+            "groupKey": "c1t1d2",
+            "name": "项目一2",
+            "selectHide": false,
+            "son": []
+          },
+          {
+            "groupKey": "c1t1d3",
+            "name": "项目一3",
+            "selectHide": false,
+            "son": []
+          }
+        ]
+      },
+      {
+        "groupKey": "c1t2",
+        "name": "项目二",
+        "selectHide": false,
+        "son": []
+      },
+      {
+        "groupKey": "c1t3",
+        "name": "项目三",
+        "selectHide": false,
+        "son": []
+      }
+    ]
+  },
+  {
+    "groupKey": "c2",
+    "name": "客群分析",
+    "selectHide": false,
+    "son": []
+  },
+  {
+    "groupKey": "c3",
+    "name": "产品定位",
+    "selectHide": false,
+    "son": []
+  },
+  {
+    "groupKey": "c4",
+    "name": "客户回访",
+    "selectHide": false,
+    "son": []
+  },
+  {
+    "groupKey": "c5",
+    "name": "其他",
+    "selectHide": false,
+    "son": []
+  }
+]

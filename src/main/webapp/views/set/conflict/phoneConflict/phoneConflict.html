@@ -1,0 +1,117 @@
+<div ng-controller="phoneConflictController" ng-init="initializeController()">
+	<div class="title-position box-shadow-1 clearfix">
+		<h2>系统管理  > 客户冲突处理  > <span class="color-black">手机冲突处理</span></h2>
+	</div>
+
+	<div class="content">
+		<div class="content-main">
+			<div class="client-search-header box-shadow-1 bg-white">
+            	<ul class="clearfix">
+                    <li>
+                        <div class="client-search-header-title">姓名：</div>
+						<div class="client-search-header-keyword rights-management">
+                            <input type="text" class="form-control" placeholder="请输入客户姓名" ng-model="cstName">
+                        </div>
+					</li>
+                    <li>
+                        <div class="client-search-header-title">手机：</div>
+						<div class="client-search-header-keyword rights-management">
+                            <input type="text" class="form-control" placeholder="请输入手机号" ng-model="mobile">
+                        </div>	
+					</li>
+                    <li>
+                        <div class="client-search-header-title">证件号：</div>
+						<div class="client-search-header-keyword rights-management">
+                            <input type="text" class="form-control" placeholder="请输入证件号" ng-model="cardId">
+                        </div>	
+					</li>
+                    <li class="group">
+						<div class="client-search-header-btn rights-management">
+                        	<a ng-click="search(cstName,mobile,cardId)" href="javascript:;" class="btn btn-black fontWeight" moduleCode="app.system.conflic.mobileConflic.search" modText="查询" assign-span-button><i class="glyphicon glyphicon-search"></i>查询</a>
+                        </div>
+					</li>
+                   
+                </ul>
+                <div class="table-responsive organization-table">
+                	<table class="table table-bordered">
+                        <thead>
+                            <tr>
+                            	<th rowspan="2">手机</th>
+                                <th colspan="3">被抢人</th>
+                                <th colspan="3">争抢人</th>
+                                <th rowspan="2">冲突时间</th>
+                                <th rowspan="2">操作</th>
+                            </tr>
+                            <tr>
+                            	<th>客户ID</th>
+                                <th>姓名</th>
+                                <th>证件号</th>
+                                <th>客户ID</th>
+                                <th>姓名</th>
+                                <th>证件号</th>
+                            </tr>
+                        </thead>
+                    	<tbody>
+                            <tr ng-repeat="conflic in conflics">
+                            	<td ng-bind="conflic.mobile"></td>
+                                <td><a href="javascript:;" ng-click="getClientDetail(conflic.cstfrom)">{{conflic.cstfrom}}</a></td>
+                                <td ng-bind="conflic.cstfromname"></td>
+                                <td ng-bind="conflic.cstfromcardid"></td>
+                                <td><a href="javascript:;" ng-click="getClientDetail(conflic.cstto)">{{conflic.cstto}}</a></td>
+                                <td ng-bind="conflic.csttoname"></td>
+                                <td ng-bind="conflic.csttocardid"></td>
+                                <td ng-bind="conflic.createtime"></td>
+                                <td><a  type="button" ng-click="getConflicDetail(conflic.mobile)">查看合并 </a></td>
+                            </tr>
+                            <tr ng-show="TotalRows == 0"><td colspan="9">暂时没有数据</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="project-page clearfix">
+                    <pagination max-size="10" rotate="false" boundary-links="true" total-items="TotalRows" items-per-page="pageSize"
+                        ng-change="pageChanged()" ng-model="currentPage" class="pagination-default"
+                        previous-text="上一页" next-text="下一页" first-text="首页" last-text="末页" style="margin: 0; display: block;">
+                    </pagination>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/ng-template" id="modifyOrganization.html" ng-controller="phoneConflictController">
+<div class="add-items">
+	<form class="form-horizontal" role="form" name="myForm" novalidate>
+		<div class="modal-header">
+			<h3 class="modal-title">选择归属人</h3>
+		</div>
+		
+		<div class="modal-body">
+			<h4 class="conflict-margin">冲突手机号 ：{{conflicDetail.mobile}}</h4>
+			<table class="table  table-bordered ">
+				<tr>
+					<th>客户ID</th>
+					<th>姓名</th>
+					<th>证件号</th>
+					<th>来源系统</th>
+					<th>来源项目</th>
+					<th>当前归属人</th>
+				</tr>
+				<tr ng-repeat="cst in conflicDetail.customers">
+					<td>{{cst.cstGUID}}</td>
+					<td>{{cst.cstName}}</td>
+					<td>{{cst.cardID}}</td>
+					<td>{{cst.app_name}}</td>
+					<td>{{cst.projName}}</td>
+					<td><input type="radio" name="agenKeep" ng-model="agenKeep" value="{{cst.cstGUID}}""></td>
+				</tr>
+			</table>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-success fontWeight" ng-disabled="myForm.$invalid" ng-click="merge()" moduleCode="app.system.conflic.mobileConflic.meger" modText="提交" assign-span-button>提交</button>
+			<button class="btn btn-cancle fontWeight" ng-click="cancer()">取消</button>
+		</div>
+		
+	</form>
+</div>
+</script>

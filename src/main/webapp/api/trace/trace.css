@@ -1,0 +1,62 @@
+.trace-header-header{
+    padding: 10px 50px;
+}
+.trace-header-header span,.trace-header-header select,.trace-header-header input,.trace-header-header a,.trace-header-header .item-left{
+    float: left;
+    font-weight: 600;
+    color:#666;
+}
+.trace-header-header a{
+    color: #fff;
+}
+.trace-header-header .long-input{
+    width:300px !important;
+}
+.trace-header-header span{
+    display: inline-block;
+    margin-top: 6px;
+}
+.trace-header-header .individual{
+    float: left;
+    overflow: auto;
+    height: 40px;
+    margin-top: 5px;
+}
+.trace-tips{
+        width: 100%;
+    height: 50px;
+    padding: 15px 0;
+    font-weight: 600;
+    color: #666;
+}
+.trace-tips b{
+    color:#333;
+}
+.trace-main-content{
+    height: 500px;
+    padding: 0px 10px;
+}
+.trace-content-table{
+   min-height: .01%;
+    overflow-x: auto;
+}
+.trace-table{
+    white-space: nowrap;
+}
+
+.trace-table thead ,.trace-table thead tr{
+    background-color: #fff !important;
+}
+
+.trace-color-green{
+    color:#5dde9d;
+}
+.trace-color-red{
+    color:#f15b6f;
+}
+.trace-color-gray{
+    color:#dadadf;
+}
+.trace-color-black{
+    color:#333;
+}

@@ -1,0 +1,37 @@
+<div ng-controller="modifyController" ng-init="initializeController()">
+
+        <div class="title-position box-shadow-1 clearfix">
+            <span  class="title-client-p client-back" ng-click="backHis()"></span>
+            <h2>系统管理  >  <span class="color-black">修改密码</span></h2>
+        </div>
+	<form name="modifyForm" novalidate ng-submit="doModify()">
+		<div class="signin-main modify-main">
+			<h2><img src="images/logo.png?201511251836" alt="卓越地产"></h2>
+			<ul>
+				<li>
+					<div class="signin-item signin-password clearfix">
+						<input type="password" ng-required="true" placeholder="请输入原密码" ng-model="obj.oldpass"  />
+					</div>
+				</li>
+				<li>
+					<div class="signin-item signin-password clearfix">
+						<input type="password" ng-required="true" placeholder="请输入新密码" ng-model="obj.newpass" />
+					</div>
+				</li>
+				<li>
+                    <div class="signin-item signin-password clearfix">
+						<input type="password" ng-required="true" placeholder="请确认新密码" ng-model="obj.renewpass" />
+					</div>
+				</li>
+				<li class="signin-btn clearfix">
+					<button ng-class="{invalid:signinForm.$invalid}" class="signin-login-btn" ng-disabled="signinForm.$invalid">修改</button>
+				</li>
+			</ul>
+		</div>
+	</form>
+	<!--<div class="slide-bg" time="5" slide-bg imgs="images/signin-bg/1.jpg,images/signin-bg/2.jpg,images/signin-bg/3.jpg,images/signin-bg/4.jpg">
+	</div>-->
+    <img  class="slide-bg"  src="images/signin-bg/1.jpg" alt="" />
+</div>
+
+

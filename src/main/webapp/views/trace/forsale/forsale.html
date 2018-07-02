@@ -1,0 +1,247 @@
+<div ng-controller="forsaleController" ng-init="initializeController()">
+    <div class="title-position box-shadow-1 clearfix">
+            <span class="title-client-p client-back" ng-click="backHis()"></span>
+            <h2>跟踪分析  > <span class="color-black">营销活动分析</span></h2>
+        </div>
+    <div class="client-search-zone">
+        <div id="forsale" class=" color-666 mb-20 mt-20">
+                <div class="main overView mb-20">
+                    <ul>
+                        <li >
+                            <div class="forsale-top ">
+                                <dl>
+                                    <div>
+                                        <dt class="dt-fl">活动名称：</dt>
+                                        <dd class="text-right black">{{job.jobName}}</dd>
+                                    </div>
+                                    <div>
+                                        <dt class="dt-fl">营销项目：</dt>
+                                        <dd class="text-right black">{{job.jobProjname}}</dd>
+                                    </div>
+                                    <!-- <div>
+                                        <dt class="dt-fl">营销区域：</dt>
+                                        <dd class="text-right black">深圳市</dd>
+                                    </div> -->
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="text-center">
+                            <div class="forsale-top" >
+                                <dl>
+                                    <dt>活动预算</dt>
+                                    <dd><b class="black">{{job.jobBudget}}</b>万元</dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="text-center ">
+                            <div class="forsale-top" >
+                                <dl>
+                                    <dt>成交金额</dt>
+                                    <dd><b class="black">{{followCnt.contractAmt}}</b>万元</dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="text-center " style="height: 102px;padding-right:0px;">
+                            <div class="forsale-top" >
+                                <dl>
+                                    <dt>投入产出比(ROI)</dt>
+                                    <dd><b style="color:#bd1022;">1/{{percent}}</b></dd>
+                                </dl>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="main  mb-20 border-1px box-shadow-1">
+                    <div class="main-title bg-white">
+                        跟踪单据详情
+                    </div>
+                    <div class="pd70">
+                        <div class="clearfix mt-20 mb-20">
+                            <dl id="billDetails">
+                                <dd class="left-dd">
+                                    <div class="customer-header-key">提取单号：</div>
+                                    <div class="black">{{job.jobOddNumber}}</div>
+                                </dd>
+                                <dd class="left-dd">
+                                    <div class="customer-header-key">申请时间：</div>
+                                    <div class="black">{{job.jobCreatetime}}</div>
+                                </dd>
+                                <dd>
+                                    <div class="customer-header-key">提取标签：</div>
+                                    <div class="black">{{job.jobLabName}}</div>
+                                </dd>
+                               <!--  <dd class="left-dd">
+                                    <div class="customer-header-key">营销地区：</div>
+                                    <div class="black">深圳市罗湖区</div>
+                                </dd> -->
+                                <dd class="clearfix">
+                                    <div class="customer-header-key">附加条件：</div>
+                                    <div class="black">{{job.jobExtratemplate}}</div>
+                                </dd>
+                                <dd class="clearfix">
+                                    <div class="customer-header-key title-top">用途说明：</div>
+                                    <div class="customer-input">
+                                        {{job.jobDescribe}}
+                                    </div>
+                                </dd>
+                                <dd>
+                                    <div class="customer-header-key">跟踪周期：</div>
+                                    <div class="black">{{job.jobTrackStarttime}}～{{job.jobTrackEndtime}}</div>
+                                </dd>
+                                <dd class="clearfix">
+                                    <div class="customer-header-key">关键数据：</div>
+                                    <div class="Key-data">
+                                        <ul class="clearfix text-center">
+                                            <li class="dt-fl">
+                                                <dl>
+                                                    <dd>提取客户数</dd>
+                                                    <dd>
+                                                        <stong class="blue-color">{{job.jobResCount}}</stong>个</dd>
+                                                </dl>
+                                            </li>
+                                            <li class="dt-fl">
+                                                <dl>
+                                                    <dd>到访次数</dd>
+                                                    <dd>
+                                                        <stong class="blue-color">{{followCnt.visitTimes}}</stong>次</dd>
+                                                </dl>
+                                            </li>
+                                            <li class="dt-fl">
+                                                <dl>
+                                                    <dd>认购套数</dd>
+                                                    <dd>
+                                                        <stong class="blue-color">{{followCnt.orderCnt}}</stong>套</dd>
+                                                </dl>
+                                            </li>
+                                            <li class="dt-fl">
+                                                <dl>
+                                                    <dd>认购面积</dd>
+                                                    <dd>
+                                                        <stong class="blue-color">{{followCnt.orderArea}}</stong>㎡</dd>
+                                                </dl>
+                                            </li>
+                                            <li class="dt-fl">
+                                                <dl>
+                                                    <dd>认购金额</dd>
+                                                    <dd>
+                                                        <stong class="blue-color">{{followCnt.orderAmt}}</stong>万元</dd>
+                                                </dl>
+                                            </li>
+                                            <li class="dt-fl">
+                                                <dl>
+                                                    <dd>签约套数</dd>
+                                                    <dd>
+                                                        <stong class="blue-color">{{followCnt.contractCnt}}</stong>套</dd>
+                                                </dl>
+                                            </li>
+                                            <li class="dt-fl">
+                                                <dl>
+                                                    <dd>签约面积</dd>
+                                                    <dd>
+                                                        <stong class="blue-color">{{followCnt.contractArea}}</stong>㎡</dd>
+                                                </dl>
+                                            </li>
+                                            <li class="dt-fl">
+                                                <dl>
+                                                    <dd>签约金额</dd>
+                                                    <dd>
+                                                        <stong class="blue-color">{{followCnt.contractAmt}}</stong>万元</dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="main  mb-20 border-1px box-shadow-1">
+                    <div class="main-title bg-white">
+                       	 跟踪效果分析
+                    </div>
+                    <div class="mt-20 pd66 mb-20 ">
+                        <div id="visitTrend">
+                            <p class="chart-title">客流到访趋势</p>
+                            <div is-echarts option="visitTrend" class="visitTrend-content"></div>
+                        </div>
+                        <div>
+                            <div class="fl margin-right">
+                                <p class="chart-title">客户转化率分析</p>
+                                <div style="display:block;position:absolute;top:80px;right:80px;">
+                                    <dl>
+                                        <dt>购转签：</dt>
+                                        <dd>{{cstPercent.orderTocon}}%</dd>
+                                        <dt>访转签：</dt>
+                                        <dd>{{cstPercent.visitTocon}}%</dd>
+                                        <dt>访转购：</dt>
+                                        <dd>{{cstPercent.visitToorder}}%</dd>
+                                    </dl>
+                                </div>
+                                <div is-echarts option="customerConversion" class="dealSum-content"></div>
+                            </div>
+                            <div class="fl">
+                                <p class="chart-title">到访次数分布</p>
+                                <div is-echarts option="visitNum" class="dealSum-content"></div>
+                            </div>
+                        </div>
+                        <div class="clearfix mt-20">
+                            <div class=" fl margin-right">
+                                <p class="chart-title">成交面积区段分析</p>
+                                <div is-echarts option="dealArea" class="dealSum-content"></div>
+                            </div>
+                            <div class="fl">
+                                <p class="chart-title">成交金额区段分析</p>
+                                <div is-echarts option="dealSum" class="dealSum-content"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div id="zfields" class="search-zone-fields boder-e3 mb-20 box-shadow-1 bg-f5">
+            <div class="list-title bg-white">跟踪客户列表
+                <span class="client-search-table-others fr">
+                    <a href="javascript:;" ng-click="doExport()" class="btn btn-black trace-btn-margin btn-padding">导出</a>
+                </span>
+            </div>
+            <div class="forsale-content">
+                <div class="main boder-e3">
+                    <table class="table  table-striped boder-1px">
+                        <thead>
+                            <tr class="bg-white">
+                                <th>序号</th>
+                                <th>姓名</th>
+                                <th>联系电话</th>
+                                <th>到访次数</th>
+                                <th>认购套数</th>
+                                <th>认购面积</th>
+                                <th>认购金额</th>
+                                <th>签约套数</th>
+                                <th>签约面积</th>
+                                <th>签约金额</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in cstList">
+                                <td>{{PageSize*(CurrentPage-1)+$index+1}}</td>
+                                <!-- <td>{{item.name}}</td> -->
+                                <td><a class="ng-binding" href="javascript:;">{{item.cstname}}</a></td>
+                                <td>{{item.mobileNoList}}</td>
+                                <td>{{item.visitTimes}}</td>
+                                <td>{{item.orderCnt}}</td>
+                                <td>{{item.orderArea}}</td>
+                                <td>{{item.orderAmt}}</td>
+                                <td>{{item.contractCnts}}</td>
+                                <td>{{item.contractArea}}</td>
+                                <td>{{item.contractAmt}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-pagniation">
+                    <pagination max-size="5" rotate="false" boundary-links="true" total-items="TotalRows" items-per-page="PageSize" ng-change="pageChanged()" ng-model="CurrentPage" class="pagination-default" previous-text="上一页" next-text="下一页" first-text="首页" last-text="末页" style="margin: 0; display: block;">
+                    </pagination>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

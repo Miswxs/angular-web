@@ -1,0 +1,304 @@
+{
+  "header": {
+    "code": 0,
+    "message": "成功"
+  },
+  "data": {
+    "isAuthenicated": "true",
+    "menu": [
+      {
+        "menuId": 1,
+        "menuName": "客户总览",
+        "className": "icon-home",
+        "navigation": "客户总览",
+        "href": "app.client.clientShow",
+        "path": "1.",
+          "isActive":true,
+        "recommend": true,
+        "dropdown": false,
+        "parentId": null,
+        "target": 1,
+        "subMenus": []
+      },
+      {
+        "menuId": 2,
+        "menuName": "客户画像",
+        "className": "icon-user",
+        "navigation": "客户画像",
+        "href": "app.client.protrait",
+        "path": "2.",
+        "recommend": true,
+        "dropdown": false,
+        "parentId": null,
+        "target": 1,
+        "subMenus": []
+      },
+      {
+        "menuId": 3,
+        "menuName": "客户查询",
+        "className": "icon-search",
+        "navigation": "客户查询",
+        "href": "app.client.clientSearch",
+        "path": "3.",
+        "recommend": true,
+        "dropdown": false,
+        "parentId": null,
+        "target": 1,
+        "subMenus": []
+      },
+      {
+        "menuId": 4,
+        "menuName": "跟踪分析",
+        "className": "icon-edit",
+        "navigation": "跟踪分析",
+        "href": "app.trace.traceMain",
+        "path": "4.",
+        "recommend": true,
+        "dropdown": false,
+        "parentId": null,
+        "target": 1,
+        "subMenus": []
+      },
+      {
+        "menuId": 5,
+        "menuName": "报表",
+        "className": "icon-file",
+        "navigation": "报表",
+        "href": "",
+        "path": "5.",
+        "recommend": true,
+        "dropdown": false,
+        "parentId": null,
+        "target": 1,
+        "subMenus": [
+          {
+            "menuId": 501,
+            "menuName": "售楼客户主题",
+            "className": null,
+            "navigation": "售楼客户主题",
+            "href": "",
+            "path": "5.501.",
+            "recommend": true,
+            "dropdown": false,
+            "parentId": 5,
+            "target": 1,
+            "subMenus": [
+              {
+                "menuId": 50101,
+                "menuName": "客户特征分布",
+                "className": null,
+                "navigation": "客户特征分布",
+                "href": "",
+                "path": "5.501.50101.",
+                "recommend": true,
+                "dropdown": false,
+                "parentId": 501,
+                "target": 1,
+                "subMenus": []
+              },
+              {
+                "menuId": 50102,
+                "menuName": "客户转化分析",
+                "className": null,
+                "navigation": "客户转化分析",
+                "href": "",
+                "path": "5.501.50102.",
+                "recommend": true,
+                "dropdown": false,
+                "parentId": 501,
+                "target": 1,
+                "subMenus": []
+              },
+              {
+                "menuId": 50103,
+                "menuName": "客户细化分析",
+                "className": null,
+                "navigation": "客户细化分析",
+                "href": "",
+                "path": "5.501.50103.",
+                "recommend": true,
+                "dropdown": false,
+                "parentId": 501,
+                "target": 1,
+                "subMenus": []
+              }
+            ]
+          },
+          {
+            "menuId": 502,
+            "menuName": "会员主题",
+            "className": null,
+            "navigation": "会员主题",
+            "href": "",
+            "path": "5.502.",
+            "recommend": true,
+            "dropdown": false,
+            "parentId": 5,
+            "target": 1,
+            "subMenus": [
+              {
+                "menuId": 50201,
+                "menuName": "会员消费统计",
+                "className": null,
+                "navigation": "会员消费统计",
+                "href": "",
+                "path": "5.502.50201.",
+                "recommend": true,
+                "dropdown": false,
+                "parentId": 502,
+                "target": 1,
+                "subMenus": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "menuId": 6,
+        "menuName": "系统管理",
+        "className": "icon-cog",
+        "navigation": "系统管理",
+        "href": "app.set",
+        "path": "6.",
+        "recommend": true,
+        "dropdown": false,
+        "parentId": null,
+        "target": 1,
+        "subMenus": [
+          {
+            "menuId": 601,
+            "menuName": "基础设置",
+            "className": null,
+            "navigation": "基础设置",
+            "href": "app.set.baseset",
+            "path": "6.601.",
+            "recommend": true,
+            "dropdown": false,
+            "parentId": 6,
+            "target": 1,
+            "subMenus": [
+              {
+                "menuId": 60101,
+                "menuName": "用户管理",
+                "className": null,
+                "navigation": "用户管理",
+                "href": "app.set.baseset.users",
+                "path": "6.601.60101.",
+                "recommend": true,
+                "dropdown": false,
+                "parentId": 601,
+                "target": 1,
+                "subMenus": []
+              },
+              {
+                "menuId": 60102,
+                "menuName": "角色管理",
+                "className": null,
+                "navigation": "角色管理",
+                "href": "app.set.baseset.myRole",
+                "path": "6.601.60102.",
+                "recommend": true,
+                "dropdown": false,
+                "parentId": 601,
+                "target": 1,
+                "subMenus": []
+              },
+              {
+                "menuId": 60103,
+                "menuName": "脱敏设置",
+                "className": null,
+                "navigation": "脱敏设置",
+                "href": "app.set.baseset.desensitizationSet",
+                "path": "6.601.60103.",
+                "recommend": true,
+                "dropdown": false,
+                "parentId": 601,
+                "target": 1,
+                "subMenus": []
+              }
+            ]
+          },
+          {
+            "menuId": 602,
+            "menuName": "标签管理",
+            "className": null,
+            "navigation": "标签管理",
+            "href": "app.set.label",
+            "path": "6.602.",
+            "recommend": true,
+            "dropdown": false,
+            "parentId": 6,
+            "target": 1,
+            "subMenus": [
+              {
+                "menuId": 60201,
+                "menuName": "标准标签",
+                "className": null,
+                "navigation": "标准标签",
+                "href": "app.set.label.labelstandard",
+                "path": "6.602.60201.",
+                "recommend": true,
+                "dropdown": false,
+                "parentId": 602,
+                "target": 1,
+                "subMenus": []
+              },
+              {
+                "menuId": 60202,
+                "menuName": "业务标签",
+                "className": null,
+                "navigation": "业务标签",
+                "href": "app.set.label.labelbusiness",
+                "path": "6.602.60202.",
+                "recommend": true,
+                "dropdown": false,
+                "parentId": 602,
+                "target": 1,
+                "subMenus": []
+              }
+            ]
+          },
+          {
+            "menuId": 603,
+            "menuName": "客户冲突处理",
+            "className": null,
+            "navigation": "客户冲突处理",
+            "href": "app.set.conflict",
+            "path": "6.603.",
+            "recommend": true,
+            "dropdown": false,
+            "parentId": 6,
+            "target": 1,
+            "subMenus": [
+              {
+                "menuId": 60301,
+                "menuName": "手机冲突处理",
+                "className": null,
+                "navigation": "手机冲突处理",
+                "href": "app.set.conflict.phoneConflict",
+                "path": "6.603.60301.",
+                "recommend": true,
+                "dropdown": false,
+                "parentId": 603,
+                "target": 1,
+                "subMenus": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "user": {
+      "userId": 1,
+      "userName": "admin",
+      "name": "admin",
+      "mobile": null,
+      "logo": null,
+      "mail": null,
+      "post": null,
+      "orgId": "1",
+      "orgName": "集团公司",
+      "userType": 1
+    }
+  }
+}

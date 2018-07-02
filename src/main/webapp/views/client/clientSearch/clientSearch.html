@@ -1,0 +1,381 @@
+<div ng-controller="clientSearchController" ng-init="initializeController()">
+    <div class="title-position  box-shadow-1 clearfix">
+        <h2>客户查询</h2>
+    </div>
+    <div class="client-search-zone">
+        <div id="ztips" class="search-zone-tips">
+            <label>上次申请记录：
+            	<span class="zone-blue">
+            	<a href="javascript:;" ng-click="expData()">{{record.exportId}}</a>
+            	</span> 于
+                <span>{{record.createTime}}</span>申请提取
+                <span class="zone-red">{{record.cstNum}}</span>个客户，提取状态为<span>{{record.jobProcessStatus !=null?record.jobProcessStatus:'未申请'}}</span>。</label>
+            <a href="#/app/traceMain" class="zone-blue">点击查看更多记录</a>
+        </div>
+        <div id="ztitles" class="search-zone-titles bg-white border-radius-2">
+            <label class="color-666">客户类型</label>
+            <!-- <a class="a-person" ng-click="myObj.isPerson = !myObj.isPerson" ng-class="{'active':myObj.isPerson}" href="javascript:;">个人客户</a>
+            <a class="a-company" ng-click="myObj.isPerson = !myObj.isPerson" ng-class="{'active':!myObj.isPerson}" href="javascript:;">企业客户</a> -->
+            <a class="a-person" ng-click="selectRadio(1)" ng-class="{'active':myObj.isPerson}" href="javascript:;">个人客户</a>
+            <a class="a-company" ng-click="selectRadio(2)" ng-class="{'active':!myObj.isPerson}" href="javascript:;">企业客户</a>
+        </div>
+        <div id="zlabels" class="search-zone-labels color-666">
+            <div class="zone-title bg-white">选择提取的标签</div>
+            <div class="zone-labels-content color-gray">
+                <div class="labels-content-title">标准标签</div>
+                <div class="labels-content-items">
+                    <div class="labels-content-item" ng-repeat="item in partStandardLabels">
+                        <a class="content-item color-666" href="javascript:;" ng-mouseenter="delayShow(item)" ng-mouseleave="clearTimes(item)" ng-click="addLabels(item)" ng-class="{'item-selected':item.doSelect}">
+                            <span ng-bind="item.labName"></span>
+                            <span>（<b ng-bind="item.labCstCount"></b>人）</span>
+                            <div class="item-dropdown color-666" ng-show="item.dropdown">
+                                <span class="item-drop-angle"></span>
+                                <span>客户类型：<b>{{item.labCstType=="1"?"个人":"企业"}}</b></span>
+                                <span>覆盖客户数：<b ng-bind="item.labCstCount"></b></span>
+                                <span>规则：<b ng-bind="item.labInfo"></b></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="labels-content-more">
+                    <a href="javascript:;" class="color-666" ng-click="showMore('standard')">
+                        <span ng-show="standardLabels.isMore == false">更多</span>
+                        <span ng-show="standardLabels.isMore == true">收起</span>
+                        <span ng-class="{false:'arrow-down',true:'arrow-up'}[standardLabels.isMore]"></span></a>
+                </div>
+                <div class="labels-content-title">业务标签</div>
+                <div class="labels-content-items ">
+                    <div class="labels-content-item" ng-repeat="item in partBusinessLabels">
+                        <a class="content-item color-666" href="javascript:;" ng-mouseenter="delayShow(item)" ng-mouseleave="clearTimes(item)" ng-click="addLabels(item)" ng-class="{'item-selected':item.doSelect}">
+                            <span ng-bind="item.labName"></span>
+                            <span>（<b ng-bind="item.labCstCount"></b>人）</span>
+                            <div class="item-dropdown color-666" ng-show="item.dropdown">
+                                <span class="item-drop-angle"></span>
+                                <span>客户类型：<b>{{item.labCstType=="1"?"个人":"企业"}}</b></span>
+                                <span>覆盖客户数：<b ng-bind="item.labCstCount"></b></span>
+                                <span>规则：<b ng-bind="item.labInfo"></b></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="labels-content-more">
+                    <a href="javascript:;" class="color-666" ng-click="showMore('business')">
+                        <span ng-show="businessLabels.isMore == false">更多</span>
+                        <span ng-show="businessLabels.isMore == true">收起</span>
+                        <span ng-class="{false:'arrow-down',true:'arrow-up'}[businessLabels.isMore]"></span></a>
+                </div>
+            </div>
+        </div>
+        <div id="ztags" class="search-zone-tags">
+            <div class="zone-title bg-white">已选标签</div>
+            <div class="zone-tags-content color-gray">
+                <div class="tags-content-labels">
+                    <span>符合以下</span>
+                    <select class="form-control tags-select" ng-model="labels" ng-options="hi.name for hi in tagsType"></select>
+                    <label ng-repeat="sl in myObj.selectLabels" ng-click="deleteLabels(sl)">
+                        <span ng-bind="sl.labName"></span>&nbsp;<span ng-bind="sl.labCstCount"></span>&nbsp;人
+                        <i class="glyphicon glyphicon-remove" ng-click="deleteLabels(sl)"></i>
+                    </label>
+                </div>
+                <div class="tags-content-foot">注：最多允许组合5个标签</div>
+            </div>
+        </div>
+        <div id="zothers" class="search-zone-others">
+            <div class="zone-title bg-white">
+                <!--<input id="others" type="checkbox" ng-model="myObj.current" />-->
+                <!-- <label class="checkbox-title" ng-click="setOthers(myObj)" ng-class="{'checkbox-title-checked':myObj.current}">-->其他补充条件
+                <!--</label>-->
+            </div>
+            <div class="zone-others-content color-gray">
+                <div class="others-content-row" ng-if="item.codValue2=='time'" ng-repeat="item in myObj.strComponent">
+                    <span>{{item.codName}}</span>
+                    <select class="form-control tags-select others-right" ng-model="item.evType" ng-options="evType.codName for evType in item.child" ng-change="strChange(item.evType,item.codValue1,item.codValue)">
+                        <option value="">请选择时间类型</option>
+                    </select>
+                    <input type="text" id="beginDate" ng-model="item.beginDate" onFocus="WdatePicker({lang:'zh-tw'})" class="form-control tags-select" readonly/>
+                    <span class="widthauto">--</span>
+                    <input type="text" id="endDate" ng-model="item.endDate" onFocus="WdatePicker({lang:'zh-tw'})" class="form-control tags-select others-right" readonly/>
+                </div>
+                <span>居住区域：</span>
+                <div class="box">
+                    <div  zone-click skey="myObj.liveZone.isdropdown" sid="myObj.liveId" class="role-mulselect-dropdown clearfix">
+                        <input  pscope="app-modal-window" ng-click="clickDropdown(myObj.liveZone)" ng-model="myObj.liveZoneValue" class="form-control " placeholder="点击选择" />
+                        <div class="dropdown-choice areaWidth " ng-show="myObj.liveZone.isdropdown">
+                            <div class="all-selected-warp clearfix">
+                                 <span class="selected-left-title">已选条件:</span>
+                                 <div class="selected-right-main" >
+                                    <span class="selected-list" ng-repeat="treeNode in myObj.treeCheckedTr">{{treeNode.codName}}
+                                          <i class="glyphicon glyphicon-remove" ng-click="deleteSelected(treeNode,'tr')"></i>
+                                    </span> 
+                                 </div>
+                            </div>
+                            <div>
+                                <div id="dcheckTree" class="role-dropdown-ul">
+                                    <ul super-check-tree zid="myObj.id+'tr'" setting="myRoleSettingTr" znodes="myObj.liveZone" class="ztree yid_ztree"></ul>
+                                </div>
+                            </div>
+                            <div class="submit-button-warp">
+                                <div class="checkbox role-dropdown-submit">
+                                    <input type="button" class="form-control btn btn-success form-drop" value="确定" ng-click="submitSelect(myObj.liveZone,myObj.liveZoneValue,'tr')" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <span>工作区域：</span>
+                <div class="box">
+                    <div zone-click skey="myObj.workZone.isdropdown" sid="myObj.workId" class="role-mulselect-dropdown clearfix">
+                        <input pscope="app-modal-window" ng-click="clickDropdown(myObj.workZone)" ng-model="myObj.workZoneValue" class="form-control " placeholder="点击选择" />
+                        <div class="dropdown-choice areaWidth " ng-show="myObj.workZone.isdropdown">
+                            <div class="all-selected-warp clearfix">
+                                 <span class="selected-left-title">已选条件:</span>
+                                 <div class="selected-right-main" >
+                                    <span class="selected-list" ng-repeat="treeNode in myObj.treeCheckedWr">{{treeNode.codName}}
+                                          <i class="glyphicon glyphicon-remove" ng-click="deleteSelected(treeNode,'wr')"></i>
+                                    </span> 
+                                 </div>
+                            </div>
+                            <div>
+                                <div id="dcheckTree" class="role-dropdown-ul">
+                                    <ul super-check-tree zid="myObj.id+'wr'" setting="myRoleSettingWr" znodes="myObj.workZone" class="ztree yid_ztree"></ul>
+                                </div>
+                            </div>
+                            <div class="submit-button-warp">
+                                <div class="checkbox role-dropdown-submit">
+                                    <input type="button" class="form-control btn btn-success form-drop" value="确定" ng-click="submitSelect(myObj.workZone,myObj.workZoneValue,'wr')" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>               
+                <div class="other-content-block" ng-if="item.codValue2=='String'" ng-repeat="item in myObj.strComponent">
+                    <span>{{item.codName}}</span>
+                    <select class="form-control tags-select others-right" ng-model="item.evType" ng-options="tt.codName for tt in item.child" ng-change="strChange(item.evType,item.codValue1,item.codValue)">
+                    	<option value="">请选择</option>
+                    </select>
+                </div>
+                <div class="others-content-row" ng-if="item.codValue2=='scope'" ng-repeat="item in myObj.strComponent">
+                    <span>{{item.codName}}</span>
+                    <input type="text" ng-model="item.begin" class="form-control tags-select" ng-blur="scopeChange(item.codName,item.codValue,item.codValue1,item.begin,'begin')"/>
+                    <span class="widthauto">--</span>
+                    <input type="text" ng-model="item.end" class="form-control tags-select " ng-blur="scopeChange(item.codName,item.codValue,item.codValue1,item.end,'end')"/>
+                    <!-- <span class="others-right others-left">岁</span> -->
+                </div>
+                <span>项目：</span>
+                <div class="box">
+                    <div  zone-click skey="myObj.proj.isdropdown" sid="myObj.projId" class="role-mulselect-dropdown clearfix">
+                        <input  pscope="app-modal-window" ng-click="clickDropdown(myObj.proj)" ng-model="myObj.projNames" class="form-control input-cursor-set form-bg" placeholder="点击选择" readonly="readonly" />
+                        <div class="dropdown-choice areaWidth" ng-show="myObj.proj.isdropdown">
+                            <div class="all-selected-warp clearfix">
+                                 <span class="selected-left-title">已选条件:</span>
+                                 <div class="selected-right-main" >
+                                    <span class="selected-list" ng-repeat="i in myObj.projChecked">{{i.codName}}
+                                          <i class="glyphicon glyphicon-remove" ng-click="deleteCheck(i)"></i>
+                                    </span> 
+                                    <span class="selected-list" ng-show="myObj.projChecked.length>=3">
+                                         <a href="javascript:;" ng-click="emptyArr()">清除所有</a>
+                                    </span>
+                                 </div>
+                            </div>  
+                            <div class="role-dropdown-ul clearfix">
+                                <ul class="select-ul">
+                                    <li ng-repeat="i in myObj.proj" class="clearfix">
+                                       <div class="clearfix select-list-warp">
+                                            <input type="checkbox" ng-model="i.checked" class="item-select" ng-click="doCheck(i)">
+                                            <span ng-bind="i.title" class="item-name"></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="submit-button-warp">
+                                <div class="checkbox role-dropdown-submit">
+                                    <input type="button" class="form-control btn btn-success form-drop" value="确定" ng-click="submitCheck(myObj.proj)" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="zfields" class="search-zone-fields">
+            <div class="zone-title bg-white">勾选提取客户字段</div>
+            <div class="zone-fields-content color-gray">
+                <div ng-show="myObj.isPerson" ng-repeat="item in fields">
+                    <label class="fields-label">{{item.fieldName}}</label>
+                    <div class="fields-content-list">
+                        <div class="list-item" ng-repeat="ba in item.child">
+                            <input type="checkbox" ng-model="ba.current" />
+                            <label class="checkbox-title fields-fontweight" ng-click="setOthers(ba)" ng-class="{'checkbox-title-checked':ba.current}" ng-bind="ba.codName"></label>
+                        </div>
+                    </div>
+                </div>
+                <div ng-show="!myObj.isPerson" ng-repeat="item in fields">
+                    <label class="fields-label">{{item.fieldName}}</label>
+                    <div class="fields-content-list">
+                        <div class="list-item" ng-repeat="ba in item.child">
+                            <input type="checkbox" ng-model="ba.current" />
+                            <label class="checkbox-title fields-fontweight" ng-click="setOthers(ba)" ng-class="{'checkbox-title-checked':ba.current}" ng-bind="ba.codName"></label>
+                        </div>
+                    </div>
+                </div>                                
+                <div class="fields-content-list submit-btn-group">
+                    <a ng-click="doSearch()" moduleCode="app.clientSearch.search" modText="查询" assign-span-button class="btn btn-danger btn-padding">查询</a>
+                    <a ng-click="doReset()" moduleCode="app.clientSearch.reset" modText="重置" assign-span-button class="btn btn-default btn-padding">重置</a>
+                </div>
+            </div>
+        </div>
+        <div ng-show="myObj.showPerview" class="search-zone-datas">
+            <div class="zone-title bg-white">客户数据预览</div>
+            <div class="zone-datas-content color-gray">
+                <label class="fields-label">找到<span>{{cstNum}}</span>个符合条件的客户，参考格式如下：</label>
+                <div>
+                    <table class="table" ng-show="customData.length>0" style="border-collapse: separate;">
+                        <thead>
+                            <tr>
+                                <td>序号</td>
+                                <td ng-repeat="item in myObj.selected">{{item.codName}}</td>                                
+                            </tr>
+                        </thead>
+                        <tbody id="showPerview">
+                            <tr ng-repeat="cd in customData">
+                                <td ng-bind="{{$index+1}}"></td>
+                                <td title="{{cd[item.codValue]}}" ng-repeat="item in myObj.selected">{{cd[item.codValue] | filterLength}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- <div ng-show="myObj.companyList">
+                    <table class="table" ng-show="companyData.length>0">
+                        <thead>
+                            <tr>
+                                <td>序号</td>
+                                <td ng-repeat="item in myObj.selected">{{item.codName}}</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="cd in companyData">
+                                <td ng-bind="{{$index+1}}"></td>
+                                <td ng-repeat="item in myObj.selected">{{cd.item.codValue}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> -->
+                <div class="fields-content-list submit-btn-group">
+                    <a id="zdatas" href="javascript:;" ng-click="doExport()" moduleCode="app.clientSearch.export" modText="申请导出" assign-a-button class="btn btn-danger btn-padding">申请导出</a>
+                    <!--<a href="javascript:;" ng-click="doSave()" class="btn btn-default btn-padding">保存</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/ng-template" id="extractInfo.html" ng-controller="clientSearchController">
+    <div class="add-items">
+        <form class="form-horizontal" role="form" name="myForm" novalidate>
+            <div class="modal-header no-bottom-border">
+                <h3 class="modal-title">填写提数用途与跟踪信息</h3>
+            </div>
+            <div class="modal-body set-user-padding">
+                <div class="table-form middle-align">
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td class="textAlgin-right" width="100">业务类型：</td>
+                                <td class="textAlgin-left">
+                                    <select class="form-control auto-width  minWidth" ng-model="einfo.followCurrent" ng-options="item.title for item in followType">
+                                        <option value="">请选择</option>
+                                    </select>
+                                </td>
+                                <!--<td class="textAlgin-right" width="100">用途类型：</td>
+                                <td class="textAlgin-left">
+                                    <select class="form-control auto-width  minWidth " ng-model="einfo.type" ng-options="item.title for item in purpose">
+                                        <option value="">请选择</option>
+                                    </select>
+                                </td>-->
+                                <td class="textAlgin-right" width="100">项目名称：</td>
+                                <td class="textAlgin-left p-relative" colspan="3" dropdown>
+                                    <input name="project" autocomplete="off" class="form-control auto-width  minWidth color-white" ng-change="changProjNameKeyword()" ng-model="einfo.project.title" placeholder="请选择" dropdown-toggle/>
+                                    <div style="color:red">
+                    					<span ng-show="myForm.project.$error.required">必填</span>
+                    					<!--<span ng-show="myForm.project.$error.minlength">太短</span>
+                    					<span ng-show="myForm.project.$error.maxlength">太长</span>-->
+                   					</div>
+									<i class="ectInfo-icon" dropdown-toggle></i>
+                                    <ul class="dropdown-menu ectInfo-drop">
+                                        <li ng-repeat="it in projectList" ng-click="dropChoose(it)">
+                                            <span ng-bind="it.title"></span>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="textAlgin-right" width="100">活动名称：</td>
+                                <td class="textAlgin-left">
+                                    <input name="activeName" class="form-control auto-width  minWidth" ng-model="einfo.activeName"/>
+									<div style="color:red">
+                    					<span ng-show="myForm.activeName.$error.required">必填</span>
+									</div>
+                                </td>
+                                <td class="textAlgin-right" colspan="2">活动预算：</td>
+                                <td class="textAlgin-left">
+                                    <input name="activeBudget" class="form-control ectBudget float-left" ng-model="einfo.activeBudget" />&nbsp;&nbsp;
+                                    <span class="float-left ectInfo-span">万元</span>
+									<div style="color:red">
+                    					<span ng-show="myForm.activeBudget.$error.required">必填</span>
+									</div>
+                                </td>
+                                <!--<td class="textAlgin-right">活动区域：</td>
+                                <td class="textAlgin-left">
+                                    <input class="form-control auto-width  minWidth" ng-model="einfo.activeZone" />
+                                </td>-->
+                            </tr>
+                            <tr>
+                                <td class="textAlgin-right" width="100">用途说明：</td>
+                                <td class="textAlgin-left" colspan="5">
+                                    <textarea rows="3" class="form-control" ng-model="einfo.describe"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right t_title notify-font-weight">跟踪状态：</td>
+                                <td class="textAlgin-left" colspan="5">
+                                    <input type="radio" class=" no-margin  marginRight" value="0" ng-model="einfo.followStatus" name="followStatus"/>不跟踪 &nbsp&nbsp&nbsp&nbsp
+                                    <input type="radio" class=" no-margin marginRight" value="1" ng-model="einfo.followStatus" name="followStatus"/>跟踪
+                                </td>
+                            </tr>
+                            <tr ng-show="einfo.followStatus==1">
+                                <td class="textAlgin-right" width="100">跟踪周期：</td>
+                                <td class="textAlgin-left" colspan="5">
+                                    <input id="followBegin" is-date class="form-control auto-width  minWidth color-white float-left" ng-model="einfo.followBegin" onFocus="WdatePicker({dateFmt:'yyyy-M-d',minDate:'%y-%M-%d'})" readonly />
+									<span class="float-left ectInfo-span">--</span>
+                                    <input id="followEnd" is-date class="form-control auto-width  minWidth color-white" ng-model="einfo.followEnd" onFocus="WdatePicker({dateFmt:'yyyy-M-d',minDate:'#F{$dp.$D(\'followBegin\')}',maxDate:'#F{$dp.$D(\'followBegin\',{d:180})}' })" readonly/>
+                                </td>
+                            </tr>                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer no-top-border">
+                <a href="javascript:;" class="btn btn-red btn-padding" ng-disabled="myForm.$invalid" ng-click="doSubmit()">提交</a>
+                <button class="btn btn-black btn-padding" ng-disabled="myForm.$invalid" ng-click="doSave()">保存</button>
+                <button class="btn btn-default btn-padding" ng-click="cancel()">取消</button>
+            </div>
+        </form>
+    </div>
+</script>
+
+
+
+<!--
+
+<div block-ui="main" class="ng-scope block-ui">
+    <div ng-show="state.blockCount > 0" class="block-ui-overlay block-ui-visible" ng-class="{ 'block-ui-visible': state.blocking }"></div>
+    <div ng-show="state.blocking" class="block-ui-message-container ">
+        <div class="block-ui-message">
+            <div class="loading-outer">
+                <div class="loading-logo"></div>
+                <div class="loading-circle"></div>
+            </div>
+        </div>
+        <div class="loading-text ng-binding">数据正在加载中</div>
+    </div>
+</div>-->

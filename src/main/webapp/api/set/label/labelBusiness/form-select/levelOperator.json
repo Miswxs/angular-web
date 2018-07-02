@@ -1,0 +1,26 @@
+{
+  "oper1": [
+    {
+        "operKey":"p1",
+      "name": "等于",
+      "code": "oper1-1"
+    },
+    {
+        "operKey":"p2",
+      "name": "不等于",
+      "code": "oper1-2"
+    }
+  ],
+  "oper2": [
+    {
+        "operKey":"p3",
+      "name": "包含",
+      "code": "oper2-1"
+    },
+      {
+          "operKey":"p4",
+      "name": "不包含",
+      "code": "oper2-2"
+    }
+  ]
+}

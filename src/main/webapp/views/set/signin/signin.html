@@ -1,0 +1,38 @@
+<div class="signin" ng-controller="SigninController" ng-init="initializeController()">
+    <div class="signin-header"><img src="images/loginlogo.png" alt=""/></div>
+	<form name="signinForm" novalidate ng-submit="signin()">
+		<div class="signin-main">
+            <h2>客户数据管理平台</h2>
+			<ul>
+				<li>
+					<div class="signin-item clearfix">
+						<input type="text" ng-required="true" placeholder="请输入账号" ng-model="username"  />
+					</div>
+				</li>
+				<li>
+					<div class="signin-item signin-password clearfix">
+						<input type="password" ng-required="true" placeholder="请输入密码" ng-model="password" />
+					</div>
+				</li>
+				<!--<li>
+					<div class="signin-item signin-code clearfix">
+						<div class="signin-code-input">
+							<input type="text" ng-required="true" placeholder="请输入验证码" ng-model="code"  />
+						</div>
+						<div class="signin-code-img"><img src="images/code.png" alt=""></div>
+					</div>
+				</li>-->
+				<li class="signin-btn clearfix">
+					<button ng-class="{invalid:signinForm.$invalid}" class="btn signin-login-btn" ng-disabled="signinForm.$invalid">{{loginBtnText}}</button>
+				</li>
+			</ul>
+		</div>
+	</form>
+    
+    <div class="signin-footer"><span>Copyright © 2007 Excellence Group All Rights Reserved. </span></div>
+	<!--<div class="slide-bg" time="5" slide-bg imgs="images/signin-bg/1.jpg,images/signin-bg/2.jpg,images/signin-bg/3.jpg,images/signin-bg/4.jpg">-->
+        <img  class="slide-bg"  src="images/signin-bg/1.jpg" alt="" />
+	<!--</div>-->
+</div>
+
+

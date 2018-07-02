@@ -1,0 +1,191 @@
+<div ng-controller="myRoleController" ng-init="initializeController()">
+    <div class="go-top-btn"></div>
+    <div class="content ">
+        <div class="title-position box-shadow-1 clearfix">
+            <h2>系统管理  > 基础设置  > <span class="color-black">角色</span></h2>
+        </div>
+        <div class="content-main">
+            <div class="client-search-header role_content_right">
+            	<ul class="clearfix">
+                    <li class="group">
+						<div class="client-search-header-btn rights-management">
+                        	<a ng-click="search(keyword)" href="javascript:;" class="btn btn-black" moduleCode="app.system.baseSet.role.search" modText="查询" assign-span-button><i class="glyphicon glyphicon-search"></i>查询</a>
+                            <a ng-click="roleAM('new',null);" moduleCode="app.system.baseSet.role.add" modText="添加" assign-span-button href="javascript:;" class="btn btn-red"><i class="glyphicon glyphicon-plus" ></i>添加</a>
+                        </div>
+						<div class="client-search-header-keyword rights-management role_user_searchinput"><input type="text" class="form-control" placeholder="请输入检索关键字：角色名称" ng-model="keyword"></div>	
+					</li>
+                </ul>
+                <div class="table-responsive organization-table">
+                	<table class="table table-bordered ">
+                    	<tbody>
+                        	<tr>
+                            	<th width="150">角色ID</th>
+                                <th width="350">角色名称</th>
+                                <th width="500">描述</th>
+                                <th>操作</th>
+                            </tr>
+                            <tr ng-repeat="l in list">
+                            	<td>{{l.roleId}}</td>
+                                <td>{{l.roleName}}</td>
+                                <td>{{l.description}}</td>
+                                <td>
+                                    <button class="btn btn-export btn-xs fontWeight " type="button" ng-click="setRowRole(l);" moduleCode="app.system.baseSet.role.menber" modText="成员" assign-span-button>成员</button>
+                                    <button class="btn btn-black btn-xs" type="button" ng-click="roleAM('modify',l);" moduleCode="app.system.baseSet.role.update" modText="修改" assign-span-button>修改</button>
+                                    <button class="btn btn-export btn-xs fontWeight" type="button" ng-show="l.roleFlag==2" ng-click="deleteRole(l);" moduleCode="app.system.baseSet.role.delete" modText="删除" assign-span-button>删除</button>
+                                </td>
+                            </tr>
+                            <tr ng-show="TotalRows == 0"><td colspan="7">暂时没有数据</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="project-page clearfix">
+                    <pagination max-size="16" rotate="false" boundary-links="true" total-items="TotalRows" items-per-page="PageSize"
+                        ng-change="pageChanged()" ng-model="currentPage" class="pagination-default"
+                        previous-text="上一页" next-text="下一页" first-text="首页" last-text="末页" style="margin: 0; display: block;">
+                    </pagination>
+                </div>
+			</div>
+        </div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="rowRole.html" ng-controller="myRoleController">
+<div class="add-items">
+	<form class="form-horizontal" role="form" name="myForm" novalidate>
+		<div class="modal-header">
+			<h3 class="modal-title"><span>系统用户</span> <span class="roles">角色成员</span></h3>
+		</div>
+		<div class="modal-body overAuto">
+			<div class="modal-body-left">
+                <ul id="commonTree" z-yree setting="mySetting" znodes="myZnodes" currentselect="currentSelect" class="ztree diy_ztree diy_set_tree"></ul>
+            </div>
+            <div class="modal-body-center">
+                <div class="body-center-top">
+                        <input type="text" class="form-control" placeholder="请输入用户姓名和账号" ng-model="keyword1">
+                        <a href="javascript:;" class="btn btn-black" ng-click="searchUser1(keyword1)">查询</a>
+                </div>
+                <div class="body-center-content">
+                    <table class="table table-bordered  table-striped">
+                        <thead>
+                            <tr>
+                                <td width="50" ng-click="selectAll(users,listCurrent)">
+                                    <input type="checkbox" ng-model="listCurrent" />
+                            <label class="checkbox-title fields-fontweight" ng-class="{'checkbox-title-checked':listCurrent}"></label>
+                                </td>
+                                <td>姓名</td>
+                                <td>账号</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="user in users" ng-click="listenSelect(users,user)">
+                                <td>
+                                    <input type="checkbox" ng-model="user.current" />
+                            <label class="checkbox-title fields-fontweight" ng-class="{'checkbox-title-checked':user.current}"></label>
+                                </td>
+                                <td ng-bind="user.name"></td>
+                                <td ng-bind="user.userName"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-body-icon">
+                <a href="javascript:;"  ng-click="addToRight()" class="body-icon-right btn btn-default"><span></span></a>
+                <a href="javascript:;"  ng-click="deleteToLeft()" class="body-icon-left btn btn-default"><span></span></a>
+            </div>
+            <div class="modal-body-right">
+                <div class="body-center-top">
+                     <input type="text" class="form-control" placeholder="请输入用户姓名和账号" ng-model="keyword2">
+                        <a href="javascript:;" ng-click="searchUser2(keyword2)" class="btn btn-black" >查询</a>
+                </div>
+                <div class="body-center-content">
+                    <table class="table table-bordered  table-striped">
+                        <thead>
+                            <tr>
+                                <td width="50">
+                                <input type="checkbox" ng-model="listCurrent2" />
+                            <label ng-click="selectAll2(roleUsers,listCurrent2)" class="checkbox-title fields-fontweight" ng-class="{'checkbox-title-checked':listCurrent2}"></label>
+                                    </td>
+                                <td>姓名</td>
+                                <td>账号</td>
+                                <td>组织</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="roleUser in roleUsers" ng-click="listenSelect2(roleUsers,roleUser)">
+                                <td> <input type="checkbox" ng-model="roleUser.current" />
+                            <label class="checkbox-title fields-fontweight" ng-class="{'checkbox-title-checked':roleUser.current}"></label></td>
+                                <td ng-bind="roleUser.name"></td>
+                                <td ng-bind="roleUser.userName"></td>
+                                <td ng-bind="roleUser.orgName"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-red" ng-disabled="myForm.$invalid" ng-click="modifySave(mrole,roleUsers)">提交</button>
+			<button class="btn btn-cancle fontWeight" ng-click="cancel()">取消</button>
+		</div>
+		
+	</form>
+</div>
+</script>
+
+<script type="text/ng-template" id="modifyAndSaveRole.html" ng-controller="myRoleController">
+<div class="add-items">
+	<form class="form-horizontal" role="form" name="myForm" novalidate>
+		<div class="modal-header">
+			<h3 class="modal-title" ng-show="rtype == 'modify'">修改角色</h3>
+            <h3 class="modal-title" ng-show="rtype == 'new'">新增角色</h3>
+		</div>
+		<div class="modal-body">
+			<table class="table  table-bordered  table-striped">
+				<tr>
+					<td width="20%" class="text-right t_title fontWeight">角色名称:</td>
+					<td width="80%" class="textAlgin-left">
+                        <input type="text" ng-model="rowRole.roleName" ng-disabled="rtype == 'modify'"  maxlength="20" class="form-control long-input float-left" placeholder="请输入角色名称" ng-model="keyword" required><span class="strong_span t_title" ng-show="rtype == 'new'">*名称必填</span>
+                    </td>
+				</tr>
+				
+				<tr>
+					<td class="text-right t_title fontWeight">描述:</td>
+					<td>
+                        <textarea type="text" cols="3"  class="form-control " maxlength="100" ng-model="rowRole.description"></textarea>
+                    </td>
+				</tr>
+                <!-- <tr>
+					<td class="text-right t_title fontWeight">脱敏权限:</td>
+					<td class="textAlgin-left" colspan="3">
+                        <input type="radio" class=" no-margin marginRight" value="2" ng-model="rowRole.delicateState" name="userStatus" />开通
+						<input type="radio" class=" no-margin marginRight" value="1" ng-model="rowRole.delicateState" name="userStatus" />关闭
+					</td>
+				</tr> -->
+                <tr>
+                    <td width="20%" class="text-right t_title fontWeight">功能权限:</td>
+					<td class="textAlgin-left">
+                        <div class="model_tree_div">
+                            <ul id="checkTree" check-tree setting="myRoleSetting" znodes="functions" class="ztree yid_ztree"></ul>
+                        </div>
+                    </td>
+				</tr>
+                <tr>
+                    <td width="20%" class="text-right t_title fontWeight">数据权限:</td>
+					<td class="textAlgin-left">
+                        <div class="model_tree_div">
+                            <ul id="checkTree2" check-tree setting="myRoleSetting" znodes="dataPowers" class="ztree yid_ztree"></ul>
+                        </div>
+                    </td>
+				</tr>
+			</table>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-red" ng-disabled="myForm.$invalid" ng-click="saveMA(rowRole)">提交</button>
+			<button class="btn btn-cancle fontWeight" ng-click="cancel()">取消</button>
+		</div>
+		
+	</form>
+</div>
+</script>

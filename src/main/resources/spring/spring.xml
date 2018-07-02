@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task-4.0.xsd
+        http://www.springframework.org/schema/cache 
+        http://www.springframework.org/schema/cache/spring-cache-4.0.xsd">
+
+	<!-- 引入jdbc配置文件 -->
+	<!-- <context:property-placeholder location="classpath:conf/jdbc.properties" /> -->
+	
+	<bean id="myProperties" class="com.sxit.spring.config.PropertiesUtil" scope="singleton">
+	    <property name="locations">
+	        <list>
+	        	<value>classpath:conf/jdbc.properties</value>
+	            <value>classpath:conf/mail.properties</value>
+	            <value>classpath*:conf/task-hessian-*.properties</value>
+	        </list>
+	    </property>
+	</bean>
+
+	<context:component-scan base-package="com.sxit" />
+	<context:component-scan base-package="uum" />
+	
+	<!-- <import resource="classpath*:spring/spring-*.xml" /> -->
+	
+	<import resource="classpath:spring/spring-mybatis-db.xml" />
+	<import resource="classpath:spring/spring-msg-clent.xml" />
+	<import resource="classpath:spring/spring-hessian.xml" />
+	<import resource="classpath:spring/spring-notifymanage-log.xml" />
+	<import resource="classpath:spring/spring-mvc.xml" />
+	<import resource="classpath:spring/spring-ehcache.xml" />
+	<import resource="classpath*:spring/spring-extends-*.xml"/>
+	
+	<!-- <import resource="classpath*:spring/spring-extends-*.xml"/> -->
+	<!-- 扫描文件（自动注入） -->
+	<!-- <context:component-scan base-package="com.sxit"
+		use-default-filters="false">
+		<context:include-filter type="regex"
+			expression="com.sxit.common.utils.*" />
+		<context:include-filter type="regex"
+			expression="com.sxit.mgt.*.controller.*" />
+		<context:include-filter type="regex"
+			expression="com.sxit.mgt.*.service.*" />
+		<context:include-filter type="regex"
+			expression="com.sxit.api.*.action.*" />
+		<context:include-filter type="regex"
+			expression="com.sxit.api.*.handler.*" />
+		<context:include-filter type="regex"
+			expression="com.sxit.api.*.service.*" />
+		<context:include-filter type="regex"
+			expression="com.sxit.dataCenter.*.action.*" />
+		<context:include-filter type="regex"
+			expression="com.sxit.dataCenter.*.handler.*" />
+		<context:include-filter type="regex"
+			expression="com.sxit.dataCenter.*.service.*" />
+		<context:include-filter type="regex"
+			expression="com.sxit.model.*.*" />
+	</context:component-scan> -->
+
+	<!-- 启用注解任务 -->
+	<task:annotation-driven />
+
+	<!-- 验证码图片
+	<bean id="captchaProducer" class="com.google.code.kaptcha.impl.DefaultKaptcha">
+		<property name="config">
+			<bean class="com.google.code.kaptcha.util.Config">
+				<constructor-arg>
+					<props>
+						<prop key="kaptcha.border">yes</prop>
+						<prop key="kaptcha.border.color">105,179,90</prop>
+						<prop key="kaptcha.textproducer.font.color">blue</prop>
+						<prop key="kaptcha.image.width">125</prop>
+						<prop key="kaptcha.image.height">40</prop>
+						<prop key="kaptcha.textproducer.font.size">35</prop>
+						<prop key="kaptcha.session.key">code</prop>
+						<prop key="kaptcha.textproducer.char.length">4</prop>
+						<prop key="kaptcha.obscurificator.impl">com.google.code.kaptcha.impl.ShadowGimpy</prop>
+						<prop key="kaptcha.noise.impl">com.google.code.kaptcha.impl.NoNoise</prop>
+					</props>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+	 -->
+	
+	
+
+	<!-- LDAP 数据同步 -->
+	<bean id="contextSourceTarget" class="org.springframework.ldap.core.support.LdapContextSource">
+		<property name="url" value="${ldap_host}" />
+		<property name="base" value="${ldap_baseDN}" />
+		<property name="userDn" value="${ldap_username}" />
+		<property name="password" value="${ldap_password}" />
+	</bean>
+	<bean id="contextSource"
+		class="org.springframework.ldap.transaction.compensating.manager.TransactionAwareContextSourceProxy">
+		<constructor-arg ref="contextSourceTarget" />
+	</bean>
+	<bean id="ldapTemplate" class="org.springframework.ldap.core.LdapTemplate">
+		<constructor-arg ref="contextSource" />
+	</bean>
+</beans>

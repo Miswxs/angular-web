@@ -1,0 +1,998 @@
+{
+  "roleList": [
+    {
+      "roleId": 1,
+      "orgId": "2054",
+      "roleName": "集团领导",
+      "orgName": "卓越集团",
+      "roleDes": "卓越集团的领导",
+      "members": [
+        {
+            "id":"1",
+            "current":true,
+            "name":"小黄",
+            "account":"xiaohuang"
+        },
+        {
+            "id":"2",
+            "current":true,
+            "name":"小中",
+            "account":"xiaohu"
+        },
+        {
+            "id":"3",
+            "current":true,
+            "name":"小有",
+            "account":"xiaohuang2"
+        },
+        {
+            "id":"4",
+            "current":true,
+            "name":"小人",
+            "account":"xiaohuaHHng"
+        },
+          {
+            "id":"5",
+              "current":true,
+            "name":"小黄3",
+            "account":"xiaohu3ang"
+        }
+      ],
+        "current":true,
+      "myRoleZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "一",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+      "dataZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "一",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+      "TotalPages": 20,
+      "TotalRows": 89,
+      "PageSize": 0
+    },
+    {
+      "roleId": 2,
+      "orgId": "2055",
+      "roleName": "集团部门主管",
+      "orgName": "卓越集团",
+      "roleDes": "卓越集团的部门主管",
+      "members": [],
+        "current":true,
+      "myRoleZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "二",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+      "dataZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "一",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+      "TotalPages": 20,
+      "TotalRows": 89,
+      "PageSize": 0
+    },
+    {
+      "roleId": 3,
+      "orgId": "2054",
+      "roleName": "集团部门员工",
+      "orgName": "卓越集团",
+      "roleDes": "卓越集团的部门员工",
+      "members": [],
+        "current":true,
+      "myRoleZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "三",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+      "dataZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "一",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+      "TotalPages": 20,
+      "TotalRows": 89,
+      "PageSize": 0
+    },
+    {
+      "roleId": 4,
+      "orgId": "2055",
+      "roleName": "集团领导",
+      "orgName": "卓越集团",
+      "roleDes": "卓越集团的领导",
+      "members": [],
+        "current":true,
+      "myRoleZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "四",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+      "dataZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "一",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+      "TotalPages": 20,
+      "TotalRows": 89,
+      "PageSize": 0
+    },
+    {
+      "roleId": 5,
+      "orgId": "2055",
+      "roleName": "集团领导",
+      "orgName": "卓越集团",
+      "roleDes": "卓越集团的领导",
+      "members": [],
+        "current":true,
+      "myRoleZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "五",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+      "dataZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "一",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+      "TotalPages": 20,
+      "TotalRows": 89,
+      "PageSize": 0
+    },
+    {
+      "roleId": 6,
+      "orgId": "2054",
+      "roleName": "集团领导",
+      "orgName": "卓越集团",
+      "roleDes": "卓越集团的领导",
+      "members": [],
+        "current":true,
+      "myRoleZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "六",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+      "dataZnodes": [
+        {
+          "id": 1,
+          "pId": 0,
+          "name": "一",
+          "open": true
+        },
+        {
+          "id": 11,
+          "pId": 1,
+          "name": "随意勾选 1-1",
+          "open": true
+        },
+        {
+          "id": 111,
+          "pId": 11,
+          "name": "随意勾选 1-1-1"
+        },
+        {
+          "id": 112,
+          "pId": 11,
+          "name": "随意勾选 1-1-2"
+        },
+        {
+          "id": 12,
+          "pId": 1,
+          "name": "随意勾选 1-2",
+          "open": true
+        },
+        {
+          "id": 121,
+          "pId": 12,
+          "name": "随意勾选 1-2-1"
+        },
+        {
+          "id": 122,
+          "pId": 12,
+          "name": "随意勾选 1-2-2"
+        },
+        {
+          "id": 2,
+          "pId": 0,
+          "name": "随意勾选 2",
+          "checked": true,
+          "open": true
+        },
+        {
+          "id": 21,
+          "pId": 2,
+          "name": "随意勾选 2-1"
+        },
+        {
+          "id": 22,
+          "pId": 2,
+          "name": "随意勾选 2-2",
+          "open": true
+        },
+        {
+          "id": 221,
+          "pId": 22,
+          "name": "随意勾选 2-2-1",
+          "checked": true
+        },
+        {
+          "id": 222,
+          "pId": 22,
+          "name": "随意勾选 2-2-2"
+        },
+        {
+          "id": 23,
+          "pId": 2,
+          "name": "随意勾选 2-3"
+        }
+      ],
+      "TotalPages": 20,
+      "TotalRows": 89,
+      "PageSize": 0
+    }
+  ],
+  "TotalPages": 20,
+  "TotalRows": 89,
+  "PageSize": 0
+}

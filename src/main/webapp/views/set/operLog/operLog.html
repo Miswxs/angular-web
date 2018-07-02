@@ -1,0 +1,67 @@
+<div ng-controller="operLogController" ng-init="initializeController()">
+	<div class="title-position box-shadow-1 clearfix">
+		<h1>操作日志</h1>
+		<h2><a class="glyphicon glyphicon-home" href=""><i>首页</i></a> > 管理> 日志查询> 操作日志</h2>
+	</div>
+
+	<div class="content">
+		<div class="content-main">
+			<div class="client-search-header box-shadow-1 border-top-3 red">
+            	<form class="form-horizontal clearfix" role="form">
+                    <ul class="clearfix">
+                        <li>
+                            <div class="client-search-header-title">操作日期：</div>
+                            <div class="client-search-header-input">
+                                <input type="text" ng-model="startDate" start-date-ymd class="form-control small-input" placeholder="开始时间" required>
+                                <input type="text" ng-model="endDate" end-date-ymd class="form-control small-input" placeholder="结束时间" required>
+                            </div>
+                            <div class="client-search-header-keyword rights-management"><input type="text" class="form-control" placeholder="输入账号或姓名查询" ng-model="keyword"></div>
+                        </li>
+                        <li>
+                            <div class="client-search-header-btn rights-management">
+                                <a ng-click="search()" href="javascript:;" class="btn btn-success1"><i class="glyphicon glyphicon-search"></i>查询</a>
+                            </div>
+                           <!--  <div class="client-search-header-btn rights-management">
+                                <a ng-click="doExport()" href="javascript:;" class="btn btn-export"><i class="glyphicon glyphicon-share-alt"></i>导出</a>
+                            </div> -->
+                        </li>
+                    </ul>
+                </form>
+                <div class="table-responsive organization-table">
+                	<table class="table table-bordered">
+                    	<tbody>
+                        	<tr>
+                            	<th>序号</th>
+                                <th>账号</th>
+                                <th>姓名</th>
+                                <th>IP</th>
+                                <th>功能模块</th>
+                                <th>操作类型</th>
+                                <th>操作时间</th>
+                            </tr>
+                             <tr ng-repeat="l in list">
+                            	<td>{{$index + 1}}</td>
+                                <td>{{l.userNameEn}}</td>
+                                <td>{{l.userNameCn}}</td>
+                                <td>{{l.ip}}</td>
+                                <td>{{l.subModules}}</td>
+                                <td>{{l.beHaive}}</td>
+                                <td>{{l.createTime}}</td>
+                            </tr> 
+                            <tr ng-show="TotalRows == 0"><td colspan="7">暂时没有数据</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="project-page clearfix">
+                    <pagination max-size="8" rotate="false" boundary-links="true" total-items="TotalRows" items-per-page="PageSize"
+                        ng-change="pageChanged()" ng-model="currentPage" class="pagination-default"
+                        previous-text="上一页" next-text="下一页" first-text="首页" last-text="末页" style="margin: 0; display: block;">
+                    </pagination>
+					<span class="pagination_span">共{{TotalRows}}条</span>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+

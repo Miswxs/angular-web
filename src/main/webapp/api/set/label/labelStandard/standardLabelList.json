@@ -1,0 +1,280 @@
+[
+    {
+        "groupId": 1,
+        "commonName": "客户特征",
+        "describe": "客户的特征",
+        "sort": 1,
+        "labelList": [
+            {
+                "id": "001",
+                "name": "时尚新贵",
+                "number": "9658",
+                "createby": "ktang1",
+                "createdtime": "2015-08-15 16:30",
+                "times": "528",
+                "status": "下线",
+                "coverPeople": "1524",
+                "latestDataTime": "2015-07-16 17:30",
+                "lastExtractTime": "2015-09-16 19:30",
+                "groupname": "标准标签",
+                "customType":"个人客户",
+                "describe": "我叫小时，我喜欢吃肉，喜欢打英雄联盟，赚钱杀猪，然后就可以天天吃肉",
+                "roles": [
+                     {
+                    "id": 1,
+                    "condiction": [
+                      {
+                        "leftkey": "创建日期",
+                        "oper": "大于",
+                        "rightvalue": "2016-04-26"
+                      },
+                      {
+                        "leftkey": "婚姻状态",
+                        "oper": "等于",
+                        "rightvalue": "已婚"
+                      },
+                      {
+                        "leftkey": "年龄段",
+                        "oper": "介于",
+                        "rightvalue": "18~55"
+                      }
+                    ]
+                  },
+                  {
+                    "id": 2,
+                    "condiction": [
+                      {
+                        "leftkey": "创建日期",
+                        "oper": "大于",
+                        "rightvalue": "2016-02-18"
+                      },
+                      {
+                        "leftkey": "已购房产套数(不含车位、商铺)",
+                        "oper": "大于等于",
+                        "rightvalue": "5"
+                      }
+                    ]
+                  }
+                ],
+                "order": "BJTS201614269UyK",
+                "showdelete": false
+      },
+            {
+                "id": "002",
+                "name": "吃货一族",
+                "number": "9337",
+                "createby": "ktang2",
+                "createdtime": "2015-08-15 16:30",
+                "coverPeople": "1524",
+                "latestDataTime": "2015-07-16 17:30",
+                "lastExtractTime": "2015-09-16 19:30",
+                "times": "528",
+                "status": "下线",
+                "groupname": "深圳工作",
+                "customType":"个人客户",
+                "describe": "我叫小二，我喜欢吃肉，喜欢打英雄联盟，赚钱杀猪，然后就可以天天吃肉",
+                "roles": [],
+                "order": "BJTS201624269UyK",
+                "showdelete": false
+      },
+            {
+                "id": "003",
+                "name": "码农",
+                "number": "9658",
+                "createby": "ktang3",
+                "createdtime": "2015-08-15 16:30",
+                "coverPeople": "1524",
+                "latestDataTime": "2015-07-16 17:30",
+                "lastExtractTime": "2015-09-16 19:30",
+                "times": "528",
+                "status": "上线",
+                "groupname": "深圳工作",
+                "customType":"个人客户",
+                "describe": "我叫小猫，我喜欢吃肉，喜欢打英雄联盟，赚钱杀猪，然后就可以天天吃肉",
+                "roles": [],
+                "order": "BJTS201634269UyK",
+                "showdelete": false
+      }
+
+    ]
+  },
+    {
+        "groupId": 2,
+        "commonName": "区域特征",
+        "describe": "区域的特征",
+        "sort": 3,
+        "labelList": [
+            {
+                "id": "001",
+                "name": "时尚新贵",
+                "number": "9344",
+                "createby": "ktang1",
+                "createdtime": "2015-08-15 16:30",
+                "coverPeople": "1524",
+                "latestDataTime": "2015-07-16 17:30",
+                "lastExtractTime": "2015-09-16 19:30",
+                "times": "528",
+                "status": "上线",
+                "groupname": "深工作",
+                "customType":"个人客户",
+                "describe": "我叫小时，我喜欢吃肉，喜欢打英雄联盟，赚钱杀猪，然后就可以天天吃肉",
+                "roles": [],
+                "order": "BJTS201604269UwK",
+                "showdelete": false
+      },
+            {
+                "id": "002",
+                "name": "吃货一族",
+                "number": "9337",
+                "createby": "ktang2",
+                "createdtime": "2015-08-15 16:30",
+                "coverPeople": "1524",
+                "latestDataTime": "2015-07-16 17:30",
+                "lastExtractTime": "2015-09-16 19:30",
+                "times": "528",
+                "status": "上线",
+                "groupname": "深圳工作",
+                "customType":"个人客户",
+                "describe": "我叫小二，我喜欢吃肉，喜欢打英雄联盟，赚钱杀猪，然后就可以天天吃肉",
+                "roles": [],
+                "order": "BJTS201604229UyK",
+                "showdelete": false
+      },
+
+            {
+                "id": "006",
+                "name": "C#开发",
+                "number": "52d42",
+                "createby": "ktang6",
+                "createdtime": "2015-08-15 16:30",
+                "coverPeople": "1524",
+                "latestDataTime": "2015-07-16 17:30",
+                "lastExtractTime": "2015-09-16 19:30",
+                "times": "528778",
+                "status": "上线",
+                "groupname": "深圳工d作",
+                "customType":"个人客户",
+                "describe": "我叫小三，我喜欢吃肉，喜欢打英雄联盟，赚钱杀猪，然后就可以天天吃肉",
+                "roles": [],
+                "order": "BJTS201604269ryK",
+                "showdelete": false
+      }
+    ]
+  },
+    {
+        "groupId": 3,
+        "commonName": "客户分类",
+        "describe": "客户的分类",
+        "sort": 2,
+        "labelList": [
+            {
+                "id": "001",
+                "name": "时尚新贵",
+                "number": "9658",
+                "createby": "ktang1",
+                "createdtime": "2015-08-15 16:30",
+                "coverPeople": "1524",
+                "latestDataTime": "2015-07-16 17:30",
+                "lastExtractTime": "2015-09-16 19:30",
+                "times": "528",
+                "status": "上线",
+                "groupname": "深工作",
+                "customType":"个人客户",
+                "describe": "我叫小时，我喜欢吃肉，喜欢打英雄联盟，赚钱杀猪，然后就可以天天吃肉",
+                "roles": [],
+                "order": "BJTS201604269Uyz",
+                "showdelete": false
+      },
+            {
+                "id": "002",
+                "name": "吃货一族",
+                "number": "9658",
+                "createby": "ktang2",
+                "createdtime": "2015-08-15 16:30",
+                "coverPeople": "1524",
+                "latestDataTime": "2015-07-16 17:30",
+                "lastExtractTime": "2015-09-16 19:30",
+                "times": "528",
+                "status": "上线",
+                "groupname": "深圳工作",
+                "customType":"个人客户",
+                "describe": "我叫小二，我喜欢吃肉，喜欢打英雄联盟，赚钱杀猪，然后就可以天天吃肉",
+                "roles": [],
+                "order": "BJTS201604269Uya",
+                "showdelete": false
+      },
+            {
+                "id": "003",
+                "name": "码农",
+                "number": "5412",
+                "createby": "ktang3",
+                "createdtime": "2015-08-15 16:30",
+                "coverPeople": "1524",
+                "latestDataTime": "2015-07-16 17:30",
+                "lastExtractTime": "2015-09-16 19:30",
+                "times": "528",
+                "status": "上线",
+                "groupname": "深圳工作",
+                "customType":"个人客户",
+                "describe": "我叫小猫，我喜欢吃肉，喜欢打英雄联盟，赚钱杀猪，然后就可以天天吃肉",
+                "roles": [],
+                "order": "BJTS201604269Uyq",
+                "showdelete": false
+      },
+            {
+                "id": "004",
+                "name": "前端开发",
+                "number": "5244",
+                "createby": "ktang4",
+                "createdtime": "2015-08-15 16:30",
+                "coverPeople": "1524",
+                "latestDataTime": "2015-07-16 17:30",
+                "lastExtractTime": "2015-09-16 19:30",
+                "times": "528",
+                "status": "上线",
+                "groupname": "深圳工作",
+                "customType":"个人客户",
+                "describe": "我叫小花，我喜欢吃肉，喜欢打英雄联盟，赚钱杀猪，然后就可以天天吃肉",
+                "roles": [],
+                "order": "BJTS201604269Uyl",
+                "showdelete": false
+      },
+            {
+                "id": "005",
+                "name": "Java开发",
+                "number": "5242",
+                "createby": "ktang5",
+                "createdtime": "2015-08-15 16:30",
+                "coverPeople": "1524",
+                "latestDataTime": "2015-07-16 17:30",
+                "lastExtractTime": "2015-09-16 19:30",
+                "times": "528",
+                "status": "上线",
+                "groupname": "深圳工作",
+                "customType":"个人客户",
+                "describe": "我叫小明，我喜欢吃肉，喜欢打英雄联盟，赚钱杀猪，然后就可以天天吃肉",
+                "roles": [],
+                "order": "BJTS201604269UoK",
+                "showdelete": false
+      },
+            {
+                "id": "006",
+                "name": "Nodejs开发",
+                "number": "9658",
+                "createby": "ktang5",
+                "createdtime": "2015-08-15 16:30",
+                "coverPeople": "1524",
+                "latestDataTime": "2015-07-16 17:30",
+                "lastExtractTime": "2015-09-16 19:30",
+                "times": "528",
+                "status": "上线",
+                "groupname": "深圳工作",
+                "customType":"个人客户",
+                "describe": "我叫小明，我喜欢吃肉，喜欢打英雄联盟，赚钱杀猪，然后就可以天天吃肉",
+                "roles": [],
+                "order": "BJTS201604269UpK",
+                "showdelete": false
+      }
+    ]
+  }
+]

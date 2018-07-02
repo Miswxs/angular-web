@@ -1,0 +1,119 @@
+<div ng-controller="traceMainController" ng-init="initializeController()">
+    <div class="title-position box-shadow-1 clearfix">
+        <h2>跟踪分析</h2>
+    </div>
+    <div class="content">
+        <div class="content-main">
+            <div class="trace-header-header bg-white border-1px clearfix">
+                <div class="individual">
+                    <span>申请时间：</span>
+                    <input type="text" ng-model="myTrace.startDate" class="form-control tags-select" is-date date-time="myTrace.startDate" readonly/>
+                    <span>--</span>
+ 					<input type="text" ng-model="myTrace.endDate" class="form-control tags-select to-right-5" is-date date-time="myTrace.endDate" readonly/>
+                 </div>
+                <div class="individual">
+                    <span>提取标签：</span>
+                    <select ng-model="myTrace.jobLabType" ng-options="item.name for item in extractLabels" class="form-control tags-select others-right">
+                       <option value="">请选择</option>                            
+                    </select>
+                	<select ng-model="myTrace.jobLab" ng-options="item.labName as item.labName for item in myTrace.jobLabType.child" class="form-control tags-select others-right">
+                       <option value="">请选择</option>                            
+                    </select>
+               </div>
+                <!-- <div class="individual">
+                    <span>用途分类：</span>
+                    <select class="form-control tags-select others-right" ng-model="myTrace.jobFor" ng-options="item.id as item.name for item in expUserFor">
+                    	<option value="">请选择</option>
+                    </select>
+                </div> -->
+                <div class="individual">
+                    <span>审批状态：</span>
+                    <select class="form-control tags-select others-right" ng-model="myTrace.jobProcessStatus" ng-options="item.id as item.name for item in approvalList">
+                    	<option value="">请选择</option>
+                    </select>
+                </div>
+                <div class="individual">
+                    <span>业务类型：</span>
+                    <select class="form-control tags-select others-right" ng-model="myTrace.jobTrackType" ng-options="item.id as item.name for item in followType">
+                    	<option value="">请选择</option>
+                    </select>
+                </div>
+                <div class="individual">
+                    <span>跟踪状态：</span>
+                    <select class="form-control tags-select others-right" ng-model="myTrace.jobTrack" ng-options="item.id as item.name for item in followStatus">
+                    	<option value="">请选择</option>
+                    </select>
+                </div>
+                <div class="individual">
+                    <span>活动名称：</span>
+                    <input type="text" class="form-control tags-select others-right long-input" ng-model="myTrace.searchTxt" />
+                </div>
+                <div class="individual">
+                    <a moduleCode="app.traceMain.search" modText="查询" assign-a-button ng-click="search(myTrace)" class="btn btn-danger others-right btn-padding">查询</a>
+                    <a moduleCode="app.traceMain.export" modText="导出" assign-a-button ng-click="exportList(myTrace)" class="btn btn-default btn-padding">导出</a>
+                </div>
+                
+            </div>
+            <div class="trace-tips">
+                <span>共查到 <b> {{TotalRows}}</b>条记录。</span>
+            </div>
+            <div class="trace-main-content bg-white border-1px clearfix">
+                <div class="trace-content-table">
+                    <table class="table table-striped trace-table" style="margin-bottom: 0px;">
+                        <thead>
+                            <tr>
+                                <th width="50">序号</th>
+                                <th width="100">申请单号</th>
+                                <th width="150">提取标签</th>
+                                <th width="100">附加条件</th>
+                                <th width="100">客户总数</th>
+                                <!-- <th width="100">用途分类</th> -->
+                                <th width="100">项目名称</th>
+                                <th width="100">活动名称</th>
+                                <th width="100">申请人</th>
+                                <th width="100">申请时间</th>
+                                <th width="100">业务类型</th>
+                                <th width="100">审批状态</th>
+                                <th width="100">导出次数</th>
+                                <th width="300">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in list">
+                            	<td>{{$index+1+(PageSize*(CurrentPage-1))}}</td>
+                                <td ng-bind="item.jobOddNumber"></td>
+                                <td ng-bind="item.jobLabName | filterLength" title="{{item.jobLabName}}"></td>
+                                <td ng-bind="item.jobExtratemplate | filterLength" title="{{item.jobExtratemplate}}"></td>                           
+                                <td ng-bind="item.jobResCount"></td>
+                                <!-- <td ng-bind="item.jobForname"></td> -->
+                                <td ng-bind="item.jobProjname"></td>
+                                <td ng-bind="item.jobName"></td>
+                                <td ng-bind="item.jobCreator"></td>                           
+                                <td ng-bind="item.jobCreatetime"></td>
+                                <td ng-bind="item.jobTrackTypename"></td>
+                                <td ng-bind="item.jobProcessstatus"></td>
+                                <td ng-bind="item.jobExpTimes"></td>
+                                <td >
+                                    <a href="javascript:;" class="" ng-click="doModify(item)" ng-if="item.jobProcessstatus=='未提交'||item.jobProcessstatus=='退回'" >修改</a>
+                                    <a href="javascript:;" class="trace-color-gray" ng-if="!(item.jobProcessstatus=='未提交'||item.jobProcessstatus=='退回')">修改</a>
+                                    <a href="javascript:;" class="" ng-click="doDelete(item)" ng-if="item.jobProcessstatus=='未提交'||item.jobProcessstatus=='退回'" >删除</a>
+                                    <a href="javascript:;" class="trace-color-gray" ng-if="!(item.jobProcessstatus=='未提交'||item.jobProcessstatus=='退回')">删除</a>
+                                    <a href="javascript:;" class="" ng-click="doExport(item)" ng-if="item.jobProcessstatus=='通过'" >导出</a>
+                                    <a href="javascript:;" class="trace-color-gray" ng-if="!(item.jobProcessstatus=='通过')">导出</a>
+                                    <!-- <a href="javascript:;" class="" ng-click="doTrace(item)">跟踪</a> -->
+                                    <a href="javascript:;" class="" ng-click="doTrace(item)" ng-if="item.jobProcessstatus=='通过'" >跟踪</a>
+                                    <a href="javascript:;" class="trace-color-gray" ng-if="!(item.jobProcessstatus=='通过')">跟踪</a>
+                                </td>
+                            </tr>
+                            <tr ng-show="TotalRows == 0"><td colspan="15">暂时没有数据</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-pagniation">
+                    <pagination max-size="5" rotate="false" boundary-links="true" total-items="TotalRows" items-per-page="PageSize"
+                        ng-change="pageChanged()" ng-model="CurrentPage" class="pagination-default"
+                        previous-text="上一页" next-text="下一页" first-text="首页" last-text="末页" style="margin: 0; display: block;">
+                    </pagination>
+                </div>
+            </div>
+        </div>

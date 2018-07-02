@@ -1,0 +1,121 @@
+<div ng-controller="sysModulesServiceController" ng-init="initializeController()">
+    <div class="go-top-btn"></div>
+    <div class="content ">
+    	<div class="title-position box-shadow-1 clearfix">
+            <h2>系统管理  > 基础设置  > <span class="color-black">模块配置</span></h2>
+        </div>
+        <div class="org_content_left label_org_tree">
+            <div class="sideBar-content left">
+                <div class="sideBar-content-inner">
+                    <ul id="commonTree" z-tree setting="mySetting" znodes="myZnodes" class="ztree diy_ztree org_diy_ztree"></ul>
+                    <div id="rMenu">
+                        <ul>
+                            <li class="rm-li" moduleCode="app.system.module.add" modText="增加子模块" assign-li-button ng-click="addTreeNode();">增加子模块</li>
+                            <li class="rm-li" moduleCode="app.system.module.del" modText="删除该模块" assign-li-button ng-click="removeTreeNode();">删除该模块</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="org_content_right  box-shadow-1 ">
+            <div class="org_content_title">
+                <!-- <h3>模块路径   :  [ <span class="org_span" ng-model="module.codNamepath">{{module.path}}</span> ]</h3> -->
+            </div>
+            <div class="org_content_form">
+                <form class="form-horizontal" role="form" name="myForm" novalidate>
+                <table class="table table-striped table-bordered edit-table ">
+				<tr>
+					<td width="15%" class="text-right t_title">名称：</td>
+					<td width="35%">
+                      	<input type="text" ng-model="module.modName" class="form-control t_input"  placeholder=""/>
+					</td>
+                    <td width="15%" class="text-right t_title">编码</td>
+					<td width="35%">
+						<input type="text" ng-model="module.modCode" class="form-control t_input"  placeholder=""/>
+					</td>
+				</tr>
+				<tr>
+					<td class="text-right t_title">类型：</td>
+					<td >
+						<select class="form-control t_input"  ng-model="module.modKind"  ng-change="changeKind(module)"  required>
+                             <option value="">请选择</option>
+                             <option value="1">模块</option>
+                             <option value="2">菜单</option>
+                             <option value="3">功能按钮</option>
+                             <option value="4">数据处理</option>
+                         </select>
+					</td>
+					<td width="15%" class="text-right t_title">窗口类型：</td>
+					<td width="35%">
+                        <select class="form-control t_input"  ng-model="module.modType"  required>
+                             <option value="">请选择</option>
+                             <option value="1">本地</option>
+                             <option value="2">内嵌</option>
+                             <option value="3">外链</option>
+                             <option value="4">跳转</option>
+                         </select>
+					</td>
+				</tr>
+				<tr ng-show="(module.modKind == 1 || module.modKind == 2)">
+					<td width="15%" class="text-right t_title">访问路径：</td>
+					<td colspan="3">
+                        <input type="text" ng-model="module.modUrl" class="form-control t_input"  placeholder=""/>
+					</td>
+				</tr>
+				<tr ng-show="(module.modKind == 1 || module.modKind == 2) && (module.modType == 1)">
+					<td width="15%" class="text-right t_title">html模板路径：</td>
+					<td colspan="3">
+                        <input type="text" ng-model="module.modHtmlurl" class="form-control t_input"  placeholder=""/>
+					</td>
+				</tr>
+				<tr ng-show="(module.modKind == 1 || module.modKind == 2) && (module.modType == 1)">
+					<td width="15%" class="text-right t_title">控制器文件路径：</td>
+					<td colspan="3">
+                        <input type="text" ng-model="module.modCtrlurl" class="form-control t_input"  placeholder=""/>
+					</td>
+				</tr>
+				<tr ng-show="(module.modKind == 1 || module.modKind == 2) && (module.modType == 1)">
+					<td width="15%" class="text-right t_title">服务文件路径：</td>
+					<td colspan="3">
+                        <input type="text" ng-model="module.modServiceurl" class="form-control t_input"  placeholder=""/>
+					</td>
+				</tr>
+				<tr ng-show="module.modKind == 4">
+					<td width="15%" class="text-right t_title">数据处理类：</td>
+					<td colspan="3">
+                        <input type="text" ng-model="module.modClassfordata" class="form-control t_input"  placeholder=""/>
+					</td>
+				</tr>
+				<tr>
+					<td class="text-right t_title">状态：</td>
+					<td >
+						 <select class="form-control t_input"  ng-model="module.modStatus"  required>
+                             <option value="">请选择</option>
+                             <option value="0">冻结</option>
+                             <option value="1">启用</option>
+                         </select>
+					</td>
+					<td class="text-right t_title">排序：</td>
+					<td >
+						 <input type="text" ng-model="module.modSort" class="form-control t_input"  placeholder=""/>
+					</td>
+				</tr>
+				<tr>
+					<td class="text-right t_title">简介：</td>
+					<td colspan="3">
+						 <textarea class="form-control" ng-model="module.modRemark" maxlength="250" name="describe" rows="3" placeholder="组织简介（最大长度250）" maxlength="250" required>{{module.remark}}</textarea>
+					</td>
+				</tr>
+			</table>
+                </form>
+                </div>
+               
+            <div class="org_content_footer">
+               <!-- 
+            <div class="">
+               -->
+                <button  class="btn btn-success" moduleCode="app.system.module.save" modText="保存" assign-span-button ng-click="saveModify(module)">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
